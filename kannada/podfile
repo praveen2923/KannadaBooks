@@ -1,0 +1,11 @@
+
+platform :ios, '8.0'
+use_frameworks!
+
+target :'kannada' do
+    pod 'CarbonKit'
+    pod 'Alamofire'
+    pod 'SVProgressHUD'
+    pod 'SDWebImage'
+    pod 'Google-Mobile-Ads-SDK'
+end
