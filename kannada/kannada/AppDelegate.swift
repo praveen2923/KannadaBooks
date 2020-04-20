@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         config.messageCenterStyleConfig = "UAMessageCenterDefaultStyle"
         UAirship.push()?.resetBadge()
+        UAirship.push()?.enableUserPushNotifications({ (status) in
+            print(status)
+        })
 
     }
     

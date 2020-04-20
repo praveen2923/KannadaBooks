@@ -48,13 +48,14 @@
 		E00634722449F347001A728F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		E0063474244A36F8001A728F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E0063476244A4AE6001A728F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E01B87BF244DDEE70093C6D0 /* kannadabooksRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooksRelease.entitlements; sourceTree = "<group>"; };
+		E01B87C0244DDF7B0093C6D0 /* kannadabooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooks.entitlements; sourceTree = "<group>"; };
 		E054853C244B07F70065532E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
-		E09247B4244DCE0B009DE3F2 /* ಪುಸ್ತಕಗಳುRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ಪುಸ್ತಕಗಳುRelease.entitlements"; sourceTree = "<group>"; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		E0B0B1CC2445CCB300FF986B /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D62445CCB300FF986B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,7 +136,7 @@
 		E0B0B1CD2445CCB300FF986B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0B0B1CC2445CCB300FF986B /* ಪುಸ್ತಕಗಳು.app */,
+				E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರಮಿ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +144,8 @@
 		E0B0B1CE2445CCB300FF986B /* kannada */ = {
 			isa = PBXGroup;
 			children = (
+				E01B87C0244DDF7B0093C6D0 /* kannadabooks.entitlements */,
+				E01B87BF244DDEE70093C6D0 /* kannadabooksRelease.entitlements */,
 				E00634702449F2CF001A728F /* Model */,
 				E0B0B1F52448695600FF986B /* Common */,
 				E0B0B1E82445D30B00FF986B /* UICells */,
@@ -152,7 +155,6 @@
 				E0B0B1D52445CCB300FF986B /* Main.storyboard */,
 				E0B0B1D82445CCB300FF986B /* Assets.xcassets */,
 				E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */,
-				E09247B4244DCE0B009DE3F2 /* ಪುಸ್ತಕಗಳುRelease.entitlements */,
 				E0B0B1DA2445CCB300FF986B /* LaunchScreen.storyboard */,
 				E0B0B1DD2445CCB400FF986B /* Info.plist */,
 			);
@@ -216,7 +218,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E0B0B1CC2445CCB300FF986B /* ಪುಸ್ತಕಗಳು.app */;
+			productReference = E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರಮಿ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -479,16 +481,17 @@
 			baseConfigurationReference = DCAF85893BC8CE7FE3FA5590 /* Pods-kannada.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SC4WJC9VWB;
+				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannada;
-				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
+				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರಮಿ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -499,16 +502,17 @@
 			baseConfigurationReference = 371B51C06F364FC4EB9D977C /* Pods-kannada.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooksRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SC4WJC9VWB;
+				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannada;
-				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
+				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
+				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರಮಿ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
