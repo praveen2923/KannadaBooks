@@ -10,18 +10,6 @@ import UIKit
 
 class extens : UIView {
 
- 
-//    ibLogInBtn.layer.shadowColor = UIColor.darkGray.cgColor
-//    ibLogInBtn.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
-//    ibLogInBtn.layer.shadowRadius = 1.0
-//    ibLogInBtn.layer.shadowOpacity = 0.7
-//    ibLogInBtn.layer.masksToBounds = false
-//
-//    ibBackgroundView.layer.shadowColor = UIColor.darkGray.cgColor
-//    ibBackgroundView.layer.shadowOffset = CGSize(width: 1.5, height: 1.5)
-//    ibBackgroundView.layer.shadowRadius = 1.0
-//    ibBackgroundView.layer.shadowOpacity = 0.7
-//    ibBackgroundView.layer.masksToBounds = false
 }
 
 // MARK: - Designable Extension

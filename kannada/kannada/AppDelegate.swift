@@ -12,8 +12,7 @@ import Airship
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
          GADMobileAds.sharedInstance().start(completionHandler: nil)
         self.setNotification()
@@ -31,25 +30,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UAirship.push()?.enableUserPushNotifications({ (status) in
             print(status)
         })
-
+          UAirship.push().pushNotificationDelegate = self
     }
     
-  
+    func applicationWillEnterForeground(_ application: UIApplication) {
+       
+    }
 
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
+
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
     }
 
+}
+
+extension AppDelegate : UAPushNotificationDelegate {
+    
+    func receivedBackgroundNotification(_ notificationContent: UANotificationContent, completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
+           // Application received a background notification
+           print("The application received a background notification");
+
+           // Call the completion handler
+           completionHandler(.noData)
+       }
+
+       func receivedForegroundNotification(_ notificationContent: UANotificationContent, completionHandler: @escaping () -> Swift.Void) {
+           // Application received a foreground notification
+           print("The application received a foreground notification");
+           completionHandler()
+       }
+
+       func receivedNotificationResponse(_ notificationResponse: UANotificationResponse, completionHandler: @escaping () -> Swift.Void) {
+           let notificationContent = notificationResponse.notificationContent
+           NSLog("Received a notification response")
+           NSLog("Alert Title:         \(notificationContent.alertTitle ?? "nil")")
+           NSLog("Alert Body:          \(notificationContent.alertBody ?? "nil")")
+           NSLog("Action Identifier:   \(notificationResponse.actionIdentifier)")
+           NSLog("Category Identifier: \(notificationContent.categoryIdentifier ?? "nil")")
+           NSLog("Response Text:       \(notificationResponse.responseText)")
+
+           completionHandler()
+       }
+
+       func presentationOptions(for notification: UNNotification) -> UNNotificationPresentationOptions {
+           return [.alert, .sound]
+       }
 }
 
 

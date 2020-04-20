@@ -16,6 +16,7 @@ class LoginView: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ibEmailIdTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "ಲಾಗಿನ್ ಮಾಡಿ"
     }
     
     override func viewDidAppear(_ animated: Bool) {
