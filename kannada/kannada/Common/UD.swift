@@ -18,6 +18,7 @@ class UD {
 static let shared = UD()
 
     let kUserLogedIn = "kUserLoginkey"
+    let kDeviceToken = "kDeviceToken"
 
     private init() {
 
@@ -30,6 +31,16 @@ static let shared = UD()
     
     func getUserLogedIn() -> Bool {
         let value = UserDefaults.standard.bool(forKey: kUserLogedIn)
+        return value
+    }
+    
+    func setDevicetoken(_ value : String)  {
+       UserDefaults.standard.set(value, forKey: kDeviceToken)
+       self.save()
+    }
+    
+    func getUDevicetoken() -> String? {
+        let value = UserDefaults.standard.string(forKey: kDeviceToken)
         return value
     }
     

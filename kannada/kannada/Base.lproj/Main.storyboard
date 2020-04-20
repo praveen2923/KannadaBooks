@@ -36,7 +36,7 @@
         <!--Register View-->
         <scene sceneID="1MW-l0-RPo">
             <objects>
-                <viewController storyboardIdentifier="RegisterView" id="4xP-eg-AGz" customClass="RegisterView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterView" id="4xP-eg-AGz" customClass="RegisterView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N82-UX-7G3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,6 +80,15 @@
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                         <connections>
                                             <outlet property="delegate" destination="4xP-eg-AGz" id="i7p-Uq-3kg"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter phone number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-qp-MQH">
+                                        <rect key="frame" x="25.5" y="177" width="250" height="30"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="4xP-eg-AGz" id="ODs-sB-56f"/>
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="ಪಾಸ್ವರ್ಡ್" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwO-1e-dmL">
@@ -151,15 +160,6 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter phone number" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3U8-qp-MQH">
-                                        <rect key="frame" x="25.5" y="177" width="250" height="30"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="alert" smartQuotesType="no"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="4xP-eg-AGz" id="ODs-sB-56f"/>
-                                        </connections>
-                                    </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbf-c3-vr4">
                                         <rect key="frame" x="25.5" y="210" width="250" height="1"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
@@ -272,12 +272,12 @@
         <!--Login View-->
         <scene sceneID="uX3-2c-dbE">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="xtj-pT-QI4" customClass="LoginView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="xtj-pT-QI4" customClass="LoginView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sSo-I9-i9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-h0-jCs" customClass="GADBannerView">
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="KX4-h0-jCs" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -321,7 +321,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="xtj-pT-QI4" id="dTd-0j-9MG"/>
                                         </connections>
@@ -461,7 +461,7 @@
         <!--ಪುಸ್ತಕಗಳು-->
         <scene sceneID="j31-b9-Lq7">
             <objects>
-                <viewController storyboardIdentifier="DashBoard" id="QbW-e0-Hh4" customClass="DashBoard" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoard" id="QbW-e0-Hh4" customClass="DashBoard" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ic-PO-Pi8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -486,7 +486,7 @@
         <!--Author View-->
         <scene sceneID="7YG-CP-Thd">
             <objects>
-                <viewController storyboardIdentifier="AuthorView" id="Pin-Cv-lSg" customClass="AuthorView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorView" id="Pin-Cv-lSg" customClass="AuthorView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Au0-DB-YFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -534,7 +534,7 @@
         <!--More Details View-->
         <scene sceneID="YVu-Em-2Za">
             <objects>
-                <viewController storyboardIdentifier="MoreDetailsView" id="Bnr-1s-xww" customClass="MoreDetailsView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreDetailsView" id="Bnr-1s-xww" customClass="MoreDetailsView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7LB-5n-TZF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -605,7 +605,7 @@
         <!--Books-->
         <scene sceneID="uYa-Ry-ok7">
             <objects>
-                <viewController storyboardIdentifier="Books" id="O96-lv-Hlu" customClass="Books" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Books" id="O96-lv-Hlu" customClass="Books" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebH-3y-TPj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -650,7 +650,7 @@
         <!--Book Reader-->
         <scene sceneID="pAg-1T-tTm">
             <objects>
-                <viewController storyboardIdentifier="BookReader" id="pis-1j-iup" customClass="BookReader" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookReader" id="pis-1j-iup" customClass="BookReader" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BfL-sh-Opp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

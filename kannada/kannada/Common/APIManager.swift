@@ -22,8 +22,8 @@ class APIManager: NSObject {
          AF.request(url, method: method, parameters: parms, encoding: JSONEncoding.default, headers: headers).responseData { (response) in
             print("Response Code:\(String(describing: response.response?.statusCode))")
             if let data = response.data {
-                let _ = String(decoding: data, as: UTF8.self)
-               // print(resStr)
+                let resStr = String(decoding: data, as: UTF8.self)
+                print(resStr)
             }
             if response.response?.statusCode == 200 {
                 completion(nil, response.data)
@@ -59,6 +59,7 @@ class APIManager: NSObject {
             "email" : parameters["email"] as? String ?? "",
             "password": parameters["password"] as? String ?? "",
             "phonenumber": parameters["phone"] as? String ?? "",
+            "devicetoken" : UD.shared.getUDevicetoken() ?? "",
             "name" : "user1"
         ]
         

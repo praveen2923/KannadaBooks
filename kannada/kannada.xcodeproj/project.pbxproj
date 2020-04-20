@@ -55,7 +55,7 @@
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		E0B0B1CC2445CCB300FF986B /* kannadabooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kannadabooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರೇಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D62445CCB300FF986B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		E0B0B1CD2445CCB300FF986B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0B0B1CC2445CCB300FF986B /* kannadabooks.app */,
+				E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E0B0B1CC2445CCB300FF986B /* kannadabooks.app */;
+			productReference = E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -492,7 +492,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = kannadabooks;
+				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -515,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = kannadabooks;
+				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

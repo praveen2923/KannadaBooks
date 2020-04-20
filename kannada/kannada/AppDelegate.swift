@@ -9,18 +9,20 @@
 import UIKit
 import GoogleMobileAds
 import Airship
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
          GADMobileAds.sharedInstance().start(completionHandler: nil)
-        self.setNotification()
+         self.setNotification()
+         IQKeyboardManager.shared.enable = true
          return true
     }
     
     func setNotification()  {
-             let config = UAConfig.default()
+        let config = UAConfig.default()
         UAirship.takeOff(config)
         if (config.validate() != true) {
            print("error")
@@ -29,8 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UAirship.push()?.resetBadge()
         UAirship.push()?.enableUserPushNotifications({ (status) in
             print(status)
+           
         })
-          UAirship.push().pushNotificationDelegate = self
+        UAirship.push().pushNotificationDelegate = self
+        UAirship.push()?.registrationDelegate = self
+        if let channelid = UAirship.channel()?.identifier {
+            UD.shared.setDevicetoken(channelid)
+        }
+   
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -81,6 +89,16 @@ extension AppDelegate : UAPushNotificationDelegate {
        func presentationOptions(for notification: UNNotification) -> UNNotificationPresentationOptions {
            return [.alert, .sound]
        }
+}
+
+extension AppDelegate : UARegistrationDelegate {
+    func apnsRegistrationFailedWithError(_ error: Error) {
+        print(error)
+    }
+    
+    func apnsRegistrationSucceeded(withDeviceToken deviceToken: Data) {
+        print("Device token:   \(deviceToken)")
+    }
 }
 
 
