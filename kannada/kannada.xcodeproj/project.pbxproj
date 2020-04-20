@@ -19,6 +19,7 @@
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
 		E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548542244B46BE0065532E /* MoreDetailsView.swift */; };
+		E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */; };
 		E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */; };
 		E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */; };
 		E0B0B1D72445CCB300FF986B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1D52445CCB300FF986B /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
+		E09247B4244DCE0B009DE3F2 /* ಪುಸ್ತಕಗಳುRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ಪುಸ್ತಕಗಳುRelease.entitlements"; sourceTree = "<group>"; };
+		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		E0B0B1CC2445CCB300FF986B /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */,
 				E0B0B1D52445CCB300FF986B /* Main.storyboard */,
 				E0B0B1D82445CCB300FF986B /* Assets.xcassets */,
+				E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */,
+				E09247B4244DCE0B009DE3F2 /* ಪುಸ್ತಕಗಳುRelease.entitlements */,
 				E0B0B1DA2445CCB300FF986B /* LaunchScreen.storyboard */,
 				E0B0B1DD2445CCB400FF986B /* Info.plist */,
 			);
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */,
+				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
 				E0B0B1D92445CCB300FF986B /* Assets.xcassets in Resources */,
 				E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */,

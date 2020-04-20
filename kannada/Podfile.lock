@@ -1,5 +1,17 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Airship (13.1.1):
+    - Airship/Automation (= 13.1.1)
+    - Airship/Core (= 13.1.1)
+    - Airship/ExtendedActions (= 13.1.1)
+    - Airship/MessageCenter (= 13.1.1)
+  - Airship/Automation (13.1.1):
+    - Airship/Core
+  - Airship/Core (13.1.1)
+  - Airship/ExtendedActions (13.1.1):
+    - Airship/Core
+  - Airship/MessageCenter (13.1.1):
+    - Airship/Core
+  - Alamofire (5.1.0)
   - CarbonKit (2.3.1)
   - Google-Mobile-Ads-SDK (7.58.0):
     - GoogleAppMeasurement (~> 6.0)
@@ -36,6 +48,7 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - Airship
   - Alamofire
   - CarbonKit
   - Google-Mobile-Ads-SDK
@@ -44,6 +57,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Airship
     - Alamofire
     - CarbonKit
     - Google-Mobile-Ads-SDK
@@ -54,7 +68,8 @@ SPEC REPOS:
     - SVProgressHUD
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Airship: ad7caf4cd8a419977f3975502308dae5561f7a03
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   CarbonKit: b60e24dbdb47179990d5e074efa87ab819c8de98
   Google-Mobile-Ads-SDK: 7052557293c75c676db55feb707ace9b790f32c1
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
@@ -63,6 +78,6 @@ SPEC CHECKSUMS:
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 5d8e403b09085542a0be3400986eaa0d9033cb94
+PODFILE CHECKSUM: 0600398293fad649c36066c284f2761eca9dd917
 
 COCOAPODS: 1.9.1

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Airship
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
          GADMobileAds.sharedInstance().start(completionHandler: nil)
-       // GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = ["c5d3d30aeb5f1b762a8ad5933077bdec" ];
-        return true
+        self.setNotification()
+         return true
+    }
+    
+    func setNotification()  {
+             let config = UAConfig.default()
+        UAirship.takeOff(config)
+        if (config.validate() != true) {
+           print("error")
+        }
+        config.messageCenterStyleConfig = "UAMessageCenterDefaultStyle"
+        UAirship.push()?.resetBadge()
+
     }
     
   

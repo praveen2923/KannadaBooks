@@ -19,11 +19,11 @@ class APIManager: NSObject {
         print("URL : \(url)")
         print("Header: \(String(describing: headers))")
         print("Parameters: \(String(describing: parms))")
-        request(url, method: method, parameters: parms, encoding: JSONEncoding.default, headers: headers).responseData { (response) in
+         AF.request(url, method: method, parameters: parms, encoding: JSONEncoding.default, headers: headers).responseData { (response) in
             print("Response Code:\(String(describing: response.response?.statusCode))")
             if let data = response.data {
-                let resStr = String(decoding: data, as: UTF8.self)
-                print(resStr)
+                let _ = String(decoding: data, as: UTF8.self)
+               // print(resStr)
             }
             if response.response?.statusCode == 200 {
                 completion(nil, response.data)
