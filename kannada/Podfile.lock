@@ -37,6 +37,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.5.2)"
   - GoogleUtilities/Reachability (6.5.2):
     - GoogleUtilities/Logger
+  - IQKeyboardManagerSwift (6.5.5)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -52,6 +53,7 @@ DEPENDENCIES:
   - Alamofire
   - CarbonKit
   - Google-Mobile-Ads-SDK
+  - IQKeyboardManagerSwift
   - SDWebImage
   - SVProgressHUD
 
@@ -63,6 +65,7 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - IQKeyboardManagerSwift
     - nanopb
     - SDWebImage
     - SVProgressHUD
@@ -74,10 +77,11 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 7052557293c75c676db55feb707ace9b790f32c1
   GoogleAppMeasurement: e49be3954045b17d046f271b9cc1ec052bad9702
   GoogleUtilities: ad0f3b691c67909d03a3327cc205222ab8f42e0e
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0600398293fad649c36066c284f2761eca9dd917
+PODFILE CHECKSUM: 7917bd6b26b94029637427ca677d4c3a94ed11e2
 
 COCOAPODS: 1.9.1
