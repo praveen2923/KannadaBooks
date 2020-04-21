@@ -35,6 +35,7 @@
 		E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FC2448841B00FF986B /* AuthorCell.swift */; };
 		E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1FD2448841B00FF986B /* AuthorCell.xib */; };
 		E0B0B2032448865200FF986B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B2022448865200FF986B /* AuthorView.swift */; };
+		E0B0F1E2244EFFC400329E4F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0B0F1E1244EFFC400329E4F /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		E0B0B1FC2448841B00FF986B /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		E0B0B1FD2448841B00FF986B /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		E0B0B2022448865200FF986B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		E0B0F1E1244EFFC400329E4F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B0F1E2244EFFC400329E4F /* StoreKit.framework in Frameworks */,
 				E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */,
 				5E7E92983C0E7B943C4337A0 /* Pods_kannada.framework in Frameworks */,
 			);
@@ -99,6 +102,7 @@
 		CFF5563CC4173A09BF46B73C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0B0F1E1244EFFC400329E4F /* StoreKit.framework */,
 				E0063476244A4AE6001A728F /* WebKit.framework */,
 				822DC0901119D8206C1ABA26 /* Pods_kannada.framework */,
 			);

@@ -9,6 +9,7 @@
 import UIKit
 import CarbonKit
 import GoogleMobileAds
+import StoreKit
 
 class DashBoard: UIViewController  {
 
@@ -29,7 +30,51 @@ class DashBoard: UIViewController  {
        super.viewDidAppear(animated)
     }
     
+    @IBAction func didTapOnMoreButton(_ sender: Any) {
+        
+        let deleteAlert = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
 
+        let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
+            self.reviewAppStore()
+        }
+        
+        let emailbtn = UIAlertAction(title: "ನಿಮ್ಮ ಫೀಡ್‌ಬ್ಯಾಕ ಇಮೇಲ್ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
+            self.sendFeedbackEmail()
+        }
+
+        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
+
+        deleteAlert.addAction(reviewbtn)
+        deleteAlert.addAction(emailbtn)
+        deleteAlert.addAction(cancelAction)
+        self.present(deleteAlert, animated: true, completion: nil)
+    }
+    
+    func sendFeedbackEmail() {
+        let supportEmail = "prin17.sh@gmail.com"
+        if let emailURL = URL(string: "mailto:\(supportEmail)"), UIApplication.shared.canOpenURL(emailURL)
+        {
+            UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    func reviewAppStore()  {
+        self.showeLoading()
+        let parameter : Dictionary<String, Any> = [SKStoreProductParameterITunesItemIdentifier : NSNumber(value: 742562928)]
+        let storeViewController : SKStoreProductViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+        storeViewController.loadProduct(withParameters: parameter) { (success, error) in
+            if success == true {
+                self.hideLoading()
+                self.present(storeViewController, animated: true, completion: nil)
+            } else {
+                self.hideLoading()
+                print("NO SUCCESS LOADING PRODUCT SCREEN")
+                print("Error ? : \(String(describing: error?.localizedDescription))")
+            }
+        }
+    }
+    
     
     func getCategoryList()  {
         self.showeLoading()
@@ -90,6 +135,13 @@ extension DashBoard: CarbonTabSwipeNavigationDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "AuthorView") as! AuthorView
         return controller
+    }
+}
+
+extension DashBoard : SKStoreProductViewControllerDelegate {
+    func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
+        print("RECEIVED a FINISH-Message from SKStoreProduktViewController")
+        viewController.dismiss(animated: true, completion: nil)
     }
 }
 
