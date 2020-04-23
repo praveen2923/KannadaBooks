@@ -22,6 +22,11 @@ class LoginView: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
       super.viewDidAppear(animated)
         self.loadBannerAd(self.bannerView)
+        if #available(iOS 13.0, *) {
+                   navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        } else {
+                   navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        }
     }
     
     override func viewWillTransition(
