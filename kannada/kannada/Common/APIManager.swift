@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Airship
 
 typealias CompletionHandler = (_ error: Any?, _ result: Any?) -> Void
 
@@ -54,25 +55,22 @@ class APIManager: NSObject {
     }
     
      // Registor Service
-    class func registorService(_ parameters: NSDictionary, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = [
-            "email" : parameters["email"] as? String ?? "",
-            "password": parameters["password"] as? String ?? "",
-            "phonenumber": parameters["phone"] as? String ?? "",
-            "devicetoken" : UD.shared.getUDevicetoken() ?? "",
-            "name" : "user1"
-        ]
-        
-        let bHTTPHeaders: HTTPHeaders = [
-                 "Content-Type" : "application/x-www-form-urlencoded",
-                 "Accept" : "application/json",
-             ]
-       
-        APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-            APIManager.responseHandler(result) { (error, result) in
-               completion(error, result)
+    class func registorService(completion: @escaping CompletionHandler) {
+        if let channelid = UAirship.channel()?.identifier {
+            let bParameters:Parameters = [ "devicetoken" : channelid ]
+            let bHTTPHeaders: HTTPHeaders = [
+               "Content-Type" : "application/x-www-form-urlencoded",
+               "Accept" : "application/json",
+            ]
+            APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
+                APIManager.responseHandler(result) { (error, result) in
+                   completion(error, result)
+                }
             }
+        }else{
+           completion(nil, nil)
         }
+       
     }
     
     // Get ALL List

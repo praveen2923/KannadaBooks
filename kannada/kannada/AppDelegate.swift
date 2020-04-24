@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import Airship
+import GoogleMobileAds
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -30,8 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.messageCenterStyleConfig = "UAMessageCenterDefaultStyle"
         UAirship.push()?.resetBadge()
         UAirship.push()?.enableUserPushNotifications({ (status) in
-            print(status)
-           
+            if let _ = UAirship.channel()?.identifier {
+                if UD.shared.getUserLogedIn() == false {
+                    APIManager.registorService() { (error, result) in
+                        if let _ = result {
+                            UD.shared.setUserLogedIn(true)
+                        }
+                    }
+                }
+            }
         })
         UAirship.push().pushNotificationDelegate = self
         UAirship.push()?.registrationDelegate = self

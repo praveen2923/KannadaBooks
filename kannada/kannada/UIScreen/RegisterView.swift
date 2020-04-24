@@ -53,9 +53,9 @@ class RegisterView: UIViewController, UITextFieldDelegate {
             }
         }
         self.showeLoading()
-        let param = ["email":self.ibEmailTextField.text, "password":self.ibPasswordTextField.text, "phone":self.ibPhoneTextField.text]
+        //let param = ["email":self.ibEmailTextField.text, "password":self.ibPasswordTextField.text, "phone":self.ibPhoneTextField.text]
         
-        APIManager.registorService(param as NSDictionary) { (error, result) in
+        APIManager.registorService() { (error, result) in
             self.hideLoading()
             if let _ = result {
                 UD.shared.setUserLogedIn(true)

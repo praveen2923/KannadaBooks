@@ -23,9 +23,9 @@ class LoginView: UIViewController, UITextFieldDelegate {
       super.viewDidAppear(animated)
         self.loadBannerAd(self.bannerView)
         if #available(iOS 13.0, *) {
-                   navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+                navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         } else {
-                   navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+                navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
         }
     }
     

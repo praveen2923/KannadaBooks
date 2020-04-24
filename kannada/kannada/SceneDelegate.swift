@@ -26,17 +26,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func setController()  {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let nvc:UINavigationController = storyBoard.instantiateViewController(withIdentifier: "RootNavigationController") as! UINavigationController
-        if UD.shared.getUserLogedIn() {
+//        if UD.shared.getUserLogedIn() {
             let rootVC:DashBoard = storyBoard.instantiateViewController(withIdentifier: "DashBoard") as! DashBoard
             nvc.viewControllers = [rootVC]
             self.window?.rootViewController = nvc
             self.window?.makeKeyAndVisible()
-        }else{
-                let rootVC:LoginView = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
-                nvc.viewControllers = [rootVC]
-                self.window?.rootViewController = nvc
-                self.window?.makeKeyAndVisible()
-        }
+//        }else{
+//                let rootVC:LoginView = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
+//                nvc.viewControllers = [rootVC]
+//                self.window?.rootViewController = nvc
+//                self.window?.makeKeyAndVisible()
+//        }
     }
      
 
