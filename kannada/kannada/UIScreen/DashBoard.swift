@@ -34,17 +34,17 @@ class DashBoard: UIViewController  {
         
         let deleteAlert = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
 
-        let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
-            self.reviewAppStore()
-        }
-        
+//        let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
+//            self.reviewAppStore()
+//        }
+//
         let emailbtn = UIAlertAction(title: "ನಿಮ್ಮ ಫೀಡ್‌ಬ್ಯಾಕ ಇಮೇಲ್ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
             self.sendFeedbackEmail()
         }
 
         let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
 
-        deleteAlert.addAction(reviewbtn)
+       // deleteAlert.addAction(reviewbtn)
         deleteAlert.addAction(emailbtn)
         deleteAlert.addAction(cancelAction)
         self.present(deleteAlert, animated: true, completion: nil)
