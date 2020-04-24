@@ -15,7 +15,9 @@ class AuthorCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        authorimage.layer.masksToBounds = true
+        authorimage.layer.borderWidth = 5
+        authorimage.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }
