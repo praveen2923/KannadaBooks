@@ -29,10 +29,8 @@ class DashBoard: UIViewController  {
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
     }
-    
-    @IBAction func didTapOnMoreButton(_ sender: Any) {
-        
-        let deleteAlert = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
+    @IBAction func didTapOnRightMenuBtn(_ sender: Any) {
+        let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
 
         let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
             self.reviewAppStore()
@@ -44,10 +42,38 @@ class DashBoard: UIViewController  {
 
         let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
 
-       // deleteAlert.addAction(reviewbtn)
-        deleteAlert.addAction(emailbtn)
-        deleteAlert.addAction(cancelAction)
-        self.present(deleteAlert, animated: true, completion: nil)
+        showoption.addAction(reviewbtn)
+        showoption.addAction(emailbtn)
+        showoption.addAction(cancelAction)
+        self.present(showoption, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func didTapOnMoreButton(_ sender: Any) {
+        
+        let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+
+        let news = UIAlertAction(title: "ಸುದ್ದಿ-ಸಮಾಚಾರ", style: .default) { (action: UIAlertAction) in
+            self.moveController()
+        }
+        let peoples = UIAlertAction(title: "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", style: .default) { (action: UIAlertAction) in
+            self.moveController()
+        }
+        let sahiti = UIAlertAction(title: "ಸಾಹಿತಿಗಳು", style: .default) { (action: UIAlertAction) in
+            self.moveController()
+        }
+        let other = UIAlertAction(title: "ಆಧ್ಯಾತ್ಮ", style: .default) { (action: UIAlertAction) in
+            self.moveController()
+        }
+
+        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
+
+        showoption.addAction(news)
+        showoption.addAction(peoples)
+        showoption.addAction(sahiti)
+        showoption.addAction(other)
+        showoption.addAction(cancelAction)
+        self.present(showoption, animated: true, completion: nil)
     }
     
     func sendFeedbackEmail() {
@@ -56,6 +82,10 @@ class DashBoard: UIViewController  {
         {
             UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
         }
+    }
+    
+    func moveController() {
+        
     }
     
     func reviewAppStore()  {

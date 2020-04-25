@@ -480,12 +480,15 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="arrow.clockwise" catalog="system" style="plain" id="P4i-vq-MrE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="P4i-vq-MrE">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oDp-fH-cVf">
-                                <rect key="frame" x="362" y="0.0" width="32" height="44"/>
+                                <rect key="frame" x="369" y="9.5" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="arrow.clockwise" catalog="system"/>
+                                <state key="normal" image="imenu"/>
+                                <connections>
+                                    <action selector="didTapOnRightMenuBtn:" destination="QbW-e0-Hh4" eventType="touchUpInside" id="znE-lv-ZGb"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -705,7 +708,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="imenu" width="25" height="25"/>
         <image name="menu" width="30" height="30"/>
     </resources>
 </document>
