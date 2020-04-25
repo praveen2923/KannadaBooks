@@ -35,6 +35,7 @@
 		E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FC2448841B00FF986B /* AuthorCell.swift */; };
 		E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1FD2448841B00FF986B /* AuthorCell.xib */; };
 		E0B0B2032448865200FF986B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B2022448865200FF986B /* AuthorView.swift */; };
+		E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70924542ABB00551BD4 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		E0B0B1FC2448841B00FF986B /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		E0B0B1FD2448841B00FF986B /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		E0B0B2022448865200FF986B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		E0F1F70924542ABB00551BD4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				E0548542244B46BE0065532E /* MoreDetailsView.swift */,
 				E0B0B1FA24486E8500FF986B /* RegisterView.swift */,
 				E006346E2449ADED001A728F /* LoginView.swift */,
+				E0F1F70924542ABB00551BD4 /* MenuViewController.swift */,
 			);
 			path = UIScreen;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
+				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
 				E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */,
 				E0B0B2032448865200FF986B /* AuthorView.swift in Sources */,
 				E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */,
