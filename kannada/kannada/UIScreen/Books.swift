@@ -41,13 +41,13 @@ class Books: UIViewController {
         super.viewDidAppear(true)
     }
     
- //   override func viewWillTransition(
-   //    to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
-    // ) {
-      // coordinator.animate(alongsideTransition: { _ in
-       //  self.loadBannerAd(self.bannerView)
-      // })
-     //}
+    override func viewWillTransition(
+       to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
+     ) {
+       coordinator.animate(alongsideTransition: { _ in
+         self.loadBannerAd(self.bannerView)
+       })
+     }
     
     func getAllOtherInformation() {
         self.showeLoading()
@@ -61,7 +61,7 @@ class Books: UIViewController {
                 if self.others.count == 0 {
                     self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
                 }else{
-                    self.others = self.others.shuffled()
+                   // self.others = self.others.shuffled()
                     self.hideLoading()
                     self.tableView.reloadData()
                 }

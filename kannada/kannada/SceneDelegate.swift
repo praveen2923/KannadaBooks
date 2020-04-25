@@ -26,7 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav = MANavigationViewController(rootViewController: homeViewController)
       
         let bMenuVC = storyBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        bMenuVC.delegate = homeViewController
         let bVC = SideMenuController(contentViewController: nav, menuViewController: bMenuVC)
             
             //SlideMenuController(mainViewController: nav, leftMenuViewController: bMenuVC)

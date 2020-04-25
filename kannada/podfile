@@ -10,4 +10,5 @@ target :'kannada' do
     pod 'Google-Mobile-Ads-SDK'
     pod 'Airship'
     pod 'IQKeyboardManagerSwift'
+    pod 'SideMenuSwift'
 end

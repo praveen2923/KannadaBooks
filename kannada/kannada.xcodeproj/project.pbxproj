@@ -19,6 +19,7 @@
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
 		E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548542244B46BE0065532E /* MoreDetailsView.swift */; };
+		E08854BE24545FAE00C78C75 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08854BD24545FAE00C78C75 /* StoreKit.framework */; };
 		E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */; };
 		E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */; };
 		E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */; };
@@ -36,6 +37,8 @@
 		E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1FD2448841B00FF986B /* AuthorCell.xib */; };
 		E0B0B2032448865200FF986B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B2022448865200FF986B /* AuthorView.swift */; };
 		E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70924542ABB00551BD4 /* MenuViewController.swift */; };
+		E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70D2454527000551BD4 /* CommonCell.swift */; };
+		E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F1F70E2454527000551BD4 /* CommonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +58,9 @@
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
+		E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರೇಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರೇಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D62445CCB300FF986B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		E0B0B1FD2448841B00FF986B /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		E0B0B2022448865200FF986B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 		E0F1F70924542ABB00551BD4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		E0F1F70D2454527000551BD4 /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
+		E0F1F70E2454527000551BD4 /* CommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E08854BE24545FAE00C78C75 /* StoreKit.framework in Frameworks */,
 				E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */,
 				5E7E92983C0E7B943C4337A0 /* Pods_kannada.framework in Frameworks */,
 			);
@@ -101,6 +108,7 @@
 		CFF5563CC4173A09BF46B73C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E08854BD24545FAE00C78C75 /* StoreKit.framework */,
 				E0063476244A4AE6001A728F /* WebKit.framework */,
 				822DC0901119D8206C1ABA26 /* Pods_kannada.framework */,
 			);
@@ -129,18 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				E0B0B1CE2445CCB300FF986B /* kannada */,
-				E0B0B1CD2445CCB300FF986B /* Products */,
 				41BA170AA39F5D6DDA3766EB /* Pods */,
 				CFF5563CC4173A09BF46B73C /* Frameworks */,
+				E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */,
 			);
-			sourceTree = "<group>";
-		};
-		E0B0B1CD2445CCB300FF986B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		E0B0B1CE2445CCB300FF986B /* kannada */ = {
@@ -166,13 +166,12 @@
 		E0B0B1E32445CF2500FF986B /* UIScreen */ = {
 			isa = PBXGroup;
 			children = (
+				E0F1F70C24544E4900551BD4 /* Not Used */,
 				E0B0B1E42445CF3700FF986B /* DashBoard.swift */,
 				E0B0B2022448865200FF986B /* AuthorView.swift */,
 				E0B0B1E62445D07400FF986B /* Books.swift */,
 				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0548542244B46BE0065532E /* MoreDetailsView.swift */,
-				E0B0B1FA24486E8500FF986B /* RegisterView.swift */,
-				E006346E2449ADED001A728F /* LoginView.swift */,
 				E0F1F70924542ABB00551BD4 /* MenuViewController.swift */,
 			);
 			path = UIScreen;
@@ -187,6 +186,8 @@
 				E0B0B1FD2448841B00FF986B /* AuthorCell.xib */,
 				E054853C244B07F70065532E /* HistoryCell.swift */,
 				E054853D244B07F70065532E /* HistoryCell.xib */,
+				E0F1F70D2454527000551BD4 /* CommonCell.swift */,
+				E0F1F70E2454527000551BD4 /* CommonCell.xib */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -200,6 +201,15 @@
 				E0063468244958BE001A728F /* UD.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E0F1F70C24544E4900551BD4 /* Not Used */ = {
+			isa = PBXGroup;
+			children = (
+				E006346E2449ADED001A728F /* LoginView.swift */,
+				E0B0B1FA24486E8500FF986B /* RegisterView.swift */,
+			);
+			path = "Not Used";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +231,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E0B0B1CC2445CCB300FF986B /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */;
+			productReference = E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +258,7 @@
 				Base,
 			);
 			mainGroup = E0B0B1C32445CCB300FF986B;
-			productRefGroup = E0B0B1CD2445CCB300FF986B /* Products */;
+			productRefGroup = E0B0B1C32445CCB300FF986B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -262,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */,
 				E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */,
 				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
@@ -323,6 +334,7 @@
 			files = (
 				E0063475244A36F8001A728F /* Book.swift in Sources */,
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
+				E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */,
 				E0B0B1E72445D07400FF986B /* Books.swift in Sources */,
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
@@ -496,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -521,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
 				PROVISIONING_PROFILE_SPECIFIER = "";

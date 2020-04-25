@@ -10,7 +10,6 @@
         <!--Navigation Controller-->
         <scene sceneID="mtF-ud-cN9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8O8-6E-9zE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="RootNavigationController" id="xcx-CO-F54" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ToJ-1g-4kq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -30,6 +29,7 @@
                         <segue destination="xtj-pT-QI4" kind="relationship" relationship="rootViewController" id="1fy-zE-uR1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8O8-6E-9zE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1017" y="123"/>
         </scene>
@@ -272,7 +272,6 @@
         <!--Login View-->
         <scene sceneID="uX3-2c-dbE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UOs-CY-g1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="LoginView" id="xtj-pT-QI4" customClass="LoginView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sSo-I9-i9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -454,6 +453,7 @@
                         <outlet property="ibPassword" destination="YrL-8h-rXW" id="4OP-A6-6Y4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UOs-CY-g1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1584" y="818"/>
         </scene>
@@ -668,14 +668,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-yH-m0Q">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFO-I9-wo4" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -683,27 +675,31 @@
                                     <constraint firstAttribute="height" constant="50" id="LL2-tg-WXW"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3b-Vq-iqw" customClass="PDFView">
+                                <rect key="frame" x="0.0" y="67" width="414" height="737"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="i5Q-yH-m0Q" firstAttribute="leading" secondItem="4p4-nc-8sZ" secondAttribute="leading" id="6pN-DJ-f34"/>
-                            <constraint firstItem="4p4-nc-8sZ" firstAttribute="trailing" secondItem="i5Q-yH-m0Q" secondAttribute="trailing" id="L4n-oL-3xu"/>
+                            <constraint firstItem="e3b-Vq-iqw" firstAttribute="trailing" secondItem="4p4-nc-8sZ" secondAttribute="trailing" id="7na-Am-sMY"/>
+                            <constraint firstItem="e3b-Vq-iqw" firstAttribute="leading" secondItem="4p4-nc-8sZ" secondAttribute="leading" id="FvK-DP-s66"/>
                             <constraint firstItem="VFO-I9-wo4" firstAttribute="bottom" secondItem="4p4-nc-8sZ" secondAttribute="bottom" id="YlB-1o-sSV"/>
-                            <constraint firstItem="i5Q-yH-m0Q" firstAttribute="top" secondItem="4p4-nc-8sZ" secondAttribute="top" id="eGE-dZ-kBc"/>
+                            <constraint firstItem="e3b-Vq-iqw" firstAttribute="top" secondItem="4p4-nc-8sZ" secondAttribute="top" id="f6L-rA-Zf0"/>
                             <constraint firstItem="VFO-I9-wo4" firstAttribute="leading" secondItem="4p4-nc-8sZ" secondAttribute="leading" id="kDZ-NB-Xc8"/>
+                            <constraint firstItem="VFO-I9-wo4" firstAttribute="top" secondItem="e3b-Vq-iqw" secondAttribute="bottom" id="kxN-Q2-brT"/>
                             <constraint firstItem="VFO-I9-wo4" firstAttribute="trailing" secondItem="4p4-nc-8sZ" secondAttribute="trailing" id="qbZ-e7-QqP"/>
-                            <constraint firstItem="VFO-I9-wo4" firstAttribute="top" secondItem="i5Q-yH-m0Q" secondAttribute="bottom" id="zFL-Ig-Oib"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4p4-nc-8sZ"/>
                     </view>
                     <connections>
                         <outlet property="bannerView" destination="VFO-I9-wo4" id="u3E-3K-rco"/>
-                        <outlet property="ibwebview" destination="i5Q-yH-m0Q" id="9uq-BS-deO"/>
+                        <outlet property="ibPdfView" destination="e3b-Vq-iqw" id="ap7-Al-l4g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="beR-C7-dK3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="818"/>
+            <point key="canvasLocation" x="586.95652173913049" y="817.63392857142856"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="2PZ-df-TG9">
@@ -714,20 +710,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kannada" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-rB-wpG">
-                                <rect key="frame" x="111" y="64" width="303" height="151"/>
+                                <rect key="frame" x="111" y="44" width="303" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="151" id="IUp-4B-wF3"/>
+                                    <constraint firstAttribute="height" constant="125" id="IUp-4B-wF3"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="1" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BNw-Wc-AiV">
+                                <rect key="frame" x="164" y="179" width="250" height="683"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="pJ7-7g-4Pi"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8x9-rB-wpG" firstAttribute="top" secondItem="YDz-9r-TpE" secondAttribute="top" constant="20" id="LWD-C6-bgb"/>
+                            <constraint firstItem="8x9-rB-wpG" firstAttribute="top" secondItem="YDz-9r-TpE" secondAttribute="top" id="LWD-C6-bgb"/>
+                            <constraint firstItem="BNw-Wc-AiV" firstAttribute="top" secondItem="8x9-rB-wpG" secondAttribute="bottom" constant="10" id="Rp5-RX-5eB"/>
+                            <constraint firstItem="BNw-Wc-AiV" firstAttribute="trailing" secondItem="YDz-9r-TpE" secondAttribute="trailing" id="ZXw-zj-E3P"/>
                             <constraint firstItem="8x9-rB-wpG" firstAttribute="trailing" secondItem="YDz-9r-TpE" secondAttribute="trailing" id="iUx-hT-2jQ"/>
                             <constraint firstItem="8x9-rB-wpG" firstAttribute="leading" secondItem="YDz-9r-TpE" secondAttribute="leading" constant="111" id="m7Q-iB-DEn"/>
+                            <constraint firstItem="BNw-Wc-AiV" firstAttribute="bottom" secondItem="YDz-9r-TpE" secondAttribute="bottom" id="wKI-UY-G4H"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YDz-9r-TpE"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="BNw-Wc-AiV" id="NpT-Iu-CYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7j-sh-W0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,4 +26,12 @@ class MoreDetailsView: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func viewWillTransition(
+       to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
+     ) {
+       coordinator.animate(alongsideTransition: { _ in
+         self.loadBannerAd(self.bannerView)
+       })
+     }
+    
 }

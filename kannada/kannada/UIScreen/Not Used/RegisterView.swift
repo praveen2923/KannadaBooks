@@ -92,38 +92,3 @@ extension UIWindow {
     }
 }
 
-extension UIViewController {
-    func showeErorMsg(_ msg : String)  {
-        DispatchQueue.main.async {
-            SVProgressHUD.setDefaultStyle(.dark)
-            SVProgressHUD.showError(withStatus: msg)
-        }
-    }
-    func showeLoading()  {
-        DispatchQueue.main.async {
-          SVProgressHUD.setDefaultStyle(.dark)
-          SVProgressHUD.setRingThickness(5.0)
-         SVProgressHUD.show()
-        }
-    }
-    
-    func hideLoading()  {
-        SVProgressHUD.dismiss()
-    }
-    
-    func loadBannerAd(_ bannerView : GADBannerView) {
-        bannerView.adUnitID = unitKey
-        bannerView.rootViewController = self
-        let frame = { () -> CGRect in
-        if #available(iOS 11.0, *) {
-            return view.frame.inset(by: view.safeAreaInsets)
-        } else {
-            return view.frame
-        } }()
-        let viewWidth = frame.size.width
-        bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
-        bannerView.load(GADRequest())
-    }
-}
-
-

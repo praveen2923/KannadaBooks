@@ -11,6 +11,8 @@ import CarbonKit
 import GoogleMobileAds
 import StoreKit
 import SideMenuSwift
+import SVProgressHUD
+import StoreKit
 
 class DashBoard: UIViewController  {
 
@@ -18,18 +20,13 @@ class DashBoard: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//       if #available(iOS 13.0, *) {
-//            navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
-//       } else {
-//            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
-//       }
-       self.getCategoryList()
+        self.getCategoryList()
     }
     
     override func viewDidAppear(_ animated: Bool) {
        super.viewDidAppear(animated)
     }
+    
     @IBAction func didTapOnRightMenuBtn(_ sender: Any) {
         let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
 
@@ -50,38 +47,12 @@ class DashBoard: UIViewController  {
         
     }
     
-  
-    
     @IBAction func didTapOnMoreButton(_ sender: Any) {
- 
         SideMenuController.preferences.basic.position = .sideBySide
         SideMenuController.preferences.basic.menuWidth = 250
         SideMenuController.preferences.basic.enableRubberEffectWhenPanning = false
         self.sideMenuController?.revealMenu()
-//
-//        let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "", preferredStyle: UIAlertController.Style.actionSheet)
-//
-//        let news = UIAlertAction(title: "ಸುದ್ದಿ-ಸಮಾಚಾರ", style: .default) { (action: UIAlertAction) in
-//            self.moveController()
-//        }
-//        let peoples = UIAlertAction(title: "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", style: .default) { (action: UIAlertAction) in
-//            self.moveController()
-//        }
-//        let sahiti = UIAlertAction(title: "ಸಾಹಿತಿಗಳು", style: .default) { (action: UIAlertAction) in
-//            self.moveController()
-//        }
-//        let other = UIAlertAction(title: "ಆಧ್ಯಾತ್ಮ", style: .default) { (action: UIAlertAction) in
-//            self.moveController()
-//        }
-//
-//        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
-//
-//        showoption.addAction(news)
-//        showoption.addAction(peoples)
-//        showoption.addAction(sahiti)
-//        showoption.addAction(other)
-//        showoption.addAction(cancelAction)
-//        self.present(showoption, animated: true, completion: nil)
+        
     }
     
     func sendFeedbackEmail() {
@@ -93,20 +64,32 @@ class DashBoard: UIViewController  {
     }
     
     func reviewAppStore()  {
-        self.showeLoading()
-        let parameter : Dictionary<String, Any> = [SKStoreProductParameterITunesItemIdentifier : NSNumber(value: 1509189571)]
-        let storeViewController : SKStoreProductViewController = SKStoreProductViewController()
-        storeViewController.delegate = self
-        storeViewController.loadProduct(withParameters: parameter) { (success, error) in
-            if success == true {
-                self.hideLoading()
-                self.present(storeViewController, animated: true, completion: nil)
-            } else {
-                self.hideLoading()
-                print("NO SUCCESS LOADING PRODUCT SCREEN")
-                print("Error ? : \(String(describing: error?.localizedDescription))")
-            }
-        }
+        
+     //   AppStoreReviewManager.requestReviewIfAppropriate()
+//
+//        var count = UserDefaults.standard.integer(forKey: UserDefaultsKeys.processCompletedCountKey)
+//        count += 1
+//        UserDefaults.standard.set(count, forKey: UserDefaultsKeys.processCompletedCountKey)
+//
+//        print("Process completed \(count) time(s)")
+//
+//        // Get the current bundle version for the app
+//        let infoDictionaryKey = kCFBundleVersionKey as String
+//        guard let currentVersion = Bundle.main.object(forInfoDictionaryKey: infoDictionaryKey) as? String
+//            else { fatalError("Expected to find a bundle version in the info dictionary") }
+//
+//        let lastVersionPromptedForReview = UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
+//
+//        // Has the process been completed several times and the user has not already been prompted for this version?
+//        if count >= 5 && currentVersion != lastVersionPromptedForReview {
+//            let twoSecondsFromNow = DispatchTime.now() + 2.0
+//            DispatchQueue.main.asyncAfter(deadline: twoSecondsFromNow) { [navigationController] in
+//                if navigationController?.topViewController is DashBoard {
+//                    SKStoreReviewController.requestReview()
+//                    UserDefaults.standard.set(currentVersion, forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
+//                }
+//            }
+//        }
     }
     
     
@@ -179,20 +162,36 @@ extension DashBoard : SKStoreProductViewControllerDelegate {
     }
 }
 
-extension DashBoard : MenuToDashboard {
-    
-    func tapOnIndex(index: Int) {
-        
+extension UIViewController {
+    func showeErorMsg(_ msg : String)  {
+        DispatchQueue.main.async {
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.showError(withStatus: msg)
+        }
+    }
+    func showeLoading()  {
+        DispatchQueue.main.async {
+          SVProgressHUD.setDefaultStyle(.dark)
+          SVProgressHUD.setRingThickness(5.0)
+         SVProgressHUD.show()
+        }
     }
     
-    func tapOnValue(value: String) {
-        
+    func hideLoading()  {
+        SVProgressHUD.dismiss()
     }
     
-    func navigateToVC(vc: UIViewController) {
-        self.navigationController?.pushViewController(vc, animated: true)
+    func loadBannerAd(_ bannerView : GADBannerView) {
+        bannerView.adUnitID = unitKey
+        bannerView.rootViewController = self
+        let frame = { () -> CGRect in
+        if #available(iOS 11.0, *) {
+            return view.frame.inset(by: view.safeAreaInsets)
+        } else {
+            return view.frame
+        } }()
+        let viewWidth = frame.size.width
+        bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        bannerView.load(GADRequest())
     }
 }
-
-
-

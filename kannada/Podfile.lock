@@ -46,6 +46,7 @@ PODS:
   - SDWebImage (5.7.2):
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
+  - SideMenuSwift (2.0.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - Google-Mobile-Ads-SDK
   - IQKeyboardManagerSwift
   - SDWebImage
+  - SideMenuSwift
   - SVProgressHUD
 
 SPEC REPOS:
@@ -68,6 +70,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - nanopb
     - SDWebImage
+    - SideMenuSwift
     - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -80,8 +83,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
+  SideMenuSwift: c7d99c270e0fad922a14b81f1dcc7a84c764bcd5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 7917bd6b26b94029637427ca677d4c3a94ed11e2
+PODFILE CHECKSUM: 532f9784350e9204b458236dfb7f054c0468128f
 
 COCOAPODS: 1.9.1
