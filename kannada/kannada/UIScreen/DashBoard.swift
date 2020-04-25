@@ -10,6 +10,7 @@ import UIKit
 import CarbonKit
 import GoogleMobileAds
 import StoreKit
+import SideMenuSwift
 
 class DashBoard: UIViewController  {
 
@@ -18,11 +19,11 @@ class DashBoard: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       if #available(iOS 13.0, *) {
-            navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
-       } else {
-            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
-       }
+//       if #available(iOS 13.0, *) {
+//            navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+//       } else {
+//            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+//       }
        self.getCategoryList()
     }
     
@@ -49,31 +50,38 @@ class DashBoard: UIViewController  {
         
     }
     
+  
+    
     @IBAction func didTapOnMoreButton(_ sender: Any) {
-        
-        let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "", preferredStyle: UIAlertController.Style.actionSheet)
-
-        let news = UIAlertAction(title: "ಸುದ್ದಿ-ಸಮಾಚಾರ", style: .default) { (action: UIAlertAction) in
-            self.moveController()
-        }
-        let peoples = UIAlertAction(title: "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", style: .default) { (action: UIAlertAction) in
-            self.moveController()
-        }
-        let sahiti = UIAlertAction(title: "ಸಾಹಿತಿಗಳು", style: .default) { (action: UIAlertAction) in
-            self.moveController()
-        }
-        let other = UIAlertAction(title: "ಆಧ್ಯಾತ್ಮ", style: .default) { (action: UIAlertAction) in
-            self.moveController()
-        }
-
-        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
-
-        showoption.addAction(news)
-        showoption.addAction(peoples)
-        showoption.addAction(sahiti)
-        showoption.addAction(other)
-        showoption.addAction(cancelAction)
-        self.present(showoption, animated: true, completion: nil)
+ 
+        SideMenuController.preferences.basic.position = .sideBySide
+        SideMenuController.preferences.basic.menuWidth = 250
+        SideMenuController.preferences.basic.enableRubberEffectWhenPanning = false
+        self.sideMenuController?.revealMenu()
+//
+//        let showoption = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+//
+//        let news = UIAlertAction(title: "ಸುದ್ದಿ-ಸಮಾಚಾರ", style: .default) { (action: UIAlertAction) in
+//            self.moveController()
+//        }
+//        let peoples = UIAlertAction(title: "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", style: .default) { (action: UIAlertAction) in
+//            self.moveController()
+//        }
+//        let sahiti = UIAlertAction(title: "ಸಾಹಿತಿಗಳು", style: .default) { (action: UIAlertAction) in
+//            self.moveController()
+//        }
+//        let other = UIAlertAction(title: "ಆಧ್ಯಾತ್ಮ", style: .default) { (action: UIAlertAction) in
+//            self.moveController()
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
+//
+//        showoption.addAction(news)
+//        showoption.addAction(peoples)
+//        showoption.addAction(sahiti)
+//        showoption.addAction(other)
+//        showoption.addAction(cancelAction)
+//        self.present(showoption, animated: true, completion: nil)
     }
     
     func sendFeedbackEmail() {
@@ -82,10 +90,6 @@ class DashBoard: UIViewController  {
         {
             UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
         }
-    }
-    
-    func moveController() {
-        
     }
     
     func reviewAppStore()  {
@@ -172,6 +176,21 @@ extension DashBoard : SKStoreProductViewControllerDelegate {
     func productViewControllerDidFinish(_ viewController: SKStoreProductViewController) {
         print("RECEIVED a FINISH-Message from SKStoreProduktViewController")
         viewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension DashBoard : MenuToDashboard {
+    
+    func tapOnIndex(index: Int) {
+        
+    }
+    
+    func tapOnValue(value: String) {
+        
+    }
+    
+    func navigateToVC(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

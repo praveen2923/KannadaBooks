@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenuSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,10 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
         self.setController()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
@@ -25,18 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setController()  {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let nvc:UINavigationController = storyBoard.instantiateViewController(withIdentifier: "RootNavigationController") as! UINavigationController
-//        if UD.shared.getUserLogedIn() {
-            let rootVC:DashBoard = storyBoard.instantiateViewController(withIdentifier: "DashBoard") as! DashBoard
-            nvc.viewControllers = [rootVC]
-            self.window?.rootViewController = nvc
-            self.window?.makeKeyAndVisible()
-//        }else{
-//                let rootVC:LoginView = storyBoard.instantiateViewController(withIdentifier: "LoginView") as! LoginView
-//                nvc.viewControllers = [rootVC]
-//                self.window?.rootViewController = nvc
-//                self.window?.makeKeyAndVisible()
-//        }
+        let homeViewController:DashBoard = storyBoard.instantiateViewController(withIdentifier: "DashBoard") as! DashBoard
+        let nav = MANavigationViewController(rootViewController: homeViewController)
+      
+        let bMenuVC = storyBoard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        bMenuVC.delegate = homeViewController
+        let bVC = SideMenuController(contentViewController: nav, menuViewController: bMenuVC)
+            
+            //SlideMenuController(mainViewController: nav, leftMenuViewController: bMenuVC)
+        self.window?.rootViewController = bVC
+        self.window?.makeKeyAndVisible()
+        
     }
      
 

@@ -8,6 +8,25 @@
 
 import UIKit
 
+
+class MANavigationViewController: UINavigationController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let color = UIColor.init(named: "bgcolor")
+        UINavigationBar.appearance().barTintColor = color
+        UINavigationBar.appearance().tintColor =  color
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
+        UINavigationBar.appearance().isTranslucent = false
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+}
+
+
 class extens : UIView {
 
 }
