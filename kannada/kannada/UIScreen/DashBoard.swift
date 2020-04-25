@@ -34,10 +34,10 @@ class DashBoard: UIViewController  {
         
         let deleteAlert = UIAlertController(title: "ಕನ್ನಡ ಪ್ರೇಮಿ", message: "ನಮ್ಮ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಬೆಂಬಲ ನೀಡಿ", preferredStyle: UIAlertController.Style.actionSheet)
 
-//        let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
-//            self.reviewAppStore()
-//        }
-//
+        let reviewbtn = UIAlertAction(title: "ಆಪ್ ಸ್ಟೋರ್‌ನಲ್ಲಿ ವಿಮರ್ಶೆ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
+            self.reviewAppStore()
+        }
+
         let emailbtn = UIAlertAction(title: "ನಿಮ್ಮ ಫೀಡ್‌ಬ್ಯಾಕ ಇಮೇಲ್ ಮಾಡಿ", style: .default) { (action: UIAlertAction) in
             self.sendFeedbackEmail()
         }
@@ -60,7 +60,7 @@ class DashBoard: UIViewController  {
     
     func reviewAppStore()  {
         self.showeLoading()
-        let parameter : Dictionary<String, Any> = [SKStoreProductParameterITunesItemIdentifier : NSNumber(value: 742562928)]
+        let parameter : Dictionary<String, Any> = [SKStoreProductParameterITunesItemIdentifier : NSNumber(value: 1509189571)]
         let storeViewController : SKStoreProductViewController = SKStoreProductViewController()
         storeViewController.delegate = self
         storeViewController.loadProduct(withParameters: parameter) { (success, error) in

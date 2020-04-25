@@ -19,5 +19,4 @@ class AuthorCell: UICollectionViewCell {
         authorimage.layer.borderWidth = 5
         authorimage.layer.borderColor = UIColor.lightGray.cgColor
     }
-
 }
