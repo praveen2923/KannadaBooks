@@ -23,16 +23,16 @@ struct APIList {
         }
     }
     
-    static var userRegistor : String {
-        get {
-            return "registor.php"
-        }
-    }
-    static var userLogin : String {
-        get {
-            return "login.php"
-        }
-    }
+//    static var userRegistor : String {
+//        get {
+//            return "registor.php"
+//        }
+//    }
+//    static var userLogin : String {
+//        get {
+//            return "login.php"
+//        }
+//    }
     
     static var categorylist : String {
         get {
@@ -55,6 +55,12 @@ struct APIList {
     static var otherInfo : String {
         get {
             return "history.php"
+        }
+    }
+    
+    static var menuList : String {
+        get {
+            return "menulist.php"
         }
     }
 }

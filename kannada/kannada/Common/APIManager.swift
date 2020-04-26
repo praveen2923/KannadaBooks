@@ -33,46 +33,7 @@ class APIManager: NSObject {
             }
         }
     }
-    
-    // Login Service
-    class func loginService(_ parameters: NSDictionary, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = [
-              "email" : parameters["email"] as? String ?? "",
-              "password": parameters["password"] as? String ?? ""
-           ]
-        
-        let bHTTPHeaders: HTTPHeaders = [
-            "Content-Type" : "application/x-www-form-urlencoded",
-            "Accept" : "application/json",
-        ]
-  
-        
-        APIManager.serviceRequest(APIList.userLogin.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-            APIManager.responseHandler(result) { (error, result) in
-                completion(error, result)
-            }
-        }
-    }
-    
-     // Registor Service
-    class func registorService(completion: @escaping CompletionHandler) {
-        if let channelid = UAirship.channel()?.identifier {
-            let bParameters:Parameters = [ "devicetoken" : channelid ]
-            let bHTTPHeaders: HTTPHeaders = [
-               "Content-Type" : "application/x-www-form-urlencoded",
-               "Accept" : "application/json",
-            ]
-            APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-                APIManager.responseHandler(result) { (error, result) in
-                   completion(error, result)
-                }
-            }
-        }else{
-           completion(nil, nil)
-        }
-       
-    }
-    
+   
     // Get ALL List
     class func categoryList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
         APIManager.serviceRequest(APIList.categorylist.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
@@ -111,6 +72,16 @@ class APIManager: NSObject {
                }
         }
     }
+    
+    // Get Menu List
+    class func getMenuList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
+        APIManager.serviceRequest(APIList.menuList.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
+            APIManager.responseHandle(result) { (error, result) in
+               completion(error, result)
+            }
+        }
+    }
+    
     
     
     // Handle NSArray json data from server
@@ -151,5 +122,48 @@ class APIManager: NSObject {
            completion(true, nil)  // No Data Response
         }
     }
+    
+    
+    
+     
+        // Login Service NOT USed
+        class func loginService(_ parameters: NSDictionary, completion: @escaping CompletionHandler) {
+    //        let bParameters:Parameters = [
+    //              "email" : parameters["email"] as? String ?? "",
+    //              "password": parameters["password"] as? String ?? ""
+    //           ]
+    //
+    //        let bHTTPHeaders: HTTPHeaders = [
+    //            "Content-Type" : "application/x-www-form-urlencoded",
+    //            "Accept" : "application/json",
+    //        ]
+    //
+            
+    //        APIManager.serviceRequest(APIList.userLogin.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
+    //            APIManager.responseHandler(result) { (error, result) in
+    //                completion(error, result)
+    //            }
+    //        }
+        }
+        
+         // Registor Service
+        class func registorService(completion: @escaping CompletionHandler) {
+    //        if let channelid = UAirship.channel()?.identifier {
+    //            let bParameters:Parameters = [ "devicetoken" : channelid ]
+    //            let bHTTPHeaders: HTTPHeaders = [
+    //               "Content-Type" : "application/x-www-form-urlencoded",
+    //               "Accept" : "application/json",
+    //            ]
+    //            APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
+    //                APIManager.responseHandler(result) { (error, result) in
+    //                   completion(error, result)
+    //                }
+    //            }
+    //        }else{
+    //           completion(nil, nil)
+    //        }
+           
+        }
+        
 }
 

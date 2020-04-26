@@ -15,7 +15,6 @@ class NewFeedsViewController: UIViewController {
         super.viewDidLoad()
         self.configureTableView()
     }
-
 }
 
 
@@ -24,8 +23,8 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
     func configureTableView()  {
         self.tableview?.delegate = self
         self.tableview?.dataSource = self
-        let nib = UINib(nibName: "CommonCell", bundle: nil)
-        self.tableview.register(nib, forCellReuseIdentifier: "CommonCell")
+        let nib = UINib(nibName: "FeedNewsCell", bundle: nil)
+        self.tableview.register(nib, forCellReuseIdentifier: "FeedNewsCell")
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,14 +35,15 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
       return getMenuCell(indexPath: indexPath)
     }
 
-    func getMenuCell(indexPath: IndexPath) -> CommonCell {
-        let cell = self.tableview.dequeueReusableCell(withIdentifier: "CommonCell", for: indexPath) as! CommonCell
+    func getMenuCell(indexPath: IndexPath) -> FeedNewsCell {
+        let cell = self.tableview.dequeueReusableCell(withIdentifier: "FeedNewsCell", for: indexPath) as! FeedNewsCell
+        cell.selectionStyle = .none
         return cell
     }
  
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 45
+       return 170
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

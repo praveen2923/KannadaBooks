@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedNewsCell" rowHeight="164" id="6L8-bs-REx" customClass="FeedNewsCell" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="318" height="164"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6L8-bs-REx" id="A0F-kz-MqZ">
+                <rect key="frame" x="0.0" y="0.0" width="318" height="164"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="th6-9l-P2Z">
+                        <rect key="frame" x="5" y="0.0" width="313" height="159"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book" translatesAutoresizingMaskIntoConstraints="NO" id="ZQb-NC-MeB">
+                                <rect key="frame" x="0.0" y="15" width="105" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="105" id="HE9-9W-QZq"/>
+                                    <constraint firstAttribute="height" constant="120" id="Pyw-nH-hRh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbE-Iz-cha">
+                                <rect key="frame" x="111" y="15" width="194" height="120"/>
+                                <mutableString key="text">ವಿಕಿಪೀಡಿಯಾ: ಕಟ್ಟಡದ ಕೊಂಡಿಗಳು ಕಷ್ಟ. ಗೂಗಲ್ ಹಿಂದೆಂದಿಗಿಂತಲೂ ವೆಬ್ಸೈಟ್ ಬ್ಯಾಕ್ಲೈನ್ ​​ಪ್ರೊಫೈಲ್ಗಳನ್ನು ಹೆಚ್ಚು ಸೂಕ್ಷ್ಮವಾಗಿ ಪರಿಶೀಲಿಸುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಸೈಟ್ ದಂಡನೆಗೆ ಒಳಪಡದಿದ್ದರೆ ಅವರ ಮಾರ್ಗಸೂಚಿಗಳಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸಲು ಇದು ಬಹಳ ಮುಖ್ಯವಾಗಿದೆ ಮತ್ತು ನಿಮ್ಮ ಎಲ್ಲಾ ಸಂಚಾರವನ್ನು ನೀವು ಕಳೆದುಕೊಳ್ಳುತ್ತೀರಿ. ಸಾಧ್ಯವಾದಷ್ಟು ಹೆಚ್ಚಿನ ಗುಣಮಟ್ಟದ ಬ್ಯಾಕ್ಲಿಂಕ್ಗಳನ್ನು ಪಡೆಯಲು ಸ್ಪರ್ಧೆಯಲ್ಲಿ, ಅನೇಕ ವಿತರಕರು ಮತ್ತು ವೆಬ್ಮಾಸ್ಟರ್ಗಳು ವಿಕಿಪೀಡಿಯ ಬಗ್ಗೆ ಮರೆತುಬಿಡುತ್ತಾರೆ. ನಿಮ್ಮ ಸೈಟ್ಗಾಗಿ ಬಲವಾದ ಬ್ಯಾಕ್ಲಿಂಕ್ ಪ್ರೊಫೈಲ್ ನಿರ್ಮಿಸಲು ಇದು ಬಂದಾಗ ಅದು ಖಂಡಿತವಾಗಿಯೂ ಹೆಚ್ಚು ಗಮನ ಸೆಳೆಯುವ ಅವಕಾಶಗಳಲ್ಲಿ</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t67-hf-Y0n">
+                                <rect key="frame" x="219" y="136" width="86" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="ಪೂರ್ತಿ ಓದಿ...">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DbE-Iz-cha" firstAttribute="leading" secondItem="ZQb-NC-MeB" secondAttribute="trailing" constant="6" id="BLE-i6-IQa"/>
+                            <constraint firstAttribute="trailing" secondItem="t67-hf-Y0n" secondAttribute="trailing" constant="8" id="H9c-La-9L7"/>
+                            <constraint firstItem="ZQb-NC-MeB" firstAttribute="leading" secondItem="th6-9l-P2Z" secondAttribute="leading" id="Itd-kV-7dT"/>
+                            <constraint firstItem="DbE-Iz-cha" firstAttribute="height" secondItem="ZQb-NC-MeB" secondAttribute="height" id="MOV-bh-wFb"/>
+                            <constraint firstItem="ZQb-NC-MeB" firstAttribute="top" secondItem="th6-9l-P2Z" secondAttribute="top" constant="15" id="R94-WW-6MP"/>
+                            <constraint firstAttribute="bottom" secondItem="t67-hf-Y0n" secondAttribute="bottom" constant="3" id="fDg-CJ-JpT"/>
+                            <constraint firstAttribute="trailing" secondItem="DbE-Iz-cha" secondAttribute="trailing" constant="8" id="uJx-xI-XYS"/>
+                            <constraint firstItem="DbE-Iz-cha" firstAttribute="top" secondItem="th6-9l-P2Z" secondAttribute="top" constant="15" id="wXt-6b-QGa"/>
+                            <constraint firstItem="t67-hf-Y0n" firstAttribute="top" secondItem="DbE-Iz-cha" secondAttribute="bottom" constant="1" id="woX-ms-iPu"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="1" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="th6-9l-P2Z" secondAttribute="trailing" id="1kE-QM-TsU"/>
+                    <constraint firstItem="th6-9l-P2Z" firstAttribute="leading" secondItem="A0F-kz-MqZ" secondAttribute="leading" constant="5" id="XgU-Kb-Wzr"/>
+                    <constraint firstItem="th6-9l-P2Z" firstAttribute="top" secondItem="A0F-kz-MqZ" secondAttribute="top" id="oEP-Cr-6eG"/>
+                    <constraint firstAttribute="bottom" secondItem="th6-9l-P2Z" secondAttribute="bottom" constant="5" id="oiA-50-ik8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <viewLayoutGuide key="safeArea" id="8jz-yx-oEa"/>
+            <connections>
+                <outlet property="ibFeedLbl" destination="DbE-Iz-cha" id="VpL-Ci-iBK"/>
+            </connections>
+            <point key="canvasLocation" x="-76.811594202898561" y="20.758928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="book" width="40" height="50.5"/>
+    </resources>
+</document>

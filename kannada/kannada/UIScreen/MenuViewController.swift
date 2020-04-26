@@ -19,14 +19,29 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var delegate : MenuToDashboard?
-    
-    let menuList = ["ಸುದ್ದಿ-ಸಮಾಚಾರ", "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", "ಸಾಹಿತಿಗಳು","ರಂಗಭೂಮಿ","ಹಳಗನ್ನಡ ಕವಿಗಳು", "ಕಲಾವಿದರು" , "ರಾಷ್ಟ್ರಪುರುಷರ ಕಥೆಗಳು", "ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟಗಾರರು","ನಮ್ಮ ಬಗ್ಗೆ"]
+    var meanulist = [[String:String]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
+        self.getMenuList()
         // Do any additional setup after loading the view.
     }
+    
+    func getMenuList()  {
+        self.showeLoading()
+        APIManager.getMenuList(nil, completion: { (error, result) in
+               self.hideLoading()
+               if let list = result as? NSArray {
+                if list.count > 0 {
+                    self.meanulist = list as! [[String : String]]
+                    self.tableView.reloadData()
+                }
+               }else{
+                   self.showeErorMsg("ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ")
+               }
+           })
+       }
 }
 
 extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
@@ -39,7 +54,7 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuList.count
+        return self.meanulist.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +63,9 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
 
     func getMenuCell(indexPath: IndexPath) -> CommonCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "CommonCell", for: indexPath) as! CommonCell
-        cell.ibMenuLbl.text = self.menuList[indexPath.row]
+        let value = self.meanulist[indexPath.row] as NSDictionary
+        cell.ibMenuLbl.text = value.object(forKey: "name") as? String
+        cell.selectionStyle = .none
         return cell
                   
     }
