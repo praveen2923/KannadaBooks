@@ -18,20 +18,42 @@ class BookReader: UIViewController {
     
     var bookInfo : Book?
     var bookpdfurl : String?
-    
+    var filePath : String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = bookInfo?.book_name
-   
-        
+        self.addShareButton()
+        self.bookDowanload()
+        self.loadBannerAd(self.bannerView)
+    }
+    
+    func addShareButton() {
+        let leftBarButtonItem = UIBarButtonItem.init(image: UIImage(named: "share"), style: .done, target: self, action: #selector(self.didTapOnShareBtn(_:)))
+        self.navigationItem.rightBarButtonItem = leftBarButtonItem
+    }
+    
+    @objc func didTapOnShareBtn(_ sender: Any) {
+
+        let fileManager = FileManager.default
+
+        if let path = self.filePath, fileManager.fileExists(atPath: path) {
+            let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+        } else {
+            print("document was not found")
+        }
+    }
+    
+    func bookDowanload() {
         if bookInfo?.book_pdf_url != "" {
             if let bookurl = bookInfo?.book_pdf_url {
                 let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
                  guard let url =  fullbookpdfurl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) else { return  }
-                if self.showSavedPdf(fileName: bookInfo?.book_name ?? "") {
+                if self.showSavedPdf(fileName: bookInfo?.bookId ?? "") {
                     print("Book is in Locally stored")
                 }else{
-                    self.downloadPdf(downloadUrl: url, uniqueName: bookInfo?.book_name ?? "") { (filePath, status) in
+                    self.downloadPdf(downloadUrl: url, uniqueName: bookInfo?.bookId ?? "") { (filePath, status) in
                         print("URl: \(filePath)")
                      }
                 }
@@ -39,7 +61,6 @@ class BookReader: UIViewController {
         }else{
             self.showeErorMsg("ಪುಸ್ತಕ ಲಭ್ಯವಿಲ್ಲ, ದಯವಿಟ್ಟು ಬೇರೆ ಪುಸ್ತಕವನ್ನು ಓದಿ")
         }
-          self.loadBannerAd(self.bannerView)
     }
     
     func showSavedPdf(fileName:String) -> Bool {
@@ -51,7 +72,8 @@ class BookReader: UIViewController {
                     var isFileInLocal : Bool = false
                     for url in contents {
                         if url.description.contains("\(fileNameEncode).pdf") {
-                            self.showFileFromLocal(url.absoluteURL )
+                            self.showFileFromLocal(url.absoluteURL)
+                            self.filePath = url.path
                             print("file found in local storage")
                             isFileInLocal = true
                             break;
@@ -66,10 +88,7 @@ class BookReader: UIViewController {
         }
         return false
     }
-    enum WebError: Swift.Error {
-        case fileNotFound(name: String)
-        case parsing(contentsOfFile: String)
-    }
+ 
     
     func showFileFromLocal(_ filePath : URL) {
         if let document = PDFDocument(url: filePath) {
@@ -109,6 +128,7 @@ class BookReader: UIViewController {
                     if response.fileURL != nil, let filePath = response.fileURL?.absoluteString {
                         if let url = response.fileURL?.absoluteURL {
                              self.showFileFromLocal(url)
+                            self.filePath = response.fileURL?.path
                         }
                         self.hideLoading()
                         completionHandler(filePath, true)

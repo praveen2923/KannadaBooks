@@ -15,7 +15,7 @@ class MANavigationViewController: UINavigationController {
         super.viewDidLoad()
         let color = UIColor.init(named: "bgcolor")
         UINavigationBar.appearance().barTintColor = color
-        UINavigationBar.appearance().tintColor =  .white
+        UINavigationBar.appearance().tintColor =  .systemGreen
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
         UINavigationBar.appearance().isTranslucent = false
 

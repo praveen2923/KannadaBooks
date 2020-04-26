@@ -349,8 +349,8 @@
                                             <action selector="didTapOnRegisterBtn:" destination="4xP-eg-AGz" eventType="touchUpInside" id="A8t-y9-xaB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-Rd-rZL">
-                                        <rect key="frame" x="50.5" y="279" width="200" height="45"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QCI-Rd-rZL">
+                                        <rect key="frame" x="51" y="210" width="200" height="114"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="HuP-lU-1PX"/>
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOs-CY-g1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="818"/>
+            <point key="canvasLocation" x="-1881.1594202898552" y="817.63392857142856"/>
         </scene>
         <!--ಪುಸ್ತಕಗಳು-->
         <scene sceneID="j31-b9-Lq7">
@@ -492,7 +492,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="O96-lv-Hlu" kind="show" id="gJq-3C-QYK"/>
                         <segue destination="Pin-Cv-lSg" kind="show" id="twU-ZS-9j2"/>
                     </connections>
                 </viewController>

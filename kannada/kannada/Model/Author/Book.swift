@@ -17,6 +17,7 @@ public class Book {
 	public var book_publish : String?
 	public var book_pdf_url : String?
 	public var author_Id : String?
+    public var bookId : String?
 	public var book_image_url : String?
 	public var iD : String?
 	public var name : String?
@@ -55,7 +56,7 @@ public class Book {
     - returns: Json4Swift_Base Instance.
 */
 	required public init?(dictionary: NSDictionary) {
-
+        bookId = dictionary["bookid"] as? String
 		book_name = dictionary["book_name"] as? String
 		book_publish = dictionary["book_publish"] as? String
 		book_pdf_url = dictionary["book_pdf_url"] as? String
@@ -88,6 +89,7 @@ public class Book {
 		dictionary.setValue(self.about, forKey: "about")
 		dictionary.setValue(self.image, forKey: "image")
 		dictionary.setValue(self.categoryid, forKey: "categoryid")
+        dictionary.setValue(self.categoryid, forKey: "bookid")
 
 		return dictionary
 	}
