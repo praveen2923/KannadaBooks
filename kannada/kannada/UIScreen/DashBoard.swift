@@ -57,8 +57,7 @@ class DashBoard: UIViewController  {
     
     func sendFeedbackEmail() {
         let supportEmail = "prin17.sh@gmail.com"
-        if let emailURL = URL(string: "mailto:\(supportEmail)"), UIApplication.shared.canOpenURL(emailURL)
-        {
+        if let emailURL = URL(string: "mailto:\(supportEmail)"), UIApplication.shared.canOpenURL(emailURL) {
             UIApplication.shared.open(emailURL, options: [:], completionHandler: nil)
         }
     }
@@ -172,7 +171,7 @@ extension UIViewController {
         DispatchQueue.main.async {
           SVProgressHUD.setDefaultStyle(.dark)
           SVProgressHUD.setRingThickness(5.0)
-         SVProgressHUD.show()
+          SVProgressHUD.show()
         }
     }
     
@@ -200,5 +199,19 @@ extension UIViewController {
         let viewWidth = frame.size.width
         bannerView.adSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         bannerView.load(GADRequest())
+    }
+}
+
+extension DashBoard : MenuToDashboard {
+    func tapOnIndex(index: Int) {
+        //
+    }
+    
+    func tapOnValue(value: String) {
+        //
+    }
+    
+    func navigateToVC(vc: UIViewController) {
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

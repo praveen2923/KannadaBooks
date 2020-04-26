@@ -20,6 +20,8 @@
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
 		E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548542244B46BE0065532E /* MoreDetailsView.swift */; };
 		E08854BE24545FAE00C78C75 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08854BD24545FAE00C78C75 /* StoreKit.framework */; };
+		E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854BF2455748600C78C75 /* NewFeedsViewController.swift */; };
+		E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C12455793100C78C75 /* SlideMenuController.swift */; };
 		E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */; };
 		E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */; };
 		E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */; };
@@ -60,6 +62,8 @@
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
 		E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರೇಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
+		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0548542244B46BE0065532E /* MoreDetailsView.swift */,
 				E0F1F70924542ABB00551BD4 /* MenuViewController.swift */,
+				E08854BF2455748600C78C75 /* NewFeedsViewController.swift */,
 			);
 			path = UIScreen;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 		E0B0B1F52448695600FF986B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E08854C12455793100C78C75 /* SlideMenuController.swift */,
 				E006346A24495A66001A728F /* APIManager.swift */,
 				E006346C24495AD0001A728F /* APIList.swift */,
 				E0B0B1F62448699100FF986B /* extens.swift */,
@@ -336,11 +342,13 @@
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
 				E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */,
 				E0B0B1E72445D07400FF986B /* Books.swift in Sources */,
+				E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */,
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
+				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
 				E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */,

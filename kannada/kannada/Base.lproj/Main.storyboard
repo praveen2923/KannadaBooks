@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8am-v2-lRF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-893" y="834"/>
+            <point key="canvasLocation" x="-2600" y="818"/>
         </scene>
         <!--Login View-->
         <scene sceneID="uX3-2c-dbE">
@@ -497,7 +497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bto-Fm-urx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="123"/>
+            <point key="canvasLocation" x="-207" y="143"/>
         </scene>
         <!--Author View-->
         <scene sceneID="7YG-CP-Thd">
@@ -546,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNv-K4-lep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="174" y="123"/>
+            <point key="canvasLocation" x="555" y="123"/>
         </scene>
         <!--More Details View-->
         <scene sceneID="YVu-Em-2Za">
@@ -759,6 +759,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7j-sh-W0D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1250.7246376811595" y="817.63392857142856"/>
+        </scene>
+        <!--New Feeds View Controller-->
+        <scene sceneID="0Bp-G3-zIM">
+            <objects>
+                <viewController storyboardIdentifier="NewFeedsViewController" id="dIR-uS-ilO" customClass="NewFeedsViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FYr-6g-5tI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0S-fb-1ve">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wvm-dz-FJS" firstAttribute="bottom" secondItem="P0S-fb-1ve" secondAttribute="bottom" id="AND-Z6-PcJ"/>
+                            <constraint firstItem="P0S-fb-1ve" firstAttribute="top" secondItem="wvm-dz-FJS" secondAttribute="top" id="i7T-Ac-5ws"/>
+                            <constraint firstItem="P0S-fb-1ve" firstAttribute="leading" secondItem="wvm-dz-FJS" secondAttribute="leading" id="nBB-Ao-aXv"/>
+                            <constraint firstItem="P0S-fb-1ve" firstAttribute="trailing" secondItem="wvm-dz-FJS" secondAttribute="trailing" id="vTx-LL-w8v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wvm-dz-FJS"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="P0S-fb-1ve" id="cnE-Zy-ChG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSQ-Mm-Pc3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.6231884057972" y="807.58928571428567"/>
         </scene>
     </scenes>
     <resources>

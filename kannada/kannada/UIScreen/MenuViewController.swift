@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol MenuToDashboard {
+    func tapOnIndex(index : Int)
+    func tapOnValue(value : String)
+    func navigateToVC(vc : UIViewController)
+}
+
+
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var delegate : MenuToDashboard?
     
     let menuList = ["ಸುದ್ದಿ-ಸಮಾಚಾರ", "ಪ್ರಸಿದ್ದ ವ್ಯಕ್ತಿಗಳು", "ಸಾಹಿತಿಗಳು","ರಂಗಭೂಮಿ","ಹಳಗನ್ನಡ ಕವಿಗಳು", "ಕಲಾವಿದರು" , "ರಾಷ್ಟ್ರಪುರುಷರ ಕಥೆಗಳು", "ಸ್ವಾತಂತ್ರ್ಯ ಹೋರಾಟಗಾರರು","ನಮ್ಮ ಬಗ್ಗೆ"]
 
@@ -51,6 +59,9 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         
+        self.sideMenuController?.hideMenu()
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "NewFeedsViewController") as! NewFeedsViewController
+        self.delegate?.navigateToVC(vc: controller)
     }
 }
