@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="mtF-ud-cN9">
             <objects>
-                <navigationController storyboardIdentifier="RootNavigationController" id="xcx-CO-F54" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigationController" id="xcx-CO-F54" customClass="MANavigationViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ToJ-1g-4kq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +31,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8O8-6E-9zE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1017" y="123"/>
+            <point key="canvasLocation" x="-1688" y="123"/>
         </scene>
         <!--Register View-->
         <scene sceneID="1MW-l0-RPo">
@@ -267,7 +267,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8am-v2-lRF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1635" y="1482"/>
+            <point key="canvasLocation" x="-893" y="834"/>
         </scene>
         <!--Login View-->
         <scene sceneID="uX3-2c-dbE">
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOs-CY-g1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1584" y="818"/>
+            <point key="canvasLocation" x="-1636" y="818"/>
         </scene>
         <!--ಪುಸ್ತಕಗಳು-->
         <scene sceneID="j31-b9-Lq7">
@@ -491,10 +491,14 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="O96-lv-Hlu" kind="show" id="gJq-3C-QYK"/>
+                        <segue destination="Pin-Cv-lSg" kind="show" id="twU-ZS-9j2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bto-Fm-urx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="123"/>
+            <point key="canvasLocation" x="-583" y="123"/>
         </scene>
         <!--Author View-->
         <scene sceneID="7YG-CP-Thd">
@@ -535,6 +539,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJV-BU-dcJ"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mLF-pL-tMr"/>
                     <connections>
                         <outlet property="bannerView" destination="3bF-Sc-Ktc" id="N3Y-p9-42e"/>
                         <outlet property="collectionView" destination="OM6-nP-xdG" id="OrX-GI-5P9"/>
@@ -542,7 +547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNv-K4-lep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="485.50724637681162" y="120.53571428571428"/>
+            <point key="canvasLocation" x="174" y="123"/>
         </scene>
         <!--More Details View-->
         <scene sceneID="YVu-Em-2Za">
@@ -676,7 +681,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3b-Vq-iqw" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="67" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>

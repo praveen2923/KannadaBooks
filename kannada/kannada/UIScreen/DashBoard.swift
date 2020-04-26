@@ -64,32 +64,31 @@ class DashBoard: UIViewController  {
     }
     
     func reviewAppStore()  {
-        
-     //   AppStoreReviewManager.requestReviewIfAppropriate()
-//
-//        var count = UserDefaults.standard.integer(forKey: UserDefaultsKeys.processCompletedCountKey)
-//        count += 1
-//        UserDefaults.standard.set(count, forKey: UserDefaultsKeys.processCompletedCountKey)
-//
-//        print("Process completed \(count) time(s)")
-//
-//        // Get the current bundle version for the app
-//        let infoDictionaryKey = kCFBundleVersionKey as String
-//        guard let currentVersion = Bundle.main.object(forInfoDictionaryKey: infoDictionaryKey) as? String
-//            else { fatalError("Expected to find a bundle version in the info dictionary") }
-//
-//        let lastVersionPromptedForReview = UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
-//
-//        // Has the process been completed several times and the user has not already been prompted for this version?
-//        if count >= 5 && currentVersion != lastVersionPromptedForReview {
-//            let twoSecondsFromNow = DispatchTime.now() + 2.0
-//            DispatchQueue.main.asyncAfter(deadline: twoSecondsFromNow) { [navigationController] in
-//                if navigationController?.topViewController is DashBoard {
-//                    SKStoreReviewController.requestReview()
-//                    UserDefaults.standard.set(currentVersion, forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
-//                }
-//            }
-//        }
+
+
+        var count = UserDefaults.standard.integer(forKey: UserDefaultsKeys.processCompletedCountKey)
+        count += 1
+        UserDefaults.standard.set(count, forKey: UserDefaultsKeys.processCompletedCountKey)
+
+        print("Process completed \(count) time(s)")
+
+        // Get the current bundle version for the app
+        let infoDictionaryKey = kCFBundleVersionKey as String
+        guard let currentVersion = Bundle.main.object(forInfoDictionaryKey: infoDictionaryKey) as? String
+            else { fatalError("Expected to find a bundle version in the info dictionary") }
+
+        let lastVersionPromptedForReview = UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
+
+        // Has the process been completed several times and the user has not already been prompted for this version?
+        if count >= 5 && currentVersion != lastVersionPromptedForReview {
+            let twoSecondsFromNow = DispatchTime.now() + 2.0
+            DispatchQueue.main.asyncAfter(deadline: twoSecondsFromNow) { [navigationController] in
+                if navigationController?.topViewController is DashBoard {
+                    SKStoreReviewController.requestReview()
+                    UserDefaults.standard.set(currentVersion, forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
+                }
+            }
+        }
     }
     
     
@@ -174,6 +173,14 @@ extension UIViewController {
           SVProgressHUD.setDefaultStyle(.dark)
           SVProgressHUD.setRingThickness(5.0)
          SVProgressHUD.show()
+        }
+    }
+    
+    func showeLoadingwithText(_ float :  Float)  {
+        DispatchQueue.main.async {
+          SVProgressHUD.setDefaultStyle(.dark)
+          SVProgressHUD.setRingThickness(5.0)
+            SVProgressHUD.showProgress(float, status: "ಪುಸ್ತಕ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ, ದಯವಿಟ್ಟು ಕಾಯಿರಿ")
         }
     }
     

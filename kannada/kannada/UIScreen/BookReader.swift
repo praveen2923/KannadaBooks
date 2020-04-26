@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import WebKit
 import GoogleMobileAds
 import Alamofire
 import PDFKit
 
-class BookReader: UIViewController, WKNavigationDelegate, WKUIDelegate {
+class BookReader: UIViewController {
 
     @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var ibPdfView: PDFView!
@@ -30,7 +29,7 @@ class BookReader: UIViewController, WKNavigationDelegate, WKUIDelegate {
                 let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
                  guard let url =  fullbookpdfurl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) else { return  }
                 if self.showSavedPdf(fileName: bookInfo?.book_name ?? "") {
-                    print()
+                    print("Book is in Locally stored")
                 }else{
                     self.downloadPdf(downloadUrl: url, uniqueName: bookInfo?.book_name ?? "") { (filePath, status) in
                         print("URl: \(filePath)")
@@ -83,20 +82,15 @@ class BookReader: UIViewController, WKNavigationDelegate, WKUIDelegate {
             self.ibPdfView.displaysPageBreaks = true
             self.ibPdfView.document = document
 
-              self.ibPdfView.maxScaleFactor = 4.0
-              self.ibPdfView.minScaleFactor =   self.ibPdfView.scaleFactorForSizeToFit
-            
-            
-//            self.ibPdfView.document = document
-//            self.ibPdfView.translatesAutoresizingMaskIntoConstraints = false
-//            self.ibPdfView.minScaleFactor = ibPdfView.scaleFactor
-//            self.ibPdfView.maxScaleFactor = ibPdfView.scaleFactorForSizeToFit
+            self.ibPdfView.maxScaleFactor = 4.0
+            self.ibPdfView.minScaleFactor =   self.ibPdfView.scaleFactorForSizeToFit
+
         }
     }
     
         
     func downloadPdf(downloadUrl: String, uniqueName: String, completionHandler:@escaping(String, Bool)->()){
-
+        self.showeLoadingwithText(0)
         let destinationPath: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0];
             let fileURL = documentsURL.appendingPathComponent("\(uniqueName).pdf")
@@ -106,7 +100,7 @@ class BookReader: UIViewController, WKNavigationDelegate, WKUIDelegate {
         print(downloadUrl)
         AF.download(downloadUrl, to: destinationPath)
             .downloadProgress { progress in
-
+                self.showeLoadingwithText(Float(progress.fractionCompleted))
             }
             .responseData { response in
                 print("response: \(response)")
@@ -116,31 +110,26 @@ class BookReader: UIViewController, WKNavigationDelegate, WKUIDelegate {
                         if let url = response.fileURL?.absoluteURL {
                              self.showFileFromLocal(url)
                         }
-                       
+                        self.hideLoading()
                         completionHandler(filePath, true)
                     }
                     break
                 case .failure:
+                    self.hideLoading()
                     completionHandler("", false)
                     break
                 }
         }
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        self.ibPdfView.autoScales = true
-    }
-    
+   
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if self.isMovingFromParent {
+             AF.cancelAllRequests()
              self.hideLoading()
         }
     }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
+
 }
 
