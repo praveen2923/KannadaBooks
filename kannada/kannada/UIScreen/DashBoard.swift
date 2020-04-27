@@ -164,6 +164,7 @@ extension UIViewController {
     func showeErorMsg(_ msg : String)  {
         DispatchQueue.main.async {
             SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.dismiss(withDelay: 1)
             SVProgressHUD.showError(withStatus: msg)
         }
     }

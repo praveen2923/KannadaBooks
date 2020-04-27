@@ -67,7 +67,7 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
         if let authorimage = self.newsFeed[indexPath.row].image {
             if authorimage != "" {
                 let fullurl = APIList.BOOKBaseUrl + authorimage
-                 cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                 cell.ibFeedImage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
             }
         }
         
