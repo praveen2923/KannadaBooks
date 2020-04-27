@@ -23,7 +23,9 @@ class NewFeedsViewController: UIViewController {
     }
     
     func getFeedById() {
+        self.showeLoading()
         APIManager.getFeedformationByMenuId(self.menuId) { (error, result) in
+           self.hideLoading()
            if let values = result as? Array<Any> {
                for item in values {
                  if let abook = NewsFeed(dictionary: item as! NSDictionary) {
