@@ -81,6 +81,7 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
         let controller = storyBoard.instantiateViewController(withIdentifier: "NewFeedsViewController") as! NewFeedsViewController
         let value = self.meanulist[indexPath.row] as NSDictionary
         controller.menuId = value.object(forKey: "id") as? String
+        controller.navtitle = value.object(forKey: "name") as? String
         self.delegate?.navigateToVC(vc: controller)
     }
 }

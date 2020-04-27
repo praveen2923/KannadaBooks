@@ -12,12 +12,14 @@ class NewFeedsViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     var menuId : String?
+    var navtitle : String?
     var newsFeed : [NewsFeed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
         self.getFeedById()
+        self.title = self.navtitle
     }
     
     func getFeedById() {
@@ -62,24 +64,37 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
     func getMenuCell(indexPath: IndexPath) -> FeedNewsCell {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: "FeedNewsCell", for: indexPath) as! FeedNewsCell
         cell.selectionStyle = .none
+        cell.delegate = self
         cell.ibFeedLbl.text = self.newsFeed[indexPath.row].note
+        cell.ibFeedTitleLbl.text = "\(self.newsFeed[indexPath.row].shortnote ?? ""):"
         cell.ibFeedImage.image = UIImage(named: "kannada")
         if let authorimage = self.newsFeed[indexPath.row].image {
             if authorimage != "" {
                 let fullurl = APIList.BOOKBaseUrl + authorimage
-                 cell.ibFeedImage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                 cell.ibFeedImage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "kannada"))
             }
         }
-        
         return cell
     }
  
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 170
+       return 180
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          
+    }
+}
+
+extension NewFeedsViewController : FeedDelegate {
+    func didTapOnReadMoreBtn(_ cell: FeedNewsCell) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "MoreDetailsView") as! MoreDetailsView
+        let indexPath = self.tableview.indexPath(for: cell)
+        if let row = indexPath?.row {
+           // controller.detail = self.newsFeed[row]
+        }
+        self.present(controller, animated: true, completion: nil)
     }
 }
