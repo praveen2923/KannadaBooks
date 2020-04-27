@@ -63,8 +63,6 @@ class DashBoard: UIViewController  {
     }
     
     func reviewAppStore()  {
-
-
         var count = UserDefaults.standard.integer(forKey: UserDefaultsKeys.processCompletedCountKey)
         count += 1
         UserDefaults.standard.set(count, forKey: UserDefaultsKeys.processCompletedCountKey)
@@ -79,7 +77,7 @@ class DashBoard: UIViewController  {
         let lastVersionPromptedForReview = UserDefaults.standard.string(forKey: UserDefaultsKeys.lastVersionPromptedForReviewKey)
 
         // Has the process been completed several times and the user has not already been prompted for this version?
-        if count >= 5 && currentVersion != lastVersionPromptedForReview {
+        if count >= 3 && currentVersion != lastVersionPromptedForReview {
             let twoSecondsFromNow = DispatchTime.now() + 2.0
             DispatchQueue.main.asyncAfter(deadline: twoSecondsFromNow) { [navigationController] in
                 if navigationController?.topViewController is DashBoard {

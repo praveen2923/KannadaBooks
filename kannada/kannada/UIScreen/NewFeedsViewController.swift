@@ -90,10 +90,10 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
 extension NewFeedsViewController : FeedDelegate {
     func didTapOnReadMoreBtn(_ cell: FeedNewsCell) {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "MoreDetailsView") as! MoreDetailsView
+        let controller = storyBoard.instantiateViewController(withIdentifier: "FeedModelViewController") as! FeedModelViewController
         let indexPath = self.tableview.indexPath(for: cell)
         if let row = indexPath?.row {
-           // controller.detail = self.newsFeed[row]
+            controller.deatils = self.newsFeed[row]
         }
         self.present(controller, animated: true, completion: nil)
     }
