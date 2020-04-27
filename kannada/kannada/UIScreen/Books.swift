@@ -61,7 +61,6 @@ class Books: UIViewController {
                 if self.others.count == 0 {
                     self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
                 }else{
-                   // self.others = self.others.shuffled()
                     self.hideLoading()
                     self.tableView.reloadData()
                 }

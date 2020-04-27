@@ -52,8 +52,7 @@ class APIManager: NSObject {
          }
      }
     
-    // Get ALL Book For author id
-    
+    // Get ALL Books For author id
     class func getAllBooksForAuthor(_ authorid: String?, completion: @escaping CompletionHandler) {
         let bParameters:Parameters = [  "author" : authorid ?? "", ]
         APIManager.serviceRequest(APIList.booklist.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
@@ -63,7 +62,7 @@ class APIManager: NSObject {
         }
     }
     
-    // Get Author information for category id categoryid
+    // Get History information for category id categoryid
     class func getAllInformationforCategory(_ catid: String?, completion: @escaping CompletionHandler) {
         let bParameters:Parameters = ["categoryid" : catid ?? "", ]
            APIManager.serviceRequest(APIList.otherInfo.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
@@ -80,6 +79,16 @@ class APIManager: NSObject {
                completion(error, result)
             }
         }
+    }
+    
+    // Get Menu information for Menu id
+    class func getFeedformationByMenuId(_ menuId: String?, completion: @escaping CompletionHandler) {
+        let bParameters:Parameters = ["id" : menuId ?? "", ]
+        APIManager.serviceRequest(APIList.getFeedById.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
+               APIManager.responseHandle(result) { (error, result) in
+                   completion(error, result)
+               }
+         }
     }
     
     

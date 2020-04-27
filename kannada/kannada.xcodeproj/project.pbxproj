@@ -24,6 +24,7 @@
 		E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C12455793100C78C75 /* SlideMenuController.swift */; };
 		E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */; };
 		E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */; };
+		E08854C82456072600C78C75 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C72456072600C78C75 /* NewsFeed.swift */; };
 		E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */; };
 		E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */; };
 		E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */; };
@@ -68,6 +69,7 @@
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNewsCell.swift; sourceTree = "<group>"; };
 		E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedNewsCell.xib; sourceTree = "<group>"; };
+		E08854C72456072600C78C75 /* NewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		E00634712449F2DD001A728F /* Author */ = {
 			isa = PBXGroup;
 			children = (
+				E08854C72456072600C78C75 /* NewsFeed.swift */,
 				E0548540244B39260065532E /* Other.swift */,
 				E0063474244A36F8001A728F /* Book.swift */,
 				E00634722449F347001A728F /* Author.swift */,
@@ -353,6 +356,7 @@
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
+				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
 				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,

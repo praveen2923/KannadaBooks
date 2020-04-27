@@ -10,16 +10,16 @@ import UIKit
 
 class FeedNewsCell: UITableViewCell {
 
+    @IBOutlet weak var ibFeedImage: UIImageView!
     @IBOutlet weak var ibFeedLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

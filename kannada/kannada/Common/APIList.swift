@@ -63,6 +63,11 @@ struct APIList {
             return "menulist.php"
         }
     }
+    static var getFeedById : String {
+        get {
+            return "getFeedById.php"
+        }
+    }
 }
 
 extension String {
