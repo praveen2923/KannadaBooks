@@ -64,14 +64,14 @@ class BookReader: UIViewController {
     }
     
     func showSavedPdf(fileName:String) -> Bool {
-        if let fileNameEncode =  fileName.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) {
             if #available(iOS 10.0, *) {
                 do {
                     let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                     let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
                     var isFileInLocal : Bool = false
                     for url in contents {
-                        if url.description.contains("\(fileNameEncode).pdf") {
+                        let theFileName = (url.absoluteString as NSString).lastPathComponent
+                        if theFileName ==  "\(fileName).pdf"{
                             self.showFileFromLocal(url.absoluteURL)
                             self.filePath = url.path
                             print("file found in local storage")
@@ -85,7 +85,6 @@ class BookReader: UIViewController {
                     return false
                 }
             }
-        }
         return false
     }
  
