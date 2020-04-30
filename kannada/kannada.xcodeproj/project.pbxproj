@@ -64,7 +64,7 @@
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
-		E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ಪ್ರೇಮಿ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ನಾಡು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 				E0B0B1CE2445CCB300FF986B /* kannada */,
 				41BA170AA39F5D6DDA3766EB /* Pods */,
 				CFF5563CC4173A09BF46B73C /* Frameworks */,
-				E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */,
+				E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,7 +249,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E08854BC245454F000C78C75 /* ಕನ್ನಡ ಪ್ರೇಮಿ.app */;
+			productReference = E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -534,7 +534,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
+				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -559,7 +559,7 @@
 				);
 				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = "ಕನ್ನಡ ಪ್ರೇಮಿ";
+				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

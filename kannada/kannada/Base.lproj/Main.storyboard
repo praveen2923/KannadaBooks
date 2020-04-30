@@ -10,7 +10,7 @@
         <!--Navigation View Controller-->
         <scene sceneID="mtF-ud-cN9">
             <objects>
-                <navigationController storyboardIdentifier="RootNavigationController" id="xcx-CO-F54" customClass="MANavigationViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RootNavigationController" id="xcx-CO-F54" customClass="MANavigationViewController" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ToJ-1g-4kq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -36,7 +36,7 @@
         <!--Register View-->
         <scene sceneID="1MW-l0-RPo">
             <objects>
-                <viewController storyboardIdentifier="RegisterView" id="4xP-eg-AGz" customClass="RegisterView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterView" id="4xP-eg-AGz" customClass="RegisterView" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N82-UX-7G3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -272,7 +272,7 @@
         <!--Login View-->
         <scene sceneID="uX3-2c-dbE">
             <objects>
-                <viewController storyboardIdentifier="LoginView" id="xtj-pT-QI4" customClass="LoginView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginView" id="xtj-pT-QI4" customClass="LoginView" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sSo-I9-i9Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -460,7 +460,7 @@
         <!--ಪುಸ್ತಕಗಳು-->
         <scene sceneID="j31-b9-Lq7">
             <objects>
-                <viewController storyboardIdentifier="DashBoard" id="QbW-e0-Hh4" customClass="DashBoard" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashBoard" id="QbW-e0-Hh4" customClass="DashBoard" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Ic-PO-Pi8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -502,13 +502,13 @@
         <!--Author View-->
         <scene sceneID="7YG-CP-Thd">
             <objects>
-                <viewController storyboardIdentifier="AuthorView" id="Pin-Cv-lSg" customClass="AuthorView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorView" id="Pin-Cv-lSg" customClass="AuthorView" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Au0-DB-YFi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OM6-nP-xdG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="760"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OM6-nP-xdG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AA3-eE-kQS">
                                     <size key="itemSize" width="189" height="231"/>
@@ -518,29 +518,18 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bF-Sc-Ktc" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="s0W-vo-cGZ"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="OM6-nP-xdG" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="EFC-Jk-W6w"/>
-                            <constraint firstItem="3bF-Sc-Ktc" firstAttribute="top" secondItem="OM6-nP-xdG" secondAttribute="bottom" id="NqL-sc-Q0p"/>
-                            <constraint firstItem="3bF-Sc-Ktc" firstAttribute="bottom" secondItem="mJV-BU-dcJ" secondAttribute="bottom" id="PXO-iB-Dgb"/>
+                            <constraint firstItem="mJV-BU-dcJ" firstAttribute="bottom" secondItem="OM6-nP-xdG" secondAttribute="bottom" id="IPl-ts-iE3"/>
                             <constraint firstItem="OM6-nP-xdG" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="W7H-iw-7dS"/>
-                            <constraint firstItem="3bF-Sc-Ktc" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="bzl-p8-y6e"/>
-                            <constraint firstItem="3bF-Sc-Ktc" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="mmT-Bp-kP3"/>
                             <constraint firstItem="OM6-nP-xdG" firstAttribute="top" secondItem="mJV-BU-dcJ" secondAttribute="top" id="u4h-hO-JfG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJV-BU-dcJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mLF-pL-tMr"/>
                     <connections>
-                        <outlet property="bannerView" destination="3bF-Sc-Ktc" id="N3Y-p9-42e"/>
                         <outlet property="collectionView" destination="OM6-nP-xdG" id="OrX-GI-5P9"/>
                     </connections>
                 </viewController>
@@ -551,13 +540,13 @@
         <!--More Details View-->
         <scene sceneID="YVu-Em-2Za">
             <objects>
-                <viewController storyboardIdentifier="MoreDetailsView" id="Bnr-1s-xww" customClass="MoreDetailsView" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoreDetailsView" id="Bnr-1s-xww" customClass="MoreDetailsView" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7LB-5n-TZF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-MY-ERK">
-                                <rect key="frame" x="5" y="95" width="404" height="687"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="3u2-MY-ERK">
+                                <rect key="frame" x="5" y="95" width="404" height="767"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -583,34 +572,23 @@
                                 <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuZ-YG-GKT" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4Rc-VK-SAT"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3u2-MY-ERK" firstAttribute="top" secondItem="rGh-O8-Kke" secondAttribute="bottom" id="0oV-pw-drN"/>
                             <constraint firstItem="3u2-MY-ERK" firstAttribute="top" secondItem="R1w-Tf-wBG" secondAttribute="bottom" constant="15" id="2bl-ok-Emi"/>
-                            <constraint firstItem="vuZ-YG-GKT" firstAttribute="bottom" secondItem="oMM-bH-QBN" secondAttribute="bottom" id="JDr-Ej-bty"/>
                             <constraint firstItem="oMM-bH-QBN" firstAttribute="trailing" secondItem="3u2-MY-ERK" secondAttribute="trailing" constant="5" id="Me0-aH-itX"/>
                             <constraint firstItem="rGh-O8-Kke" firstAttribute="leading" secondItem="oMM-bH-QBN" secondAttribute="leading" constant="20" id="We1-Mq-A8q"/>
                             <constraint firstItem="rGh-O8-Kke" firstAttribute="top" secondItem="oMM-bH-QBN" secondAttribute="top" constant="10" id="Zm3-o8-CqG"/>
                             <constraint firstItem="R1w-Tf-wBG" firstAttribute="top" secondItem="oMM-bH-QBN" secondAttribute="top" constant="10" id="ZmX-nh-fM2"/>
+                            <constraint firstItem="oMM-bH-QBN" firstAttribute="bottom" secondItem="3u2-MY-ERK" secondAttribute="bottom" id="eGv-h1-pcm"/>
                             <constraint firstItem="oMM-bH-QBN" firstAttribute="trailing" secondItem="R1w-Tf-wBG" secondAttribute="trailing" constant="11" id="hRs-tE-bRE"/>
                             <constraint firstItem="3u2-MY-ERK" firstAttribute="leading" secondItem="oMM-bH-QBN" secondAttribute="leading" constant="5" id="i7m-ZW-kMv"/>
-                            <constraint firstItem="vuZ-YG-GKT" firstAttribute="trailing" secondItem="oMM-bH-QBN" secondAttribute="trailing" id="kui-L3-fyS"/>
-                            <constraint firstItem="vuZ-YG-GKT" firstAttribute="top" secondItem="3u2-MY-ERK" secondAttribute="bottom" id="npQ-Ht-DdF"/>
                             <constraint firstItem="R1w-Tf-wBG" firstAttribute="leading" secondItem="rGh-O8-Kke" secondAttribute="trailing" constant="22" id="oeY-5G-nwu"/>
-                            <constraint firstItem="vuZ-YG-GKT" firstAttribute="leading" secondItem="oMM-bH-QBN" secondAttribute="leading" id="vSL-Sr-Apb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oMM-bH-QBN"/>
                     </view>
                     <connections>
-                        <outlet property="bannerView" destination="vuZ-YG-GKT" id="PZI-vI-e4e"/>
                         <outlet property="ibTextView" destination="3u2-MY-ERK" id="eY7-IJ-BeH"/>
                         <outlet property="ibtitlelbl" destination="rGh-O8-Kke" id="gnl-h4-FBy"/>
                     </connections>
@@ -622,32 +600,22 @@
         <!--Books-->
         <scene sceneID="uYa-Ry-ok7">
             <objects>
-                <viewController storyboardIdentifier="Books" id="O96-lv-Hlu" customClass="Books" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Books" id="O96-lv-Hlu" customClass="Books" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ebH-3y-TPj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-7N-Akf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnx-Kb-yi9" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sr6-Yo-KHk"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cnx-Kb-yi9" firstAttribute="trailing" secondItem="kft-zr-G0R" secondAttribute="trailing" id="G9Z-IG-zoC"/>
-                            <constraint firstItem="cnx-Kb-yi9" firstAttribute="top" secondItem="JuY-7N-Akf" secondAttribute="bottom" id="awe-2S-KDD"/>
-                            <constraint firstItem="cnx-Kb-yi9" firstAttribute="bottom" secondItem="kft-zr-G0R" secondAttribute="bottom" id="drQ-iQ-QI6"/>
+                            <constraint firstItem="kft-zr-G0R" firstAttribute="bottom" secondItem="JuY-7N-Akf" secondAttribute="bottom" id="fKM-a0-zX0"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="leading" secondItem="kft-zr-G0R" secondAttribute="leading" id="ftG-kJ-YsU"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="trailing" secondItem="kft-zr-G0R" secondAttribute="trailing" id="jwD-NA-wju"/>
-                            <constraint firstItem="cnx-Kb-yi9" firstAttribute="leading" secondItem="kft-zr-G0R" secondAttribute="leading" id="qfH-NF-ZDg"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="top" secondItem="kft-zr-G0R" secondAttribute="top" id="wIy-d4-RIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kft-zr-G0R"/>
@@ -656,7 +624,6 @@
                         <barButtonItem key="backBarButtonItem" title="       " id="5mN-i9-Jfv"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="bannerView" destination="cnx-Kb-yi9" id="kec-VO-B6u"/>
                         <outlet property="tableView" destination="JuY-7N-Akf" id="dkY-jH-3Pq"/>
                     </connections>
                 </viewController>
@@ -667,20 +634,13 @@
         <!--Book Reader-->
         <scene sceneID="pAg-1T-tTm">
             <objects>
-                <viewController storyboardIdentifier="BookReader" id="pis-1j-iup" customClass="BookReader" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookReader" id="pis-1j-iup" customClass="BookReader" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BfL-sh-Opp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFO-I9-wo4" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LL2-tg-WXW"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3b-Vq-iqw" customClass="PDFView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="768"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -688,16 +648,12 @@
                         <constraints>
                             <constraint firstItem="e3b-Vq-iqw" firstAttribute="trailing" secondItem="4p4-nc-8sZ" secondAttribute="trailing" id="7na-Am-sMY"/>
                             <constraint firstItem="e3b-Vq-iqw" firstAttribute="leading" secondItem="4p4-nc-8sZ" secondAttribute="leading" id="FvK-DP-s66"/>
-                            <constraint firstItem="VFO-I9-wo4" firstAttribute="bottom" secondItem="4p4-nc-8sZ" secondAttribute="bottom" id="YlB-1o-sSV"/>
                             <constraint firstItem="e3b-Vq-iqw" firstAttribute="top" secondItem="4p4-nc-8sZ" secondAttribute="top" id="f6L-rA-Zf0"/>
-                            <constraint firstItem="VFO-I9-wo4" firstAttribute="leading" secondItem="4p4-nc-8sZ" secondAttribute="leading" id="kDZ-NB-Xc8"/>
-                            <constraint firstItem="VFO-I9-wo4" firstAttribute="top" secondItem="e3b-Vq-iqw" secondAttribute="bottom" id="kxN-Q2-brT"/>
-                            <constraint firstItem="VFO-I9-wo4" firstAttribute="trailing" secondItem="4p4-nc-8sZ" secondAttribute="trailing" id="qbZ-e7-QqP"/>
+                            <constraint firstItem="4p4-nc-8sZ" firstAttribute="bottom" secondItem="e3b-Vq-iqw" secondAttribute="bottom" id="tk8-Vk-utD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4p4-nc-8sZ"/>
                     </view>
                     <connections>
-                        <outlet property="bannerView" destination="VFO-I9-wo4" id="u3E-3K-rco"/>
                         <outlet property="ibPdfView" destination="e3b-Vq-iqw" id="ap7-Al-l4g"/>
                     </connections>
                 </viewController>
@@ -708,7 +664,7 @@
         <!--Menu View Controller-->
         <scene sceneID="2PZ-df-TG9">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="q8P-Pp-sMo" customClass="MenuViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" id="q8P-Pp-sMo" customClass="MenuViewController" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Gr-8t-xUq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -764,7 +720,7 @@
         <!--New Feeds View Controller-->
         <scene sceneID="0Bp-G3-zIM">
             <objects>
-                <viewController storyboardIdentifier="NewFeedsViewController" id="dIR-uS-ilO" customClass="NewFeedsViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewFeedsViewController" id="dIR-uS-ilO" customClass="NewFeedsViewController" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYr-6g-5tI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -795,7 +751,7 @@
         <!--Feed Model View Controller-->
         <scene sceneID="LrB-aJ-DfH">
             <objects>
-                <viewController storyboardIdentifier="FeedModelViewController" id="hFV-49-gb8" customClass="FeedModelViewController" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedModelViewController" id="hFV-49-gb8" customClass="FeedModelViewController" customModule="ಕನ್ನಡ_ನಾಡು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U58-zf-THT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -805,7 +761,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" metaFont="system" size="14"/>

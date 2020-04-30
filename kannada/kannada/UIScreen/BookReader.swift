@@ -13,7 +13,6 @@ import PDFKit
 
 class BookReader: UIViewController {
 
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var ibPdfView: PDFView!
     
     var bookInfo : Book?
@@ -24,7 +23,6 @@ class BookReader: UIViewController {
         self.navigationItem.title = bookInfo?.book_name
         self.addShareButton()
         self.bookDowanload()
-        self.loadBannerAd(self.bannerView)
     }
     
     func addShareButton() {

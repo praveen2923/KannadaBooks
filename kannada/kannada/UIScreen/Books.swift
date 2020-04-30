@@ -12,7 +12,6 @@ import GoogleMobileAds
 
 class Books: UIViewController {
     
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
     
     var author : Author?
@@ -30,7 +29,6 @@ class Books: UIViewController {
         } else {
             self.getAllOtherInformation()
         }
-        self.loadBannerAd(self.bannerView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,13 +39,6 @@ class Books: UIViewController {
         super.viewDidAppear(true)
     }
     
-    override func viewWillTransition(
-       to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
-     ) {
-       coordinator.animate(alongsideTransition: { _ in
-         self.loadBannerAd(self.bannerView)
-       })
-     }
     
     func getAllOtherInformation() {
         self.showeLoading()

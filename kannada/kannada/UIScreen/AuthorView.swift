@@ -12,7 +12,6 @@ import GoogleMobileAds
 
 class AuthorView: UIViewController {
     
-    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var collectionView: UICollectionView!
     var authors : [Author] = []
     
@@ -24,18 +23,8 @@ class AuthorView: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        self.loadBannerAd(self.bannerView)
-        self.bannerView.delegate = self
     }
     
-    override func viewWillTransition(
-       to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator
-     ) {
-       coordinator.animate(alongsideTransition: { _ in
-        self.loadBannerAd(self.bannerView)
-       
-       })
-     }
     
     func getAllAuthors()  {
         APIManager.authorList(nil) { (error, result) in
