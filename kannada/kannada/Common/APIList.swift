@@ -25,11 +25,12 @@ struct APIList {
         }
     }
     
-//    static var userRegistor : String {
-//        get {
-//            return "registor.php"
-//        }
-//    }
+    static var userRegistor : String {
+        get {
+            return "registor.php"
+        }
+    }
+    
 //    static var userLogin : String {
 //        get {
 //            return "login.php"
