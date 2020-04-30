@@ -524,7 +524,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -549,7 +549,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooksRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

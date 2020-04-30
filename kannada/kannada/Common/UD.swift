@@ -26,7 +26,7 @@ class UD {
 
 static let shared = UD()
 
-    let kUserLogedIn = "kUserLoginkey"
+    let kUserLogedIn = "kUserLoginkeytest"
     let kDeviceToken = "kDeviceToken"
 
     private init() {
