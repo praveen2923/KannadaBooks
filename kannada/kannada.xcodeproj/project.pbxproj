@@ -26,6 +26,9 @@
 		E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */; };
 		E08854C82456072600C78C75 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C72456072600C78C75 /* NewsFeed.swift */; };
 		E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C92456DF9900C78C75 /* FeedModelViewController.swift */; };
+		E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CB245D969700C78C75 /* BookListViewController.swift */; };
+		E08854D1245D982600C78C75 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CF245D982600C78C75 /* BookListCell.swift */; };
+		E08854D2245D982600C78C75 /* BookListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08854D0245D982600C78C75 /* BookListCell.xib */; };
 		E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */; };
 		E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */; };
 		E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */; };
@@ -33,7 +36,7 @@
 		E0B0B1D92445CCB300FF986B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1D82445CCB300FF986B /* Assets.xcassets */; };
 		E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1DA2445CCB300FF986B /* LaunchScreen.storyboard */; };
 		E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E42445CF3700FF986B /* DashBoard.swift */; };
-		E0B0B1E72445D07400FF986B /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E62445D07400FF986B /* Books.swift */; };
+		E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E62445D07400FF986B /* OtherListViewController.swift */; };
 		E0B0B1F12445D3F000FF986B /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1EF2445D3F000FF986B /* BookCell.swift */; };
 		E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1F02445D3F000FF986B /* BookCell.xib */; };
 		E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1F32445EC5B00FF986B /* BookReader.swift */; };
@@ -72,6 +75,9 @@
 		E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedNewsCell.xib; sourceTree = "<group>"; };
 		E08854C72456072600C78C75 /* NewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		E08854C92456DF9900C78C75 /* FeedModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModelViewController.swift; sourceTree = "<group>"; };
+		E08854CB245D969700C78C75 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
+		E08854CF245D982600C78C75 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
+		E08854D0245D982600C78C75 /* BookListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCell.xib; sourceTree = "<group>"; };
 		E09247B5244DCE16009DE3F2 /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +86,7 @@
 		E0B0B1DB2445CCB300FF986B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B0B1DD2445CCB400FF986B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B0B1E42445CF3700FF986B /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
-		E0B0B1E62445D07400FF986B /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		E0B0B1E62445D07400FF986B /* OtherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewController.swift; sourceTree = "<group>"; };
 		E0B0B1EF2445D3F000FF986B /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		E0B0B1F02445D3F000FF986B /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		E0B0B1F32445EC5B00FF986B /* BookReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReader.swift; sourceTree = "<group>"; };
@@ -182,12 +188,13 @@
 				E0F1F70C24544E4900551BD4 /* Not Used */,
 				E0B0B1E42445CF3700FF986B /* DashBoard.swift */,
 				E0B0B2022448865200FF986B /* AuthorView.swift */,
-				E0B0B1E62445D07400FF986B /* Books.swift */,
+				E0B0B1E62445D07400FF986B /* OtherListViewController.swift */,
 				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0548542244B46BE0065532E /* MoreDetailsView.swift */,
 				E0F1F70924542ABB00551BD4 /* MenuViewController.swift */,
 				E08854BF2455748600C78C75 /* NewFeedsViewController.swift */,
 				E08854C92456DF9900C78C75 /* FeedModelViewController.swift */,
+				E08854CB245D969700C78C75 /* BookListViewController.swift */,
 			);
 			path = UIScreen;
 			sourceTree = "<group>";
@@ -205,6 +212,8 @@
 				E0F1F70E2454527000551BD4 /* CommonCell.xib */,
 				E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */,
 				E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */,
+				E08854CF245D982600C78C75 /* BookListCell.swift */,
+				E08854D0245D982600C78C75 /* BookListCell.xib */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -292,6 +301,7 @@
 			files = (
 				E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */,
 				E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */,
+				E08854D2245D982600C78C75 /* BookListCell.xib in Resources */,
 				E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */,
 				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
@@ -353,8 +363,9 @@
 			files = (
 				E0063475244A36F8001A728F /* Book.swift in Sources */,
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
+				E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */,
 				E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */,
-				E0B0B1E72445D07400FF986B /* Books.swift in Sources */,
+				E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */,
 				E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */,
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
@@ -362,6 +373,7 @@
 				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
+				E08854D1245D982600C78C75 /* BookListCell.swift in Sources */,
 				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
@@ -524,7 +536,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -532,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -549,7 +561,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooksRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -557,7 +569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
 				PROVISIONING_PROFILE_SPECIFIER = "";

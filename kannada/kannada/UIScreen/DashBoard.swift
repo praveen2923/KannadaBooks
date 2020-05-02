@@ -138,9 +138,9 @@ extension DashBoard: CarbonTabSwipeNavigationDelegate {
 
     }
     
-    func getBookListVc() -> Books {
+    func getBookListVc() -> OtherListViewController {
            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-           let controller = storyBoard.instantiateViewController(withIdentifier: "Books") as! Books
+           let controller = storyBoard.instantiateViewController(withIdentifier: "OtherListViewController") as! OtherListViewController
            return controller
        }
     

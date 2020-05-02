@@ -10,7 +10,7 @@ import UIKit
 import GoogleMobileAds
 
 
-class Books: UIViewController {
+class OtherListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -84,7 +84,7 @@ class Books: UIViewController {
     }
 }
 
-extension Books : UITableViewDelegate, UITableViewDataSource {
+extension OtherListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func configureTableView()  {
         self.tableView?.delegate = self
@@ -156,7 +156,7 @@ extension Books : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension Books : CellDelegate {
+extension OtherListViewController : CellDelegate {
     func didTapOnmoredetails(_ cell: HistoryCell) {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "MoreDetailsView") as! MoreDetailsView
