@@ -13,22 +13,14 @@ import GoogleMobileAds
 class OtherListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var author : Author?
-    var books : [Book] = []
+
     var others : [Other] = []
     var categoryid : String?
    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        
-        if categoryid == "1" {
-            self.getAllBooksForAuthor()
-            self.navigationItem.title = author?.name
-        } else {
-            self.getAllOtherInformation()
-        }
+        self.getAllOtherInformation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,28 +52,6 @@ class OtherListViewController: UIViewController {
             }
         }
     }
-    
-    func getAllBooksForAuthor() {
-        self.showeLoading()
-        APIManager.getAllBooksForAuthor(author?.iD) { (error, result) in
-            if let values = result as? Array<Any> {
-                for item in values {
-                  if let abook = Book(dictionary: item as! NSDictionary) {
-                       self.books.append(abook)
-                   }
-                }
-                if self.books.count == 0 {
-                    self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-                }else{
-                    self.books = self.books.shuffled()
-                    self.hideLoading()
-                    self.tableView.reloadData()
-                }
-            }else{
-                self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-            }
-        }
-    }
 }
 
 extension OtherListViewController : UITableViewDelegate, UITableViewDataSource {
@@ -94,29 +64,16 @@ extension OtherListViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func registerCellforTableview()  {
-        if self.categoryid == "1" {
-            let nib = UINib(nibName: "BookCell", bundle: nil)
-            self.tableView.register(nib, forCellReuseIdentifier: "BookCell")
-        }else{
-            let nib = UINib(nibName: "HistoryCell", bundle: nil)
-            self.tableView.register(nib, forCellReuseIdentifier: "HistoryCell")
-        }
+        let nib = UINib(nibName: "HistoryCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "HistoryCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if categoryid == "1" {
-            return self.books.count
-        }else{
-            return self.others.count
-        }
+       return self.others.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.categoryid == "1" {
-            return getBookListCell(indexPath: indexPath)
-        } else {
-            return getHistoryCell(indexPath: indexPath)
-        }
+        return getHistoryCell(indexPath: indexPath)
     }
     
     func getHistoryCell(indexPath: IndexPath) -> HistoryCell {
@@ -129,29 +86,11 @@ extension OtherListViewController : UITableViewDelegate, UITableViewDataSource {
                   
     }
     
-    func getBookListCell(indexPath: IndexPath) -> BookCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookCell
-        cell.selectionStyle = .none
-        cell.ibBookName.text = self.books[indexPath.row].book_name
-        cell.ibBookPublish.text = self.books[indexPath.row].book_publish
-        cell.imageView?.image = UIImage(named: "defultauthorimage")
-                           
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if self.categoryid == "1" {
             return 100
           }else{
             return 150
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if self.categoryid == "1" {
-           let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookReader") as? BookReader
-           vc?.bookInfo = self.books[indexPath.row]
-           self.navigationController?.pushViewController(vc!, animated: true)
         }
     }
 }

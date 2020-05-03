@@ -90,8 +90,8 @@ extension AuthorView : UICollectionViewDelegate, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
-//        controller.author = self.authors[indexPath.row]
-//        controller.categoryid =  "1"
+        controller.author = self.authors[indexPath.row]
+        controller.categoryid =  "1"
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

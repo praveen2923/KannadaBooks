@@ -37,8 +37,6 @@
 		E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1DA2445CCB300FF986B /* LaunchScreen.storyboard */; };
 		E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E42445CF3700FF986B /* DashBoard.swift */; };
 		E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E62445D07400FF986B /* OtherListViewController.swift */; };
-		E0B0B1F12445D3F000FF986B /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1EF2445D3F000FF986B /* BookCell.swift */; };
-		E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1F02445D3F000FF986B /* BookCell.xib */; };
 		E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1F32445EC5B00FF986B /* BookReader.swift */; };
 		E0B0B1F72448699100FF986B /* extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1F62448699100FF986B /* extens.swift */; };
 		E0B0B1FB24486E8500FF986B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FA24486E8500FF986B /* RegisterView.swift */; };
@@ -67,7 +65,7 @@
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
-		E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಕನ್ನಡ ನಾಡು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
@@ -87,8 +85,6 @@
 		E0B0B1DD2445CCB400FF986B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B0B1E42445CF3700FF986B /* DashBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoard.swift; sourceTree = "<group>"; };
 		E0B0B1E62445D07400FF986B /* OtherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewController.swift; sourceTree = "<group>"; };
-		E0B0B1EF2445D3F000FF986B /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
-		E0B0B1F02445D3F000FF986B /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		E0B0B1F32445EC5B00FF986B /* BookReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReader.swift; sourceTree = "<group>"; };
 		E0B0B1F62448699100FF986B /* extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extens.swift; sourceTree = "<group>"; };
 		E0B0B1FA24486E8500FF986B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -158,7 +154,7 @@
 				E0B0B1CE2445CCB300FF986B /* kannada */,
 				41BA170AA39F5D6DDA3766EB /* Pods */,
 				CFF5563CC4173A09BF46B73C /* Frameworks */,
-				E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */,
+				E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,12 +185,12 @@
 				E0B0B1E42445CF3700FF986B /* DashBoard.swift */,
 				E0B0B2022448865200FF986B /* AuthorView.swift */,
 				E0B0B1E62445D07400FF986B /* OtherListViewController.swift */,
-				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0548542244B46BE0065532E /* MoreDetailsView.swift */,
 				E0F1F70924542ABB00551BD4 /* MenuViewController.swift */,
 				E08854BF2455748600C78C75 /* NewFeedsViewController.swift */,
 				E08854C92456DF9900C78C75 /* FeedModelViewController.swift */,
 				E08854CB245D969700C78C75 /* BookListViewController.swift */,
+				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 			);
 			path = UIScreen;
 			sourceTree = "<group>";
@@ -202,8 +198,6 @@
 		E0B0B1E82445D30B00FF986B /* UICells */ = {
 			isa = PBXGroup;
 			children = (
-				E0B0B1EF2445D3F000FF986B /* BookCell.swift */,
-				E0B0B1F02445D3F000FF986B /* BookCell.xib */,
 				E0B0B1FC2448841B00FF986B /* AuthorCell.swift */,
 				E0B0B1FD2448841B00FF986B /* AuthorCell.xib */,
 				E054853C244B07F70065532E /* HistoryCell.swift */,
@@ -258,7 +252,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E08854BC245454F000C78C75 /* ಕನ್ನಡ ನಾಡು.app */;
+			productReference = E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -302,7 +296,6 @@
 				E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */,
 				E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */,
 				E08854D2245D982600C78C75 /* BookListCell.xib in Resources */,
-				E0B0B1F22445D3F000FF986B /* BookCell.xib in Resources */,
 				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
 				E0B0B1D92445CCB300FF986B /* Assets.xcassets in Resources */,
@@ -388,7 +381,6 @@
 				E0063469244958BE001A728F /* UD.swift in Sources */,
 				E006346D24495AD0001A728F /* APIList.swift in Sources */,
 				E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */,
-				E0B0B1F12445D3F000FF986B /* BookCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +538,7 @@
 				);
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
+				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -571,7 +563,7 @@
 				);
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
-				PRODUCT_NAME = "ಕನ್ನಡ ನಾಡು";
+				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

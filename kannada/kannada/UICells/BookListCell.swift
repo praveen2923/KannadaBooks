@@ -10,6 +10,8 @@ import UIKit
 
 class BookListCell: UICollectionViewCell {
 
+    @IBOutlet weak var ibBookName: UILabel!
+    @IBOutlet weak var ibbookimage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
