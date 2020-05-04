@@ -101,6 +101,7 @@ class DashBoard: UIViewController  {
                 self.showeErorMsg("ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ")
             }
             if self.values.count != 0 {
+                self.values.insert("ಆಡಿಯೊಬುಕ್", at: 1)
                 self.setCarbonframe()
             }
         }
@@ -130,19 +131,28 @@ extension DashBoard: CarbonTabSwipeNavigationDelegate {
         if index == 0 {
             let controller = getAuthorListVc()
             return controller
-        }else{
-            let controller = getBookListVc()
-            controller.categoryid =  "\(index + 2)"
+        } else if index == 1 {
+             let controller = getAudioBookListVc()
+            return controller
+        } else {
+            let controller = getOtherListVc()
+            controller.categoryid =  "\(index + 1)"
             return controller
         }
 
     }
     
-    func getBookListVc() -> OtherListViewController {
+    func getAudioBookListVc() -> AudioBookViewController {
            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-           let controller = storyBoard.instantiateViewController(withIdentifier: "OtherListViewController") as! OtherListViewController
+           let controller = storyBoard.instantiateViewController(withIdentifier: "AudioBookViewController") as! AudioBookViewController
            return controller
-       }
+    }
+    
+    func getOtherListVc() -> OtherListViewController {
+            let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let controller = storyBoard.instantiateViewController(withIdentifier: "OtherListViewController") as! OtherListViewController
+            return controller
+     }
     
     func getAuthorListVc() -> AuthorView {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)

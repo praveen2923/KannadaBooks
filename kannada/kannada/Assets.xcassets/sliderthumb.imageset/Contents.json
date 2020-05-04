@@ -5,7 +5,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "Book.png",
+      "filename" : "icons8-filled-circle-48.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -17,8 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }
