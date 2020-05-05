@@ -14,11 +14,14 @@ class AudioBookViewController: UIViewController {
     @IBOutlet weak var padlock: CircleView!
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var animationview: UIView!
+    @IBOutlet weak var ibcMoveAudioview: NSLayoutConstraint!
     @IBOutlet weak var ibAudioSliderBar: CustomUISlider!
     @IBOutlet weak var ibBooNameLbl: UILabel!
     @IBOutlet weak var ibPlayBtn: UIButton!
+    @IBOutlet weak var ibAudioControllerview: UIView!
     
+    @IBOutlet weak var ibCurrentplaytTimeLbl: UILabel!
+    @IBOutlet weak var ibAudioDurationLbl: UILabel!
     
     var player : AVPlayer?
     private var playbackLikelyToKeepUpContext = 0
@@ -29,6 +32,7 @@ class AudioBookViewController: UIViewController {
         super.viewDidLoad()
         
         self.configureTableView()
+        self.ibcMoveAudioview.constant = 124
         
         let urlString = "http://softwaresolutionpvt.com/bookapp/audiobooks/%E0%B2%B5%E0%B3%86%E0%B2%82%E0%B2%95%E0%B2%9F%E0%B2%B6%E0%B2%BE%E0%B2%AE%E0%B2%BF%E0%B2%AF%20%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%A3%E0%B2%AF.mp3"
          
@@ -40,8 +44,6 @@ class AudioBookViewController: UIViewController {
         values.append(urlString)
          values.append(urlString)
         values.append(urlString)
-        values.append(urlString)
-         values.append(urlString)
         values.append(urlString)
     }
     
@@ -66,25 +68,26 @@ class AudioBookViewController: UIViewController {
     }
     
     func addObserver() {
-       // print(self.player?.volume)
          if let stime = self.player?.currentItem?.duration {
-            let total = CMTimeGetSeconds(stime)
-            let formatter = DateComponentsFormatter()
-            formatter.allowedUnits = [.hour, .minute, .second]
-            let formattedString = formatter.string(from: TimeInterval(total))!
-            print(formattedString)
+            self.ibAudioDurationLbl.text = self.getLabelString(CMTimeGetSeconds(stime))
         }
         
         self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
             if let duration = self.player?.currentItem?.duration {
                 print(duration)
               let duration = CMTimeGetSeconds(duration), time = CMTimeGetSeconds(time)
-                
-                
               let progress = (time/duration)
               self.ibAudioSliderBar.value = Float(progress)
+              self.ibCurrentplaytTimeLbl.text = self.getLabelString(time)
             }
         })
+    }
+    
+    func getLabelString(_ stime : Float64) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.hour, .minute, .second]
+        let audioDuration = formatter.string(from: TimeInterval(stime))!
+        return audioDuration
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -151,9 +154,13 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.padlock.isAnimating = true
+        self.view.layoutIfNeeded()
+        self.ibcMoveAudioview.constant = 0
+        UIView.animate(withDuration: 0.5) {
+             self.view.layoutIfNeeded()
+        }
         self.didTapOnPlayBtn(UIButton())
     }
-    
 }
 
 
