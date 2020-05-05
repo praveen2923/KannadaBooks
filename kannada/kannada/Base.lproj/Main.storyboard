@@ -646,11 +646,24 @@
                                 <rect key="frame" x="0.0" y="738" width="414" height="124"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ನಿಜಗಲ್ಲಿನ ರಾಣಿ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-Ai-cyp">
-                                        <rect key="frame" x="10" y="8" width="394" height="19.5"/>
+                                        <rect key="frame" x="10" y="8" width="394" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9I-Vp-GnA" customClass="CircleView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
+                                        <rect key="frame" x="186.5" y="73" width="42" height="42"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="qQM-kD-tXS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-X8-0OO">
                                         <rect key="frame" x="117.5" y="74" width="50" height="40"/>
                                         <constraints>
@@ -663,7 +676,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-kc-lYB">
-                                        <rect key="frame" x="269" y="74" width="50" height="40"/>
+                                        <rect key="frame" x="248" y="74" width="50" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="L4l-x9-B0o"/>
                                             <constraint firstAttribute="width" constant="50" id="RSS-ec-PzN"/>
@@ -686,29 +699,32 @@
                                             <action selector="didTapOnPlayBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="fsl-bb-QCM"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d4l-07-XeX" customClass="CustomUISlider" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="42" width="323" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d4l-07-XeX" customClass="CustomUISlider" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="48" width="323" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6bw-e2-xMC"/>
                                         </constraints>
                                     </slider>
                                 </subviews>
-                                <color key="backgroundColor" red="0.14170507116197184" green="0.15958892139014083" blue="0.16725481567042255" alpha="0.74438820422535212" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549018" blue="0.16862745098039217" alpha="0.74438820422535212" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="124" id="AF4-7O-zpo"/>
                                     <constraint firstItem="d4l-07-XeX" firstAttribute="leading" secondItem="zvK-ko-4dT" secondAttribute="leading" constant="52" id="AUZ-pe-Nbs"/>
-                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="top" secondItem="d4l-07-XeX" secondAttribute="bottom" constant="2" id="DCW-Jw-xM5"/>
+                                    <constraint firstItem="t9I-Vp-GnA" firstAttribute="centerX" secondItem="jmn-AJ-uTX" secondAttribute="centerX" id="Atw-tK-GlC"/>
+                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="top" secondItem="d4l-07-XeX" secondAttribute="bottom" constant="-4" id="DCW-Jw-xM5"/>
                                     <constraint firstAttribute="bottom" secondItem="tIC-X8-0OO" secondAttribute="bottom" constant="10" id="HHH-6f-3vP"/>
-                                    <constraint firstItem="d4l-07-XeX" firstAttribute="top" secondItem="Jv7-Ai-cyp" secondAttribute="bottom" constant="16.5" id="Hpb-lh-hoB"/>
+                                    <constraint firstItem="d4l-07-XeX" firstAttribute="top" secondItem="Jv7-Ai-cyp" secondAttribute="bottom" constant="26.5" id="Hpb-lh-hoB"/>
                                     <constraint firstAttribute="bottom" secondItem="Kjl-kc-lYB" secondAttribute="bottom" constant="10" id="J66-7I-00N"/>
                                     <constraint firstItem="Jv7-Ai-cyp" firstAttribute="top" secondItem="zvK-ko-4dT" secondAttribute="top" constant="8" id="Kil-DY-Miv"/>
                                     <constraint firstAttribute="bottom" secondItem="jmn-AJ-uTX" secondAttribute="bottom" constant="5" id="QWX-Pg-vCr"/>
                                     <constraint firstAttribute="trailing" secondItem="Jv7-Ai-cyp" secondAttribute="trailing" constant="10" id="XVg-ke-63S"/>
                                     <constraint firstItem="Jv7-Ai-cyp" firstAttribute="leading" secondItem="zvK-ko-4dT" secondAttribute="leading" constant="10" id="bny-rS-ydh"/>
-                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="leading" secondItem="jmn-AJ-uTX" secondAttribute="trailing" constant="36.5" id="cUp-jw-YyF"/>
+                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="leading" secondItem="jmn-AJ-uTX" secondAttribute="trailing" constant="15.5" id="cUp-jw-YyF"/>
                                     <constraint firstItem="jmn-AJ-uTX" firstAttribute="leading" secondItem="tIC-X8-0OO" secondAttribute="trailing" constant="15" id="co1-nG-xV2"/>
                                     <constraint firstAttribute="trailing" secondItem="d4l-07-XeX" secondAttribute="trailing" constant="43" id="lqr-4l-Jqn"/>
                                     <constraint firstItem="jmn-AJ-uTX" firstAttribute="centerX" secondItem="zvK-ko-4dT" secondAttribute="centerX" constant="0.5" id="usA-kL-EXP"/>
+                                    <constraint firstItem="t9I-Vp-GnA" firstAttribute="centerY" secondItem="jmn-AJ-uTX" secondAttribute="centerY" id="vMU-b7-2wo"/>
+                                    <constraint firstItem="t9I-Vp-GnA" firstAttribute="height" secondItem="jmn-AJ-uTX" secondAttribute="height" multiplier="0.84" id="wsb-cc-eBh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -726,8 +742,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-Fj-5KT">
-                                <rect key="frame" x="0.0" y="44" width="419" height="686"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-Fj-5KT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="686"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -736,7 +752,7 @@
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="leading" secondItem="Jmi-7q-7nO" secondAttribute="leading" id="3c4-J4-8VN"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="3t7-KF-79Q"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="leading" secondItem="Jmi-7q-7nO" secondAttribute="leading" id="Dgz-eK-GOZ"/>
-                            <constraint firstItem="zvK-ko-4dT" firstAttribute="top" secondItem="s6M-Fj-5KT" secondAttribute="bottom" id="OS1-op-KK0"/>
+                            <constraint firstItem="zvK-ko-4dT" firstAttribute="top" secondItem="s6M-Fj-5KT" secondAttribute="bottom" constant="8" id="OS1-op-KK0"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" id="Ps0-vU-Pp1"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="U3r-FP-1KD"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="top" secondItem="Jmi-7q-7nO" secondAttribute="top" id="jw8-uz-FaR"/>
@@ -747,6 +763,8 @@
                         <outlet property="ibAudioSliderBar" destination="d4l-07-XeX" id="qLP-2n-D4o"/>
                         <outlet property="ibBooNameLbl" destination="Jv7-Ai-cyp" id="1Ao-Wa-0UG"/>
                         <outlet property="ibPlayBtn" destination="jmn-AJ-uTX" id="O9W-sd-q04"/>
+                        <outlet property="padlock" destination="t9I-Vp-GnA" id="Y5V-eo-Ofd"/>
+                        <outlet property="tableView" destination="s6M-Fj-5KT" id="shn-Cl-s4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkB-NF-Ppy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

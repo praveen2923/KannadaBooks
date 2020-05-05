@@ -155,7 +155,7 @@ class APIManager: NSObject {
     //        }
         }
         
-         // Registor Service
+         // Registor Service Push Notification
         class func registorService(completion: @escaping CompletionHandler) {
             if let channelid = UAirship.channel()?.identifier {
                 let bParameters:Parameters = [ "devicetoken" : channelid ]

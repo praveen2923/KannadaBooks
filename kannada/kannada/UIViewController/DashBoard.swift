@@ -101,7 +101,7 @@ class DashBoard: UIViewController  {
                 self.showeErorMsg("ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ")
             }
             if self.values.count != 0 {
-                self.values.insert("ಆಡಿಯೊಬುಕ್", at: 1)
+                self.values.insert("ಆಡಿಯೊಬುಕ್ಸ್", at: 1)
                 self.setCarbonframe()
             }
         }
