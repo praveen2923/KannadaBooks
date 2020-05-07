@@ -25,7 +25,7 @@ class AudioBookViewController: UIViewController {
     
     var player : AVPlayer?
     private var playbackLikelyToKeepUpContext = 0
-    var values = [String]()
+    var audioBooks = [AudioBook]()
     
     
     override func viewDidLoad() {
@@ -34,17 +34,29 @@ class AudioBookViewController: UIViewController {
         self.configureTableView()
         self.ibcMoveAudioview.constant = 124
         
-        let urlString = "http://softwaresolutionpvt.com/bookapp/audiobooks/%E0%B2%B5%E0%B3%86%E0%B2%82%E0%B2%95%E0%B2%9F%E0%B2%B6%E0%B2%BE%E0%B2%AE%E0%B2%BF%E0%B2%AF%20%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%A3%E0%B2%AF.mp3"
-         
-         values.append(urlString)
-        values.append(urlString)
-        values.append(urlString)
-         values.append(urlString)
-        values.append(urlString)
-        values.append(urlString)
-         values.append(urlString)
-        values.append(urlString)
-        values.append(urlString)
+        self.getAudioFiles()
+    }
+    
+    func getAudioFiles()  {
+      self.showeLoading()
+        APIManager.getListOfAudioBooks { (error, result) in
+           self.hideLoading()
+           if let values = result as? Array<Any> {
+               for item in values {
+                 if let abook = AudioBook(dictionary: item as! NSDictionary) {
+                      self.audioBooks.append(abook)
+                  }
+               }
+               if self.audioBooks.count == 0 {
+                   self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
+               }else{
+                   self.hideLoading()
+                   self.tableView.reloadData()
+               }
+           }else{
+               self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
+           }
+        }
     }
     
     @IBAction func didTapOnPlayBtn(_ sender: Any) {
@@ -57,13 +69,15 @@ class AudioBookViewController: UIViewController {
             self.player?.play()
         }else{
             self.ibPlayBtn.isSelected = true
-            let urlString = "http://softwaresolutionpvt.com/bookapp/audiobooks/%E0%B2%B5%E0%B3%86%E0%B2%82%E0%B2%95%E0%B2%9F%E0%B2%B6%E0%B2%BE%E0%B2%AE%E0%B2%BF%E0%B2%AF%20%E0%B2%AA%E0%B3%8D%E0%B2%B0%E0%B2%A3%E0%B2%AF.mp3"
-             guard let url = URL.init(string: urlString) else { return }
-             let playerItem = AVPlayerItem.init(url: url)
-             self.player = AVPlayer.init(playerItem: playerItem)
-             self.player?.play()
-             self.player?.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp", options: .new, context: &playbackLikelyToKeepUpContext)
-          
+            
+            if let urlString = audioBooks[(sender as! UIButton).tag].imageurl {
+                guard let url = URL.init(string: urlString) else { return }
+                let playerItem = AVPlayerItem.init(url: url)
+                self.player = AVPlayer.init(playerItem: playerItem)
+                self.player?.play()
+                self.player?.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp", options: .new, context: &playbackLikelyToKeepUpContext)
+            }
+            
         }
     }
     
@@ -134,7 +148,7 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return values.count
+        return audioBooks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,6 +157,9 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     
     func getHistoryCell(indexPath: IndexPath) -> AudioBookCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "AudioBookCell", for: indexPath) as! AudioBookCell
+       
+        cell.ibTitleLabel.text = self.audioBooks[indexPath.row].title
+        cell.ibSubTitleLabel.text = self.audioBooks[indexPath.row].subtitle
         cell.selectionStyle = .none
         return cell
                   
@@ -159,15 +176,11 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
         UIView.animate(withDuration: 0.5) {
              self.view.layoutIfNeeded()
         }
-        self.didTapOnPlayBtn(UIButton())
+        let btn = UIButton()
+        btn.tag = indexPath.row
+        self.didTapOnPlayBtn(btn)
     }
 }
-
-
-
-
-
-
 
 
 class CustomUISlider : UISlider {

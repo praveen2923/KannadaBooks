@@ -18,6 +18,7 @@
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
 		E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548542244B46BE0065532E /* MoreDetailsView.swift */; };
+		E07CAF09246434AF00FAC819 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CAF08246434AF00FAC819 /* AudioBook.swift */; };
 		E08854BE24545FAE00C78C75 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08854BD24545FAE00C78C75 /* StoreKit.framework */; };
 		E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854BF2455748600C78C75 /* NewFeedsViewController.swift */; };
 		E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C12455793100C78C75 /* SlideMenuController.swift */; };
@@ -65,6 +66,7 @@
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
+		E07CAF08246434AF00FAC819 /* AudioBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
 		E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		E00634712449F2DD001A728F /* Author */ = {
 			isa = PBXGroup;
 			children = (
+				E07CAF08246434AF00FAC819 /* AudioBook.swift */,
 				E08854C72456072600C78C75 /* NewsFeed.swift */,
 				E0548540244B39260065532E /* Other.swift */,
 				E0063474244A36F8001A728F /* Book.swift */,
@@ -357,6 +360,7 @@
 				E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */,
 				E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */,
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
+				E07CAF09246434AF00FAC819 /* AudioBook.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
 				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,

@@ -25,17 +25,11 @@ struct APIList {
         }
     }
     
-    static var userRegistor : String {
+    static var userRegistor : String { // registor push notification
         get {
             return "registor.php"
         }
     }
-    
-//    static var userLogin : String {
-//        get {
-//            return "login.php"
-//        }
-//    }
     
     static var categorylist : String {
         get {
@@ -71,6 +65,12 @@ struct APIList {
             return "getFeedById.php"
         }
     }
+    
+    static var getAudiobooks : String {
+         get {
+             return "getaudiobooks.php"
+         }
+     }
 }
 
 extension String {

@@ -20,7 +20,7 @@
                         <rect key="frame" x="5" y="0.0" width="315" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ಮತ್ತಷ್ಟು ಓದಿ ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmn-Cn-VkR">
-                                <rect key="frame" x="55" y="22" width="255" height="22"/>
+                                <rect key="frame" x="55" y="22" width="166" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ಮತ್ತಷ್ಟು ಓದಿ ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEP-3y-9Jb">
-                                <rect key="frame" x="55" y="5" width="255" height="21"/>
+                                <rect key="frame" x="55" y="8" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Jdz-Ve-n4B"/>
                                 </constraints>
@@ -41,17 +41,44 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSm-5P-spQ">
+                                <rect key="frame" x="273" y="7" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="0c2-N6-rFy"/>
+                                    <constraint firstAttribute="width" constant="32" id="ncu-84-zXx"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="downalod"/>
+                                <connections>
+                                    <action selector="didTapOnDownalodBtn:" destination="9ag-iC-sQb" eventType="touchUpInside" id="3DX-5t-pKQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uG-Na-fXr">
+                                <rect key="frame" x="231" y="7" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="YVE-qG-mf6"/>
+                                </constraints>
+                                <state key="normal" image="hartempty"/>
+                                <connections>
+                                    <action selector="didTapOnLikeBtn:" destination="9ag-iC-sQb" eventType="touchUpInside" id="k77-ux-XW1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QEP-3y-9Jb" firstAttribute="top" secondItem="zbk-Q0-UNS" secondAttribute="top" constant="5" id="2iQ-BQ-Cy3"/>
-                            <constraint firstAttribute="trailing" secondItem="bmn-Cn-VkR" secondAttribute="trailing" constant="5" id="55G-wb-NOF"/>
+                            <constraint firstItem="QEP-3y-9Jb" firstAttribute="top" secondItem="zbk-Q0-UNS" secondAttribute="top" constant="8" id="2iQ-BQ-Cy3"/>
+                            <constraint firstAttribute="trailing" secondItem="uSm-5P-spQ" secondAttribute="trailing" constant="10" id="6Kq-Rq-5W9"/>
                             <constraint firstItem="eP3-Wt-9ZJ" firstAttribute="leading" secondItem="zbk-Q0-UNS" secondAttribute="leading" id="HGy-g4-YsJ"/>
+                            <constraint firstItem="6uG-Na-fXr" firstAttribute="leading" secondItem="QEP-3y-9Jb" secondAttribute="trailing" constant="10" id="HvF-Zh-u3O"/>
                             <constraint firstItem="QEP-3y-9Jb" firstAttribute="leading" secondItem="eP3-Wt-9ZJ" secondAttribute="trailing" constant="15" id="Jec-NP-Scj"/>
+                            <constraint firstItem="6uG-Na-fXr" firstAttribute="height" secondItem="uSm-5P-spQ" secondAttribute="height" id="NzX-eX-Dzw"/>
                             <constraint firstAttribute="bottom" secondItem="bmn-Cn-VkR" secondAttribute="bottom" constant="2" id="Swt-0n-czT"/>
+                            <constraint firstItem="uSm-5P-spQ" firstAttribute="centerY" secondItem="zbk-Q0-UNS" secondAttribute="centerY" id="b2e-bh-zJx"/>
+                            <constraint firstItem="6uG-Na-fXr" firstAttribute="leading" secondItem="bmn-Cn-VkR" secondAttribute="trailing" constant="10" id="dEC-pR-OkI"/>
+                            <constraint firstItem="6uG-Na-fXr" firstAttribute="centerY" secondItem="uSm-5P-spQ" secondAttribute="centerY" id="g4v-rA-QoZ"/>
                             <constraint firstItem="bmn-Cn-VkR" firstAttribute="leading" secondItem="eP3-Wt-9ZJ" secondAttribute="trailing" constant="15" id="gMK-4n-y5M"/>
-                            <constraint firstItem="bmn-Cn-VkR" firstAttribute="top" secondItem="QEP-3y-9Jb" secondAttribute="bottom" constant="-4" id="ivD-MN-NPg"/>
-                            <constraint firstAttribute="trailing" secondItem="QEP-3y-9Jb" secondAttribute="trailing" constant="5" id="sLf-xD-cYo"/>
+                            <constraint firstItem="bmn-Cn-VkR" firstAttribute="top" secondItem="QEP-3y-9Jb" secondAttribute="bottom" constant="-7" id="ivD-MN-NPg"/>
+                            <constraint firstItem="uSm-5P-spQ" firstAttribute="leading" secondItem="6uG-Na-fXr" secondAttribute="trailing" constant="10" id="y1z-ti-yfQ"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
@@ -80,10 +107,16 @@
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <viewLayoutGuide key="safeArea" id="aFW-ZI-EFd"/>
-            <point key="canvasLocation" x="-75.362318840579718" y="32.8125"/>
+            <connections>
+                <outlet property="ibSubTitleLabel" destination="bmn-Cn-VkR" id="2xy-Ay-mOr"/>
+                <outlet property="ibTitleLabel" destination="QEP-3y-9Jb" id="pKR-eV-yic"/>
+            </connections>
+            <point key="canvasLocation" x="-94" y="-78"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="downalod" width="32" height="32"/>
+        <image name="hartempty" width="32" height="32"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
     </resources>
 </document>

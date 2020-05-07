@@ -10,15 +10,28 @@ import UIKit
 import Airship
 import GoogleMobileAds
 import IQKeyboardManagerSwift
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-         GADMobileAds.sharedInstance().start(completionHandler: nil)
+
          self.setNotification()
+         self.addbackgroundPlayerEnable()
          IQKeyboardManager.shared.enable = true
          return true
+    }
+    
+    func addbackgroundPlayerEnable()  {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [.defaultToSpeaker, .allowAirPlay])
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+        } catch {
+            print(error)
+        }
     }
     
     func setNotification()  {

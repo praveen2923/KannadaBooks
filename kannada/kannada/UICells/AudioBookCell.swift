@@ -10,6 +10,8 @@ import UIKit
 
 class AudioBookCell: UITableViewCell {
 
+    @IBOutlet weak var ibSubTitleLabel: UILabel!
+    @IBOutlet weak var ibTitleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,8 @@ class AudioBookCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func didTapOnLikeBtn(_ sender: Any) {
+    }
+    @IBAction func didTapOnDownalodBtn(_ sender: Any) {
+    }
 }

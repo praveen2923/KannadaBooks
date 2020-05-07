@@ -81,7 +81,7 @@ class APIManager: NSObject {
         }
     }
     
-    // Get Menu information for Menu id
+    // Get Menu information for Menu ID
     class func getFeedformationByMenuId(_ menuId: String?, completion: @escaping CompletionHandler) {
         let bParameters:Parameters = ["id" : menuId ?? "", ]
         APIManager.serviceRequest(APIList.getFeedById.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
@@ -90,6 +90,16 @@ class APIManager: NSObject {
                }
          }
     }
+    
+    // Get List of Audio Books
+       class func getListOfAudioBooks(completion: @escaping CompletionHandler) {
+        let bParameters:Parameters = [:]
+           APIManager.serviceRequest(APIList.getAudiobooks.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
+                  APIManager.responseHandle(result) { (error, result) in
+                      completion(error, result)
+                  }
+            }
+       }
     
     
     
@@ -131,29 +141,6 @@ class APIManager: NSObject {
            completion(true, nil)  // No Data Response
         }
     }
-    
-    
-    
-     
-        // Login Service NOT USed
-        class func loginService(_ parameters: NSDictionary, completion: @escaping CompletionHandler) {
-    //        let bParameters:Parameters = [
-    //              "email" : parameters["email"] as? String ?? "",
-    //              "password": parameters["password"] as? String ?? ""
-    //           ]
-    //
-    //        let bHTTPHeaders: HTTPHeaders = [
-    //            "Content-Type" : "application/x-www-form-urlencoded",
-    //            "Accept" : "application/json",
-    //        ]
-    //
-            
-    //        APIManager.serviceRequest(APIList.userLogin.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-    //            APIManager.responseHandler(result) { (error, result) in
-    //                completion(error, result)
-    //            }
-    //        }
-        }
         
          // Registor Service Push Notification
         class func registorService(completion: @escaping CompletionHandler) {
