@@ -33,7 +33,7 @@ class AudioBookViewController: UIViewController {
         
         self.configureTableView()
         self.ibcMoveAudioview.constant = 124
-        
+        self.ibPlayBtn.isHidden = true
         self.getAudioFiles()
     }
     
@@ -109,7 +109,8 @@ class AudioBookViewController: UIViewController {
             if  self.player?.currentItem?.isPlaybackLikelyToKeepUp ?? false {
                 self.padlock.isAnimating = false
                 self.padlock.isHidden = true
-                 self.addObserver()
+                self.ibPlayBtn.isHidden = false
+                self.addObserver()
                 print("loadingIndicatorView.stopAnimating()")
             } else {
                // loadingIndicatorView.startAnimating() or something else
@@ -173,9 +174,11 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
         self.padlock.isAnimating = true
         self.view.layoutIfNeeded()
         self.ibcMoveAudioview.constant = 0
-        UIView.animate(withDuration: 0.5) {
-             self.view.layoutIfNeeded()
-        }
+        UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
+        
+        let cell = self.tableView.cellForRow(at: indexPath) as? AudioBookCell
+        cell?.ibBackgroundview.backgroundColor = UIColor(named: "")
+        
         let btn = UIButton()
         btn.tag = indexPath.row
         self.didTapOnPlayBtn(btn)
@@ -200,15 +203,6 @@ class CustomUISlider : UISlider {
     }
 }
 
-
-
-
-
-
-
-
-
-
 extension UIView {
     func rotate360Degrees(duration: CFTimeInterval = 3) {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
@@ -224,7 +218,7 @@ extension UIView {
 class CircleView: UIView {
 
     var foregroundColor = UIColor.white
-    var lineWidth: CGFloat = 3.0
+    var lineWidth: CGFloat = 4.0
 
     var isAnimating = false {
         didSet {

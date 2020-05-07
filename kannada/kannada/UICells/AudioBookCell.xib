@@ -108,6 +108,7 @@
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <viewLayoutGuide key="safeArea" id="aFW-ZI-EFd"/>
             <connections>
+                <outlet property="ibBackgroundview" destination="zbk-Q0-UNS" id="dM0-8d-DeZ"/>
                 <outlet property="ibSubTitleLabel" destination="bmn-Cn-VkR" id="2xy-Ay-mOr"/>
                 <outlet property="ibTitleLabel" destination="QEP-3y-9Jb" id="pKR-eV-yic"/>
             </connections>

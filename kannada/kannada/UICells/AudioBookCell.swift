@@ -10,6 +10,7 @@ import UIKit
 
 class AudioBookCell: UITableViewCell {
 
+    @IBOutlet weak var ibBackgroundview: UIView!
     @IBOutlet weak var ibSubTitleLabel: UILabel!
     @IBOutlet weak var ibTitleLabel: UILabel!
     override func awakeFromNib() {
