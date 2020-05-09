@@ -63,17 +63,25 @@
                                     <action selector="didTapOnLikeBtn:" destination="9ag-iC-sQb" eventType="touchUpInside" id="k77-ux-XW1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.5k" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yg-ga-2vM">
+                                <rect key="frame" x="237.5" y="17.5" width="19.5" height="11"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QEP-3y-9Jb" firstAttribute="top" secondItem="zbk-Q0-UNS" secondAttribute="top" constant="8" id="2iQ-BQ-Cy3"/>
                             <constraint firstAttribute="trailing" secondItem="uSm-5P-spQ" secondAttribute="trailing" constant="10" id="6Kq-Rq-5W9"/>
+                            <constraint firstItem="6yg-ga-2vM" firstAttribute="centerX" secondItem="6uG-Na-fXr" secondAttribute="centerX" id="8cm-Hb-Zfu"/>
                             <constraint firstItem="eP3-Wt-9ZJ" firstAttribute="leading" secondItem="zbk-Q0-UNS" secondAttribute="leading" id="HGy-g4-YsJ"/>
                             <constraint firstItem="6uG-Na-fXr" firstAttribute="leading" secondItem="QEP-3y-9Jb" secondAttribute="trailing" constant="10" id="HvF-Zh-u3O"/>
                             <constraint firstItem="QEP-3y-9Jb" firstAttribute="leading" secondItem="eP3-Wt-9ZJ" secondAttribute="trailing" constant="15" id="Jec-NP-Scj"/>
                             <constraint firstItem="6uG-Na-fXr" firstAttribute="height" secondItem="uSm-5P-spQ" secondAttribute="height" id="NzX-eX-Dzw"/>
                             <constraint firstAttribute="bottom" secondItem="bmn-Cn-VkR" secondAttribute="bottom" constant="2" id="Swt-0n-czT"/>
                             <constraint firstItem="uSm-5P-spQ" firstAttribute="centerY" secondItem="zbk-Q0-UNS" secondAttribute="centerY" id="b2e-bh-zJx"/>
+                            <constraint firstItem="6yg-ga-2vM" firstAttribute="centerY" secondItem="6uG-Na-fXr" secondAttribute="centerY" id="bwo-BI-8AS"/>
                             <constraint firstItem="6uG-Na-fXr" firstAttribute="leading" secondItem="bmn-Cn-VkR" secondAttribute="trailing" constant="10" id="dEC-pR-OkI"/>
                             <constraint firstItem="6uG-Na-fXr" firstAttribute="centerY" secondItem="uSm-5P-spQ" secondAttribute="centerY" id="g4v-rA-QoZ"/>
                             <constraint firstItem="bmn-Cn-VkR" firstAttribute="leading" secondItem="eP3-Wt-9ZJ" secondAttribute="trailing" constant="15" id="gMK-4n-y5M"/>
@@ -109,10 +117,12 @@
             <viewLayoutGuide key="safeArea" id="aFW-ZI-EFd"/>
             <connections>
                 <outlet property="ibBackgroundview" destination="zbk-Q0-UNS" id="dM0-8d-DeZ"/>
+                <outlet property="ibLikeBtn" destination="6uG-Na-fXr" id="7tB-pq-AJm"/>
                 <outlet property="ibSubTitleLabel" destination="bmn-Cn-VkR" id="2xy-Ay-mOr"/>
                 <outlet property="ibTitleLabel" destination="QEP-3y-9Jb" id="pKR-eV-yic"/>
+                <outlet property="intotslLikes" destination="6yg-ga-2vM" id="56V-w5-AqO"/>
             </connections>
-            <point key="canvasLocation" x="-94" y="-78"/>
+            <point key="canvasLocation" x="-94.20289855072464" y="-78.348214285714278"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import AuthenticationServices
 
 class AudioBookViewController: UIViewController {
     @IBOutlet weak var padlock: CircleView!
@@ -26,7 +26,7 @@ class AudioBookViewController: UIViewController {
     var player : AVPlayer?
     private var playbackLikelyToKeepUpContext = 0
     var audioBooks = [AudioBook]()
-    
+    @IBOutlet weak var loginProviderStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,47 @@ class AudioBookViewController: UIViewController {
         self.ibcMoveAudioview.constant = 124
         self.ibPlayBtn.isHidden = true
         self.getAudioFiles()
+//          setupProviderLoginView()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+          super.viewDidAppear(animated)
+          performExistingAccountSetupFlows()
+      }
+    
+//    /// - Tag: add_appleid_button
+//      func setupProviderLoginView() {
+//          let authorizationButton = ASAuthorizationAppleIDButton()
+//          authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+//          self.loginProviderStackView.addArrangedSubview(authorizationButton)
+//      }
+      
+      // - Tag: perform_appleid_password_request
+      /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
+      func performExistingAccountSetupFlows() {
+          // Prepare requests for both Apple ID and password providers.
+          let requests = [ASAuthorizationAppleIDProvider().createRequest(),
+                          ASAuthorizationPasswordProvider().createRequest()]
+          
+          // Create an authorization controller with the given requests.
+          let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+          authorizationController.delegate = self
+          authorizationController.presentationContextProvider = self
+          authorizationController.performRequests()
+      }
+      
+      /// - Tag: perform_appleid_request
+      @objc
+      func handleAuthorizationAppleIDButtonPress() {
+          let appleIDProvider = ASAuthorizationAppleIDProvider()
+          let request = appleIDProvider.createRequest()
+          request.requestedScopes = [.fullName, .email]
+          
+          let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+          authorizationController.delegate = self
+          authorizationController.presentationContextProvider = self
+          authorizationController.performRequests()
+      }
     
     func getAudioFiles()  {
       self.showeLoading()
@@ -70,14 +110,31 @@ class AudioBookViewController: UIViewController {
         }else{
             self.ibPlayBtn.isSelected = true
             
-            if let urlString = audioBooks[(sender as! UIButton).tag].imageurl {
-                guard let url = URL.init(string: urlString) else { return }
-                let playerItem = AVPlayerItem.init(url: url)
+            if let endpoint = audioBooks[(sender as! UIButton).tag].audiourl {
+                let fullurl = APIList.BOOKBaseUrl + endpoint
+                guard let urlS = URL.init(string: fullurl) else { return }
+
+                let playerItem = AVPlayerItem.init(url:urlS)
                 self.player = AVPlayer.init(playerItem: playerItem)
+              
+                self.player?.automaticallyWaitsToMinimizeStalling = true
+                self.player?.playImmediately(atRate: 1.0)
                 self.player?.play()
+                self.player?.volume = 1.0   
+                self.player?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 self.player?.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp", options: .new, context: &playbackLikelyToKeepUpContext)
             }
             
+        }
+    }
+    
+    @IBAction func playerSeektoSlider(_ sender: Any) {
+        let value = self.ibAudioSliderBar.value
+          if let totalDuration = self.player?.currentItem?.duration {
+            let durationToSeek = Float(CMTimeGetSeconds(totalDuration)) * value
+            print(durationToSeek)
+            self.player?.seek(to:CMTimeMakeWithSeconds(Float64(durationToSeek), preferredTimescale: CMTimeScale(NSEC_PER_SEC)))
+ 
         }
     }
     
@@ -105,17 +162,22 @@ class AudioBookViewController: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+
         if context == &playbackLikelyToKeepUpContext {
+            
             if  self.player?.currentItem?.isPlaybackLikelyToKeepUp ?? false {
                 self.padlock.isAnimating = false
                 self.padlock.isHidden = true
                 self.ibPlayBtn.isHidden = false
                 self.addObserver()
+                self.player?.play()
                 print("loadingIndicatorView.stopAnimating()")
             } else {
                // loadingIndicatorView.startAnimating() or something else
                 print("loadingIndicatorView.startAnimating()")
+                print(self.player?.reasonForWaitingToPlay ?? "")
                 self.padlock.isAnimating = true
+                self.ibPlayBtn.isHidden = true
             }
         }
     }
@@ -162,6 +224,7 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
         cell.ibTitleLabel.text = self.audioBooks[indexPath.row].title
         cell.ibSubTitleLabel.text = self.audioBooks[indexPath.row].subtitle
         cell.selectionStyle = .none
+        cell.delegate = self
         return cell
                   
     }
@@ -175,13 +238,42 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
         self.view.layoutIfNeeded()
         self.ibcMoveAudioview.constant = 0
         UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-        
-        let cell = self.tableView.cellForRow(at: indexPath) as? AudioBookCell
-        cell?.ibBackgroundview.backgroundColor = UIColor(named: "")
-        
+
         let btn = UIButton()
         btn.tag = indexPath.row
         self.didTapOnPlayBtn(btn)
+    }
+}
+
+
+extension AudioBookViewController: AudioBookCellDelegate {
+    func didTapOnLikeBtn(_ cell : AudioBookCell) {
+        let showoption = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.actionSheet)
+        let authorizationButton = ASAuthorizationAppleIDButton()
+         
+              authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+        showoption.view.addSubview(authorizationButton)
+        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
+
+        showoption.addAction(cancelAction)
+        self.present(showoption, animated: true, completion: nil)
+        
+        cell.ibLikeBtn.setImage(UIImage(named: "hartfill"), for: .normal)
+    }
+    
+    func didTapOnDownalodBtn(_ cell : AudioBookCell){
+        
+    }
+}
+
+extension AudioBookViewController: ASAuthorizationControllerDelegate {
+}
+
+
+extension AudioBookViewController: ASAuthorizationControllerPresentationContextProviding {
+    /// - Tag: provide_presentation_anchor
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
     }
 }
 

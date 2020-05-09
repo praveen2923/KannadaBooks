@@ -18,7 +18,7 @@ public class AudioBook {
 	public var subtitle : String?
 	public var imageurl : String?
 	public var likes : String?
-
+    public var audiourl : String?
 /**
     Returns an array of models based on given dictionary.
     
@@ -56,6 +56,7 @@ public class AudioBook {
 		subtitle = dictionary["subtitle"] as? String
 		imageurl = dictionary["imageurl"] as? String
 		likes = dictionary["likes"] as? String
+        audiourl = dictionary["audiourl"] as? String
 	}
 
 		
@@ -73,7 +74,7 @@ public class AudioBook {
 		dictionary.setValue(self.subtitle, forKey: "subtitle")
 		dictionary.setValue(self.imageurl, forKey: "imageurl")
 		dictionary.setValue(self.likes, forKey: "likes")
-
+        dictionary.setValue(self.likes, forKey: "audiourl")
 		return dictionary
 	}
 

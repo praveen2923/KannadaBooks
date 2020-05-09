@@ -67,7 +67,7 @@
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
 		E07CAF08246434AF00FAC819 /* AudioBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
-		E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "ಪುಸ್ತಕಗಳು.app"; path = "/Users/icluster/Documents/kannada/kannada/build/Debug-iphoneos/ಪುಸ್ತಕಗಳು.app"; sourceTree = "<absolute>"; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
@@ -159,7 +159,6 @@
 				E0B0B1CE2445CCB300FF986B /* kannada */,
 				41BA170AA39F5D6DDA3766EB /* Pods */,
 				CFF5563CC4173A09BF46B73C /* Frameworks */,
-				E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */,
 			);
 			sourceTree = "<group>";
 		};

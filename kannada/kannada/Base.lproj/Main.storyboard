@@ -643,8 +643,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvK-ko-4dT">
-                                <rect key="frame" x="0.0" y="740" width="414" height="124"/>
+                                <rect key="frame" x="0.0" y="736.5" width="414" height="127.5"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9I-Vp-GnA" customClass="CircleView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
+                                        <rect key="frame" x="187" y="77.5" width="40" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="qQM-kD-tXS"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ನಿಜಗಲ್ಲಿನ ರಾಣಿ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-Ai-cyp">
                                         <rect key="frame" x="10" y="15" width="394" height="13.5"/>
                                         <constraints>
@@ -654,43 +667,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9I-Vp-GnA" customClass="CircleView" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
-                                        <rect key="frame" x="186.5" y="73" width="42" height="42"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="qQM-kD-tXS"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="22"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-X8-0OO">
-                                        <rect key="frame" x="117.5" y="74" width="50" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="QBg-Ht-f4q"/>
-                                            <constraint firstAttribute="height" constant="40" id="dyL-TA-t92"/>
-                                        </constraints>
-                                        <state key="normal" image="backward.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="didTapOnBackBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="yGX-aB-UBh"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-kc-lYB">
-                                        <rect key="frame" x="248" y="74" width="50" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="L4l-x9-B0o"/>
-                                            <constraint firstAttribute="width" constant="50" id="RSS-ec-PzN"/>
-                                        </constraints>
-                                        <state key="normal" image="forward.end.alt.fill" catalog="system"/>
+                                        <rect key="frame" x="249" y="77.5" width="50" height="40"/>
+                                        <state key="normal" image="forward.fill" catalog="system"/>
                                         <connections>
                                             <action selector="didTapOnForwordBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="Bvz-SK-fQq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmn-AJ-uTX">
-                                        <rect key="frame" x="182.5" y="69" width="50" height="50"/>
+                                        <rect key="frame" x="182" y="72.5" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PIF-u2-fPL"/>
                                             <constraint firstAttribute="width" constant="50" id="W7F-nB-FQ3"/>
@@ -702,14 +687,17 @@
                                             <action selector="didTapOnPlayBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="fsl-bb-QCM"/>
                                         </connections>
                                     </button>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="d4l-07-XeX" customClass="CustomUISlider" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="54" width="312" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="6bw-e2-xMC"/>
-                                        </constraints>
-                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-c4-E13">
+                                        <rect key="frame" x="315" y="77" width="50" height="40"/>
+                                        <state key="normal" image="goforward.15" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapOnForwordBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="pn2-Sa-sR1"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgT-vB-Ym4">
-                                        <rect key="frame" x="4" y="43.5" width="35.5" height="21"/>
+                                        <rect key="frame" x="4" y="46" width="35.5" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="35.5" id="16S-WK-Xkf"/>
                                         </constraints>
@@ -718,7 +706,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--:--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGz-L6-Hq5">
-                                        <rect key="frame" x="368" y="43.5" width="42" height="21"/>
+                                        <rect key="frame" x="368" y="46" width="42" height="14.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="1gS-SY-nAY"/>
                                         </constraints>
@@ -726,30 +714,66 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-X8-0OO">
+                                        <rect key="frame" x="108.5" y="77.5" width="50" height="40"/>
+                                        <state key="normal" image="backward.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapOnBackBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="yGX-aB-UBh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A06-Qa-6iX">
+                                        <rect key="frame" x="47" y="77" width="50" height="40"/>
+                                        <state key="normal" image="gobackward.15" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapOnBackBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="GjA-pi-K7G"/>
+                                        </connections>
+                                    </button>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4l-07-XeX" customClass="CustomUISlider" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
+                                        <rect key="frame" x="45" y="50" width="312" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6bw-e2-xMC"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="playerSeektoSlider:" destination="hus-Q9-dcS" eventType="valueChanged" id="kN7-kv-Ihh"/>
+                                        </connections>
+                                    </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549018" blue="0.16862745098039217" alpha="0.74438820422535212" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="dgT-vB-Ym4" firstAttribute="leading" secondItem="zvK-ko-4dT" secondAttribute="leading" constant="4" id="00B-cA-Dns"/>
-                                    <constraint firstItem="d4l-07-XeX" firstAttribute="leading" secondItem="dgT-vB-Ym4" secondAttribute="trailing" constant="12.5" id="4NF-NF-4xo"/>
-                                    <constraint firstAttribute="height" constant="124" id="AF4-7O-zpo"/>
+                                    <constraint firstItem="d4l-07-XeX" firstAttribute="leading" secondItem="dgT-vB-Ym4" secondAttribute="trailing" constant="7.5" id="4NF-NF-4xo"/>
+                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="width" secondItem="jmn-AJ-uTX" secondAttribute="width" id="5Zf-NP-VtY"/>
                                     <constraint firstItem="t9I-Vp-GnA" firstAttribute="centerX" secondItem="jmn-AJ-uTX" secondAttribute="centerX" id="Atw-tK-GlC"/>
-                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="top" secondItem="d4l-07-XeX" secondAttribute="bottom" constant="-10" id="DCW-Jw-xM5"/>
-                                    <constraint firstAttribute="bottom" secondItem="tIC-X8-0OO" secondAttribute="bottom" constant="10" id="HHH-6f-3vP"/>
-                                    <constraint firstItem="d4l-07-XeX" firstAttribute="top" secondItem="Jv7-Ai-cyp" secondAttribute="bottom" constant="25.5" id="Hpb-lh-hoB"/>
-                                    <constraint firstItem="CGz-L6-Hq5" firstAttribute="centerY" secondItem="d4l-07-XeX" secondAttribute="centerY" constant="-15" id="IAT-B1-y5E"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kjl-kc-lYB" secondAttribute="bottom" constant="10" id="J66-7I-00N"/>
+                                    <constraint firstItem="A06-Qa-6iX" firstAttribute="width" secondItem="tIC-X8-0OO" secondAttribute="width" id="E3X-Zt-W23"/>
+                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="height" secondItem="jmn-AJ-uTX" secondAttribute="height" multiplier="0.8" id="GsO-hP-mSs"/>
+                                    <constraint firstItem="d4l-07-XeX" firstAttribute="top" secondItem="Jv7-Ai-cyp" secondAttribute="bottom" constant="21.5" id="Hpb-lh-hoB"/>
+                                    <constraint firstItem="CGz-L6-Hq5" firstAttribute="centerY" secondItem="d4l-07-XeX" secondAttribute="centerY" constant="-11.75" id="IAT-B1-y5E"/>
                                     <constraint firstItem="Jv7-Ai-cyp" firstAttribute="top" secondItem="zvK-ko-4dT" secondAttribute="top" constant="15" id="Kil-DY-Miv"/>
+                                    <constraint firstItem="A06-Qa-6iX" firstAttribute="centerY" secondItem="tIC-X8-0OO" secondAttribute="centerY" id="NNp-xq-imZ"/>
+                                    <constraint firstItem="8lS-c4-E13" firstAttribute="leading" secondItem="Kjl-kc-lYB" secondAttribute="trailing" constant="10" id="O9C-9L-27l"/>
                                     <constraint firstAttribute="bottom" secondItem="jmn-AJ-uTX" secondAttribute="bottom" constant="5" id="QWX-Pg-vCr"/>
                                     <constraint firstAttribute="trailing" secondItem="CGz-L6-Hq5" secondAttribute="trailing" constant="4" id="TJd-bw-J2X"/>
+                                    <constraint firstItem="A06-Qa-6iX" firstAttribute="height" secondItem="tIC-X8-0OO" secondAttribute="height" id="UBS-wu-mk3"/>
                                     <constraint firstAttribute="trailing" secondItem="Jv7-Ai-cyp" secondAttribute="trailing" constant="10" id="XVg-ke-63S"/>
+                                    <constraint firstAttribute="height" constant="127.5" id="XYB-vB-fWy"/>
                                     <constraint firstItem="Jv7-Ai-cyp" firstAttribute="leading" secondItem="zvK-ko-4dT" secondAttribute="leading" constant="10" id="bny-rS-ydh"/>
-                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="leading" secondItem="jmn-AJ-uTX" secondAttribute="trailing" constant="15.5" id="cUp-jw-YyF"/>
-                                    <constraint firstItem="jmn-AJ-uTX" firstAttribute="leading" secondItem="tIC-X8-0OO" secondAttribute="trailing" constant="15" id="co1-nG-xV2"/>
-                                    <constraint firstItem="CGz-L6-Hq5" firstAttribute="leading" secondItem="d4l-07-XeX" secondAttribute="trailing" constant="8" id="gjv-i9-p0B"/>
-                                    <constraint firstItem="dgT-vB-Ym4" firstAttribute="centerY" secondItem="d4l-07-XeX" secondAttribute="centerY" constant="-15" id="hF7-9i-0gE"/>
-                                    <constraint firstItem="jmn-AJ-uTX" firstAttribute="centerX" secondItem="zvK-ko-4dT" secondAttribute="centerX" constant="0.5" id="usA-kL-EXP"/>
+                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="leading" secondItem="jmn-AJ-uTX" secondAttribute="trailing" constant="10" id="cUp-jw-YyF"/>
+                                    <constraint firstItem="8lS-c4-E13" firstAttribute="centerY" secondItem="Kjl-kc-lYB" secondAttribute="centerY" id="cfX-RQ-YtN"/>
+                                    <constraint firstItem="jmn-AJ-uTX" firstAttribute="leading" secondItem="tIC-X8-0OO" secondAttribute="trailing" constant="10" id="co1-nG-xV2"/>
+                                    <constraint firstItem="8lS-c4-E13" firstAttribute="width" secondItem="Kjl-kc-lYB" secondAttribute="width" id="d79-yg-LUS"/>
+                                    <constraint firstItem="8lS-c4-E13" firstAttribute="height" secondItem="Kjl-kc-lYB" secondAttribute="height" id="eDz-LA-BGC"/>
+                                    <constraint firstItem="CGz-L6-Hq5" firstAttribute="leading" secondItem="d4l-07-XeX" secondAttribute="trailing" constant="13" id="gjv-i9-p0B"/>
+                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="centerY" secondItem="jmn-AJ-uTX" secondAttribute="centerY" id="grW-O3-AqC"/>
+                                    <constraint firstItem="dgT-vB-Ym4" firstAttribute="centerY" secondItem="d4l-07-XeX" secondAttribute="centerY" constant="-11.75" id="hF7-9i-0gE"/>
+                                    <constraint firstItem="Kjl-kc-lYB" firstAttribute="width" secondItem="jmn-AJ-uTX" secondAttribute="width" id="idN-Cq-JjD"/>
+                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="centerY" secondItem="jmn-AJ-uTX" secondAttribute="centerY" id="l54-AF-9Zo"/>
+                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="leading" secondItem="A06-Qa-6iX" secondAttribute="trailing" constant="10" id="mxk-n8-DcF"/>
+                                    <constraint firstItem="tIC-X8-0OO" firstAttribute="height" secondItem="jmn-AJ-uTX" secondAttribute="height" multiplier="0.8" id="nI1-d6-jkr"/>
+                                    <constraint firstItem="jmn-AJ-uTX" firstAttribute="centerX" secondItem="zvK-ko-4dT" secondAttribute="centerX" id="usA-kL-EXP"/>
                                     <constraint firstItem="t9I-Vp-GnA" firstAttribute="centerY" secondItem="jmn-AJ-uTX" secondAttribute="centerY" id="vMU-b7-2wo"/>
-                                    <constraint firstItem="t9I-Vp-GnA" firstAttribute="height" secondItem="jmn-AJ-uTX" secondAttribute="height" multiplier="0.84" id="wsb-cc-eBh"/>
+                                    <constraint firstItem="t9I-Vp-GnA" firstAttribute="height" secondItem="jmn-AJ-uTX" secondAttribute="height" multiplier="0.84" constant="-2" id="wsb-cc-eBh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -768,7 +792,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s6M-Fj-5KT">
-                                <rect key="frame" x="0.0" y="44" width="414" height="688"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="684.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -995,7 +1019,9 @@
     </scenes>
     <resources>
         <image name="backward.fill" catalog="system" width="128" height="79"/>
-        <image name="forward.end.alt.fill" catalog="system" width="128" height="66"/>
+        <image name="forward.fill" catalog="system" width="128" height="79"/>
+        <image name="gobackward.15" catalog="system" width="121" height="128"/>
+        <image name="goforward.15" catalog="system" width="121" height="128"/>
         <image name="imenu" width="25" height="25"/>
         <image name="kannada" width="305.5" height="204"/>
         <image name="menu" width="30" height="30"/>

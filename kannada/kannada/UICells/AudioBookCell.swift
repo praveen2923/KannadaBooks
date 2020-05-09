@@ -8,11 +8,20 @@
 
 import UIKit
 
+protocol AudioBookCellDelegate: class {
+    func didTapOnLikeBtn(_ cell : AudioBookCell)
+    func didTapOnDownalodBtn(_ cell : AudioBookCell)
+}
+
 class AudioBookCell: UITableViewCell {
 
+    @IBOutlet weak var intotslLikes: UILabel!
+    @IBOutlet weak var ibLikeBtn: UIButton!
     @IBOutlet weak var ibBackgroundview: UIView!
     @IBOutlet weak var ibSubTitleLabel: UILabel!
     @IBOutlet weak var ibTitleLabel: UILabel!
+    
+    weak var delegate: AudioBookCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,7 +34,13 @@ class AudioBookCell: UITableViewCell {
     }
     
     @IBAction func didTapOnLikeBtn(_ sender: Any) {
+        self.delegate?.didTapOnLikeBtn(self)
     }
+    
+    
     @IBAction func didTapOnDownalodBtn(_ sender: Any) {
+        self.delegate?.didTapOnDownalodBtn(self)
     }
+    
+    
 }
