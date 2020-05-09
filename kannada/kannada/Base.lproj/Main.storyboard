@@ -833,7 +833,7 @@
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" constant="2" id="Ps0-vU-Pp1"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="U3r-FP-1KD"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="top" secondItem="Jmi-7q-7nO" secondAttribute="top" id="jw8-uz-FaR"/>
-                            <constraint firstItem="Au4-AJ-rea" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" id="zpK-Sf-btq"/>
+                            <constraint firstItem="Au4-AJ-rea" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" constant="500" id="zpK-Sf-btq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmi-7q-7nO"/>
                     </view>
