@@ -14,10 +14,10 @@ class MANavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let color = UIColor.init(named: "bgcolor")
-        UINavigationBar.appearance().barTintColor = color
-        UINavigationBar.appearance().tintColor =  .systemGreen
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
-        UINavigationBar.appearance().isTranslucent = false
+        self.navigationBar.barTintColor = color
+        self.navigationBar.tintColor =  .systemGreen
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
+        self.navigationBar.isTranslucent = false
 
     }
     

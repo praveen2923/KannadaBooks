@@ -9,11 +9,14 @@
 import UIKit
 import AVFoundation
 import AuthenticationServices
+import FBSDKLoginKit
 
-class AudioBookViewController: UIViewController {
+class AudioBookViewController: UIViewController, LoginButtonDelegate {
+ 
     @IBOutlet weak var padlock: CircleView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var ibFaceLoginView: UIView!
     @IBOutlet weak var ibcMoveAudioview: NSLayoutConstraint!
     @IBOutlet weak var ibAudioSliderBar: CustomUISlider!
     @IBOutlet weak var ibBooNameLbl: UILabel!
@@ -35,23 +38,44 @@ class AudioBookViewController: UIViewController {
         self.ibcMoveAudioview.constant = 124
         self.ibPlayBtn.isHidden = true
         self.getAudioFiles()
-//          setupProviderLoginView()
+        self.setupProviderLoginView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
           super.viewDidAppear(animated)
-          performExistingAccountSetupFlows()
-      }
+       // self.performExistingAccountSetupFlows()
+        self.facbookLogin()
+    }
+    
+    //MARK:- Login Maintain
+    func facbookLogin()  {
+        
+        let fbLoginButton = FBLoginButton()
+        fbLoginButton.permissions = ["public_profile", "email"]
+        fbLoginButton.delegate = self
+        fbLoginButton.frame =  CGRect(x: 0, y: 0, width: self.ibFaceLoginView.frame.size.width, height: self.ibFaceLoginView.frame.size.height)
+        
+        self.ibFaceLoginView.addSubview(fbLoginButton)
+        
+    }
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+         print()
+     }
+     
+     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+         print()
+     }
+    
     
 //    /// - Tag: add_appleid_button
-//      func setupProviderLoginView() {
-//          let authorizationButton = ASAuthorizationAppleIDButton()
-//          authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
-//          self.loginProviderStackView.addArrangedSubview(authorizationButton)
-//      }
+      func setupProviderLoginView() {
+          let authorizationButton = ASAuthorizationAppleIDButton()
+          authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
+          self.loginProviderStackView.addArrangedSubview(authorizationButton)
+      }
       
       // - Tag: perform_appleid_password_request
-      /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
       func performExistingAccountSetupFlows() {
           // Prepare requests for both Apple ID and password providers.
           let requests = [ASAuthorizationAppleIDProvider().createRequest(),
@@ -248,16 +272,6 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension AudioBookViewController: AudioBookCellDelegate {
     func didTapOnLikeBtn(_ cell : AudioBookCell) {
-        let showoption = UIAlertController(title: "", message: "", preferredStyle: UIAlertController.Style.actionSheet)
-        let authorizationButton = ASAuthorizationAppleIDButton()
-         
-              authorizationButton.addTarget(self, action: #selector(handleAuthorizationAppleIDButtonPress), for: .touchUpInside)
-        showoption.view.addSubview(authorizationButton)
-        let cancelAction = UIAlertAction(title: "ರದ್ದುಮಾಡಿ", style: .destructive, handler: nil)
-
-        showoption.addAction(cancelAction)
-        self.present(showoption, animated: true, completion: nil)
-        
         cell.ibLikeBtn.setImage(UIImage(named: "hartfill"), for: .normal)
     }
     

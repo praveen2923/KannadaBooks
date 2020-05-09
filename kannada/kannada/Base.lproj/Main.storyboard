@@ -668,7 +668,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjl-kc-lYB">
-                                        <rect key="frame" x="249" y="77.5" width="50" height="40"/>
+                                        <rect key="frame" x="242" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="forward.fill" catalog="system"/>
                                         <connections>
                                             <action selector="didTapOnForwordBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="Bvz-SK-fQq"/>
@@ -688,7 +688,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-c4-E13">
-                                        <rect key="frame" x="315" y="77" width="50" height="40"/>
+                                        <rect key="frame" x="302" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="goforward.15" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
@@ -715,14 +715,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIC-X8-0OO">
-                                        <rect key="frame" x="108.5" y="77.5" width="50" height="40"/>
+                                        <rect key="frame" x="122" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="backward.fill" catalog="system"/>
                                         <connections>
                                             <action selector="didTapOnBackBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="yGX-aB-UBh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A06-Qa-6iX">
-                                        <rect key="frame" x="47" y="77" width="50" height="40"/>
+                                        <rect key="frame" x="62" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="gobackward.15" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                         </state>
@@ -795,16 +795,45 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="684.5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-AJ-rea">
+                                <rect key="frame" x="0.0" y="723" width="414" height="139"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="htB-jX-2Gw">
+                                        <rect key="frame" x="20" y="10" width="374" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="JW9-wQ-RPo"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jt8-ff-xWY">
+                                        <rect key="frame" x="20" y="65" width="374" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.16078431372549018" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="htB-jX-2Gw" firstAttribute="top" secondItem="Au4-AJ-rea" secondAttribute="top" constant="10" id="3Fq-sJ-CFl"/>
+                                    <constraint firstAttribute="trailing" secondItem="htB-jX-2Gw" secondAttribute="trailing" constant="20" id="8vv-Dj-IHp"/>
+                                    <constraint firstAttribute="bottom" secondItem="jt8-ff-xWY" secondAttribute="bottom" constant="24" id="C6D-bD-CSI"/>
+                                    <constraint firstAttribute="trailing" secondItem="jt8-ff-xWY" secondAttribute="trailing" constant="20" id="D2b-AV-cBQ"/>
+                                    <constraint firstItem="jt8-ff-xWY" firstAttribute="top" secondItem="htB-jX-2Gw" secondAttribute="bottom" constant="9" id="Tyb-6a-NwP"/>
+                                    <constraint firstItem="htB-jX-2Gw" firstAttribute="leading" secondItem="Au4-AJ-rea" secondAttribute="leading" constant="20" id="oqw-8G-4eO"/>
+                                    <constraint firstItem="jt8-ff-xWY" firstAttribute="leading" secondItem="Au4-AJ-rea" secondAttribute="leading" constant="20" id="rGp-pX-L57"/>
+                                    <constraint firstAttribute="height" constant="139" id="uHH-cx-f6Y"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="leading" secondItem="Jmi-7q-7nO" secondAttribute="leading" id="3c4-J4-8VN"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="3t7-KF-79Q"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="leading" secondItem="Jmi-7q-7nO" secondAttribute="leading" id="Dgz-eK-GOZ"/>
+                            <constraint firstItem="Au4-AJ-rea" firstAttribute="leading" secondItem="Jmi-7q-7nO" secondAttribute="leading" id="HVv-zT-7if"/>
+                            <constraint firstItem="Au4-AJ-rea" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="MfW-AH-Kb3"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="top" secondItem="s6M-Fj-5KT" secondAttribute="bottom" constant="8" id="OS1-op-KK0"/>
                             <constraint firstItem="zvK-ko-4dT" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" constant="2" id="Ps0-vU-Pp1"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="trailing" secondItem="Jmi-7q-7nO" secondAttribute="trailing" id="U3r-FP-1KD"/>
                             <constraint firstItem="s6M-Fj-5KT" firstAttribute="top" secondItem="Jmi-7q-7nO" secondAttribute="top" id="jw8-uz-FaR"/>
+                            <constraint firstItem="Au4-AJ-rea" firstAttribute="bottom" secondItem="Jmi-7q-7nO" secondAttribute="bottom" id="zpK-Sf-btq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jmi-7q-7nO"/>
                     </view>
@@ -814,8 +843,10 @@
                         <outlet property="ibAudioSliderBar" destination="d4l-07-XeX" id="qLP-2n-D4o"/>
                         <outlet property="ibBooNameLbl" destination="Jv7-Ai-cyp" id="1Ao-Wa-0UG"/>
                         <outlet property="ibCurrentplaytTimeLbl" destination="dgT-vB-Ym4" id="bQy-Cv-4bP"/>
+                        <outlet property="ibFaceLoginView" destination="jt8-ff-xWY" id="d03-rK-tVa"/>
                         <outlet property="ibPlayBtn" destination="jmn-AJ-uTX" id="O9W-sd-q04"/>
                         <outlet property="ibcMoveAudioview" destination="Ps0-vU-Pp1" id="q6u-En-CyX"/>
+                        <outlet property="loginProviderStackView" destination="htB-jX-2Gw" id="Mwj-0G-bZ4"/>
                         <outlet property="padlock" destination="t9I-Vp-GnA" id="Y5V-eo-Ofd"/>
                         <outlet property="tableView" destination="s6M-Fj-5KT" id="shn-Cl-s4s"/>
                     </connections>
