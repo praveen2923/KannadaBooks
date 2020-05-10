@@ -17,7 +17,7 @@ class BookReader: UIViewController {
     
     var bookInfo : Book?
     var bookpdfurl : String?
-    var filePath : String?
+    var filePath : URL?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = bookInfo?.book_name
@@ -34,10 +34,13 @@ class BookReader: UIViewController {
 
         let fileManager = FileManager.default
 
-        if let path = self.filePath, fileManager.fileExists(atPath: path) {
-            let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: nil)
+        if let _ = self.filePath, fileManager.fileExists(atPath: filePath?.path ?? "") {
+            if let absoluteURL = self.filePath?.absoluteURL {
+                let pdfDATA = try? Data(contentsOf: absoluteURL)
+                let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [pdfDATA ?? ""], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                self.present(activityViewController, animated: true, completion: nil)
+            }
         } else {
             print("document was not found")
         }
@@ -71,7 +74,7 @@ class BookReader: UIViewController {
                         let theFileName = (url.absoluteString as NSString).lastPathComponent
                         if theFileName ==  "\(fileName).pdf"{
                             self.showFileFromLocal(url.absoluteURL)
-                            self.filePath = url.path
+                            self.filePath = url
                             print("file found in local storage")
                             isFileInLocal = true
                             break;
@@ -125,7 +128,7 @@ class BookReader: UIViewController {
                     if response.fileURL != nil, let filePath = response.fileURL?.absoluteString {
                         if let url = response.fileURL?.absoluteURL {
                              self.showFileFromLocal(url)
-                            self.filePath = response.fileURL?.path
+                            self.filePath = response.fileURL
                         }
                         self.hideLoading()
                         completionHandler(filePath, true)
