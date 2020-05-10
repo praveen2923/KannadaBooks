@@ -16,6 +16,7 @@ class AudioBookViewController: UIViewController {
     @IBOutlet weak var padlock: CircleView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var ibAudioTitle: UILabel!
     @IBOutlet weak var ibFaceLoginView: UIView!
     @IBOutlet weak var ibcMoveAudioview: NSLayoutConstraint!
     @IBOutlet weak var ibAudioSliderBar: CustomUISlider!
@@ -25,11 +26,12 @@ class AudioBookViewController: UIViewController {
     
     @IBOutlet weak var ibCurrentplaytTimeLbl: UILabel!
     @IBOutlet weak var ibAudioDurationLbl: UILabel!
+    @IBOutlet weak var loginProviderStackView: UIStackView!
     
     var player : AVPlayer?
     private var playbackLikelyToKeepUpContext = 0
     var audioBooks = [AudioBook]()
-    @IBOutlet weak var loginProviderStackView: UIStackView!
+    var timeObserver : Any?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,13 +105,15 @@ class AudioBookViewController: UIViewController {
         if ibPlayBtn.isSelected {
             self.ibPlayBtn.isSelected = false
             self.player?.pause()
-        }else if player != nil {
+        }else if self.player != nil {
             self.ibPlayBtn.isSelected = true
             self.player?.play()
         }else{
             self.ibPlayBtn.isSelected = true
             
             if let endpoint = audioBooks[(sender as! UIButton).tag].audiourl {
+                
+                self.ibAudioTitle.text = audioBooks[(sender as! UIButton).tag].title
                 let fullurl = APIList.BOOKBaseUrl + endpoint
                 guard let urlS = URL.init(string: fullurl) else { return }
 
@@ -120,7 +124,6 @@ class AudioBookViewController: UIViewController {
                 self.player?.playImmediately(atRate: 1.0)
                 self.player?.play()
                 self.player?.volume = 1.0   
-                self.player?.addObserver(self, forKeyPath: "status", options: [], context: nil)
                 self.player?.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp", options: .new, context: &playbackLikelyToKeepUpContext)
             }
             
@@ -142,7 +145,7 @@ class AudioBookViewController: UIViewController {
             self.ibAudioDurationLbl.text = self.getLabelString(CMTimeGetSeconds(stime))
         }
         
-        self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
+        self.timeObserver = self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
             if let duration = self.player?.currentItem?.duration {
                 print(duration)
               let duration = CMTimeGetSeconds(duration), time = CMTimeGetSeconds(time)
@@ -230,11 +233,18 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.player?.removeObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp")
+        self.player?.removeTimeObserver(self.timeObserver ?? (Any).self)
         self.padlock.isAnimating = true
+        self.ibPlayBtn.isHidden = true
+        self.ibPlayBtn.isSelected = false
+        self.player = nil
+       
         self.view.layoutIfNeeded()
-        self.ibcMoveAudioview.constant = 0
-        UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-
+        if  self.ibcMoveAudioview.constant != 0 {
+            self.ibcMoveAudioview.constant = 0
+            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
+        }
         let btn = UIButton()
         btn.tag = indexPath.row
         self.didTapOnPlayBtn(btn)

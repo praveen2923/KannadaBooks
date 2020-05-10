@@ -33,8 +33,7 @@ class BookReader: UIViewController {
     @objc func didTapOnShareBtn(_ sender: Any) {
 
         let fileManager = FileManager.default
-
-        if let _ = self.filePath, fileManager.fileExists(atPath: filePath?.path ?? "") {
+        if fileManager.fileExists(atPath: filePath?.path ?? "") {
             if let absoluteURL = self.filePath?.absoluteURL {
                 let pdfDATA = try? Data(contentsOf: absoluteURL)
                 let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [pdfDATA ?? ""], applicationActivities: nil)

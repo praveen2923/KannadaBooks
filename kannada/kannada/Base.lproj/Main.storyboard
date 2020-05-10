@@ -796,7 +796,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Au4-AJ-rea">
-                                <rect key="frame" x="0.0" y="723" width="414" height="139"/>
+                                <rect key="frame" x="0.0" y="1223" width="414" height="139"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="htB-jX-2Gw">
                                         <rect key="frame" x="20" y="10" width="374" height="46"/>
@@ -841,6 +841,7 @@
                         <outlet property="ibAudioControllerview" destination="zvK-ko-4dT" id="z4F-vc-OPX"/>
                         <outlet property="ibAudioDurationLbl" destination="CGz-L6-Hq5" id="13H-oV-eci"/>
                         <outlet property="ibAudioSliderBar" destination="d4l-07-XeX" id="qLP-2n-D4o"/>
+                        <outlet property="ibAudioTitle" destination="Jv7-Ai-cyp" id="tcY-h4-Rgr"/>
                         <outlet property="ibBooNameLbl" destination="Jv7-Ai-cyp" id="1Ao-Wa-0UG"/>
                         <outlet property="ibCurrentplaytTimeLbl" destination="dgT-vB-Ym4" id="bQy-Cv-4bP"/>
                         <outlet property="ibFaceLoginView" destination="jt8-ff-xWY" id="d03-rK-tVa"/>
