@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9O-2W-Eka">
-                        <rect key="frame" x="5" y="5" width="141" height="181"/>
+                        <rect key="frame" x="5" y="5" width="141" height="172"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ಹರ್ಷ ಮುದ್ರಣಾಲಯ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63k-Rf-YoK">
-                                <rect key="frame" x="0.0" y="139" width="141" height="36"/>
+                                <rect key="frame" x="0.0" y="130" width="141" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Nii-uS-37r"/>
                                 </constraints>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorimage" translatesAutoresizingMaskIntoConstraints="NO" id="w98-BX-O48">
-                                <rect key="frame" x="0.0" y="0.0" width="141" height="140"/>
+                                <rect key="frame" x="0.0" y="5" width="141" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="ZNm-nV-W2B"/>
                                 </constraints>
@@ -47,17 +47,17 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="2" height="2"/>
+                                <size key="value" width="3" height="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="2"/>
+                                <real key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="2"/>
+                                <real key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
