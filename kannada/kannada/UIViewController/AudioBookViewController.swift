@@ -115,14 +115,17 @@ class AudioBookViewController: UIViewController {
                 
                 self.ibAudioTitle.text = audioBooks[(sender as! UIButton).tag].title
                 let fullurl = APIList.BOOKBaseUrl + endpoint
+                print(fullurl)
                 guard let urlS = URL.init(string: fullurl) else { return }
 
                 let playerItem = AVPlayerItem.init(url:urlS)
+                playerItem.preferredForwardBufferDuration = 5
                 self.player = AVPlayer.init(playerItem: playerItem)
               
-                self.player?.automaticallyWaitsToMinimizeStalling = true
-                self.player?.playImmediately(atRate: 1.0)
+                self.player?.automaticallyWaitsToMinimizeStalling = false
+                self.player?.playImmediately(atRate: 5 )
                 self.player?.play()
+         
                 self.player?.volume = 1.0   
                 self.player?.addObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp", options: .new, context: &playbackLikelyToKeepUpContext)
             }
@@ -135,8 +138,7 @@ class AudioBookViewController: UIViewController {
           if let totalDuration = self.player?.currentItem?.duration {
             let durationToSeek = Float(CMTimeGetSeconds(totalDuration)) * value
             print(durationToSeek)
-            self.player?.seek(to:CMTimeMakeWithSeconds(Float64(durationToSeek), preferredTimescale: CMTimeScale(NSEC_PER_SEC)))
- 
+          //  self.player?.seek(to:CMTimeMakeWithSeconds(Float64(durationToSeek), preferredTimescale: CMTimeScale(NSEC_PER_SEC)))
         }
     }
     
@@ -144,7 +146,6 @@ class AudioBookViewController: UIViewController {
          if let stime = self.player?.currentItem?.duration {
             self.ibAudioDurationLbl.text = self.getLabelString(CMTimeGetSeconds(stime))
         }
-        
         self.timeObserver = self.player?.addPeriodicTimeObserver(forInterval: CMTime.init(value: 1, timescale: 1), queue: .main, using: { time in
             if let duration = self.player?.currentItem?.duration {
                 print(duration)
@@ -152,34 +153,37 @@ class AudioBookViewController: UIViewController {
               let progress = (time/duration)
               self.ibAudioSliderBar.value = Float(progress)
               self.ibCurrentplaytTimeLbl.text = self.getLabelString(time)
+                
             }
         })
     }
     
     func getLabelString(_ stime : Float64) -> String {
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
-        let audioDuration = formatter.string(from: TimeInterval(stime))!
-        return audioDuration
+        if !stime.isNaN {
+            let formatter = DateComponentsFormatter()
+            formatter.allowedUnits = [.hour, .minute, .second]
+            let audioDuration = formatter.string(from: TimeInterval(stime))!
+            return audioDuration
+        }else{
+            return ""
+        }
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
 
         if context == &playbackLikelyToKeepUpContext {
-            
-            if  self.player?.currentItem?.isPlaybackLikelyToKeepUp ?? false {
-                self.padlock.isAnimating = false
-                self.padlock.isHidden = true
-                self.ibPlayBtn.isHidden = false
-                self.addObserver()
-                self.player?.play()
-                print("loadingIndicatorView.stopAnimating()")
-            } else {
-                print("loadingIndicatorView.startAnimating()")
-                print(self.player?.reasonForWaitingToPlay ?? "")
-                self.padlock.isAnimating = true
-                self.ibPlayBtn.isHidden = true
-            }
+                if self.player?.rate == 0 {
+                    print("Stop Playing .startAnimating()")
+                    print(self.player?.reasonForWaitingToPlay ?? "")
+                    self.padlock.isAnimating = true
+                    self.ibPlayBtn.isHidden = true
+                }else{
+                    self.padlock.isAnimating = false
+                    self.padlock.isHidden = true
+                    self.ibPlayBtn.isHidden = false
+                    self.addObserver()
+                }
+        
         }
     }
     
@@ -234,7 +238,7 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.player?.removeObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp")
-        self.player?.removeTimeObserver(self.timeObserver ?? (Any).self)
+        self.timeObserver = nil
         self.padlock.isAnimating = true
         self.ibPlayBtn.isHidden = true
         self.ibPlayBtn.isSelected = false

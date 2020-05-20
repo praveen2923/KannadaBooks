@@ -62,12 +62,12 @@ extension AuthorView : UICollectionViewDelegate, UICollectionViewDataSource, UIC
         self.collectionView.register(UINib(nibName: "AuthorCell", bundle: nil), forCellWithReuseIdentifier: "AuthorCell")
         
         let screenWidth = UIScreen.main.bounds.width
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 10, right: 0)
-        layout.itemSize = CGSize(width: screenWidth/2 - 5, height: 230)
-        layout.minimumInteritemSpacing = 5
-        layout.minimumLineSpacing = 5
-        self.collectionView.collectionViewLayout = layout
+             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+             layout.sectionInset = UIEdgeInsets(top: 2, left: 1, bottom: 5, right: 0)
+             layout.itemSize = CGSize(width: screenWidth/3 - 1, height: 180)
+             layout.minimumInteritemSpacing = 1
+             layout.minimumLineSpacing = 1
+             self.collectionView.collectionViewLayout = layout
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
