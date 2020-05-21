@@ -506,35 +506,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OM6-nP-xdG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yun-vE-Gkj">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="AA3-eE-kQS">
-                                    <size key="itemSize" width="189" height="231"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="OM6-nP-xdG" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="EFC-Jk-W6w"/>
-                            <constraint firstItem="mJV-BU-dcJ" firstAttribute="bottom" secondItem="OM6-nP-xdG" secondAttribute="bottom" id="IPl-ts-iE3"/>
-                            <constraint firstItem="OM6-nP-xdG" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="W7H-iw-7dS"/>
-                            <constraint firstItem="OM6-nP-xdG" firstAttribute="top" secondItem="mJV-BU-dcJ" secondAttribute="top" id="u4h-hO-JfG"/>
+                            <constraint firstItem="yun-vE-Gkj" firstAttribute="top" secondItem="mJV-BU-dcJ" secondAttribute="top" id="55j-Ag-pwc"/>
+                            <constraint firstItem="yun-vE-Gkj" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="Udi-JL-8Sw"/>
+                            <constraint firstItem="yun-vE-Gkj" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="gym-pu-4Eg"/>
+                            <constraint firstItem="yun-vE-Gkj" firstAttribute="bottom" secondItem="mJV-BU-dcJ" secondAttribute="bottom" id="hr4-F9-qP2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJV-BU-dcJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mLF-pL-tMr"/>
                     <connections>
-                        <outlet property="collectionView" destination="OM6-nP-xdG" id="OrX-GI-5P9"/>
+                        <outlet property="tableView" destination="yun-vE-Gkj" id="lKG-mL-p6C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNv-K4-lep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="123"/>
+            <point key="canvasLocation" x="553.62318840579712" y="122.54464285714285"/>
         </scene>
         <!--More Details View-->
         <scene sceneID="YVu-Em-2Za">
@@ -686,7 +679,7 @@
                                             <action selector="didTapOnPlayBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="fsl-bb-QCM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-c4-E13">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lS-c4-E13">
                                         <rect key="frame" x="302" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="goforward.15" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
@@ -720,7 +713,7 @@
                                             <action selector="didTapOnBackBtn:" destination="hus-Q9-dcS" eventType="touchUpInside" id="yGX-aB-UBh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A06-Qa-6iX">
+                                    <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A06-Qa-6iX">
                                         <rect key="frame" x="62" y="77.5" width="50" height="40"/>
                                         <state key="normal" image="gobackward.15" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>

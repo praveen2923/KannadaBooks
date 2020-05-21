@@ -14,6 +14,8 @@
 		E00634732449F347001A728F /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00634722449F347001A728F /* Author.swift */; };
 		E0063475244A36F8001A728F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0063474244A36F8001A728F /* Book.swift */; };
 		E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0063476244A4AE6001A728F /* WebKit.framework */; };
+		E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */; };
+		E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */; };
 		E054853E244B07F70065532E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054853C244B07F70065532E /* HistoryCell.swift */; };
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
@@ -60,6 +62,8 @@
 		E00634722449F347001A728F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		E0063474244A36F8001A728F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E0063476244A4AE6001A728F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTableViewCell.swift; sourceTree = "<group>"; };
+		E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorTableViewCell.xib; sourceTree = "<group>"; };
 		E0513A06245065DB00F07E4F /* kannadabooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooks.entitlements; sourceTree = "<group>"; };
 		E0513A07245065E200F07E4F /* kannadabooksRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooksRelease.entitlements; sourceTree = "<group>"; };
 		E054853C244B07F70065532E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				E08854D0245D982600C78C75 /* BookListCell.xib */,
 				E0F6282B2461768D00DDA808 /* AudioBookCell.swift */,
 				E0F6282C2461768D00DDA808 /* AudioBookCell.xib */,
+				E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */,
+				E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */,
+				E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */,
 				E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */,
 				E08854D2245D982600C78C75 /* BookListCell.xib in Resources */,
 				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
@@ -373,6 +380,7 @@
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
 				E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */,
 				E0B0B2032448865200FF986B /* AuthorView.swift in Sources */,
+				E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */,
 				E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */,
 				E0F6282D2461768D00DDA808 /* AudioBookCell.swift in Sources */,
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,

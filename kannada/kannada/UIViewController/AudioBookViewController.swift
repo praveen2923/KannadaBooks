@@ -32,6 +32,7 @@ class AudioBookViewController: UIViewController {
     private var playbackLikelyToKeepUpContext = 0
     var audioBooks = [AudioBook]()
     var timeObserver : Any?
+    var playerIndex : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,11 +120,11 @@ class AudioBookViewController: UIViewController {
                 guard let urlS = URL.init(string: fullurl) else { return }
 
                 let playerItem = AVPlayerItem.init(url:urlS)
-                playerItem.preferredForwardBufferDuration = 5
+                playerItem.preferredForwardBufferDuration = 10
                 self.player = AVPlayer.init(playerItem: playerItem)
               
                 self.player?.automaticallyWaitsToMinimizeStalling = false
-                self.player?.playImmediately(atRate: 5 )
+                self.player?.playImmediately(atRate: 10)
                 self.player?.play()
          
                 self.player?.volume = 1.0   
@@ -187,13 +188,40 @@ class AudioBookViewController: UIViewController {
         }
     }
     
+    func playaudio(_ index : Int)  {
+        self.padlock.isAnimating = true
+        self.ibPlayBtn.isHidden = true
+        self.ibPlayBtn.isSelected = false
+        self.player = nil
+        let btn = UIButton()
+        btn.tag = index
+         self.playerIndex = index
+        self.didTapOnPlayBtn(btn)
+       
+    }
+    
     @IBAction func didTapOnForwordBtn(_ sender: Any) {
-        
+        if let currentIndex = self.playerIndex {
+            let nextPlayerIndex =  currentIndex + 1
+            if self.audioBooks.count <= nextPlayerIndex {
+                 print("Reached last index")
+            }else{
+                self.playaudio(nextPlayerIndex)
+            }
+        }
+       
     }
     
     
     @IBAction func didTapOnBackBtn(_ sender: Any) {
-        
+        if let currentIndex = self.playerIndex {
+            let previousIndex =  currentIndex - 1
+            if  previousIndex < 0 {
+                 print("Reached first index")
+            }else{
+                self.playaudio(previousIndex)
+            }
+        }
     }
     
 }
@@ -239,19 +267,13 @@ extension AudioBookViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.player?.removeObserver(self, forKeyPath: "currentItem.playbackLikelyToKeepUp")
         self.timeObserver = nil
-        self.padlock.isAnimating = true
-        self.ibPlayBtn.isHidden = true
-        self.ibPlayBtn.isSelected = false
-        self.player = nil
-       
         self.view.layoutIfNeeded()
         if  self.ibcMoveAudioview.constant != 0 {
             self.ibcMoveAudioview.constant = 0
             UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
         }
-        let btn = UIButton()
-        btn.tag = indexPath.row
-        self.didTapOnPlayBtn(btn)
+        self.playaudio(indexPath.row)
+
     }
 }
 
@@ -264,6 +286,7 @@ extension AudioBookViewController: AudioBookCellDelegate {
     func didTapOnDownalodBtn(_ cell : AudioBookCell){
         
     }
+    
 }
 
 
@@ -272,6 +295,7 @@ extension AudioBookViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization){
         
     }
+    
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error){
         
     }

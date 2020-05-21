@@ -12,13 +12,15 @@ import GoogleMobileAds
 
 class AuthorView: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
+ //   @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     var authors : [Author] = []
+    var list = ["ಜನಪ್ರಿಯ ಪುಸ್ತಕಗಳು","ಕನ್ನಡ ಸಾಹಿತ್ಯ","ಜನಪ್ರಿಯ ಬರಹಗಾರ","ಇತ್ತೀಚಿನ ಪುಸ್ತಕಗಳು", "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಪುಸ್ತಕಗಳು"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getAllAuthors()
-        self.setupCells()
+        self.configureTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +37,7 @@ class AuthorView: UIViewController {
                     }
                 }
                 self.authors = self.authors.shuffled()
-                self.collectionView.reloadData()
+                self.tableView.reloadData()
             }else{
                 
             }
@@ -53,46 +55,42 @@ extension AuthorView : GADBannerViewDelegate {
     }
 }
 
+extension AuthorView : UITableViewDelegate, UITableViewDataSource {
+    
+    func configureTableView()  {
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        let nib = UINib(nibName: "AuthorTableViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "AuthorTableViewCell")
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.list.count
+    }
 
-extension AuthorView : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func setupCells()  {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(UINib(nibName: "AuthorCell", bundle: nil), forCellWithReuseIdentifier: "AuthorCell")
-        
-        let screenWidth = UIScreen.main.bounds.width
-             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-             layout.sectionInset = UIEdgeInsets(top: 2, left: 1, bottom: 5, right: 0)
-             layout.itemSize = CGSize(width: screenWidth/3 - 1, height: 180)
-             layout.minimumInteritemSpacing = 1
-             layout.minimumLineSpacing = 1
-             self.collectionView.collectionViewLayout = layout
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.authors.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : AuthorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
-        cell.authorName.text = self.authors[indexPath.row].name
-        cell.authorimage.image = UIImage(named: "authorimage")
-        if let authorimage = self.authors[indexPath.row].image {
-            if authorimage != "" {
-                let fullurl = APIList.BOOKBaseUrl + authorimage
-                 cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
-            }
-        }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorTableViewCell", for: indexPath) as! AuthorTableViewCell
+        cell.authors = self.authors
+        cell.collectionView.reloadData()
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
-        controller.author = self.authors[indexPath.row]
-        controller.categoryid =  "1"
-        self.navigationController?.pushViewController(controller, animated: true)
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 195
+    }
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.list[section]
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+        headerView.tintColor =  self.tableView.backgroundColor //use any color you want here .red, .black etc
+        headerView.textLabel?.textColor = .white
+        headerView.textLabel?.font = .systemFont(ofSize: 15)
+    }
 }

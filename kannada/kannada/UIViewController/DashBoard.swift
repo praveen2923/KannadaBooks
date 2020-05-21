@@ -121,6 +121,7 @@ class DashBoard: UIViewController  {
         carbonTabSwipeNavigation.setTabBarHeight(55)
         carbonTabSwipeNavigation.setSelectedColor(UIColor.systemGreen)
         carbonTabSwipeNavigation.setIndicatorColor(UIColor.systemGreen)
+        carbonTabSwipeNavigation.pagesScrollView?.isScrollEnabled = false
     }
 
 }
