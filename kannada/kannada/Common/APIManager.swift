@@ -44,9 +44,9 @@ class APIManager: NSObject {
     }
     
     // Get ALL Author
-    class func authorList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
-        APIManager.serviceRequest(APIList.authors.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
-           APIManager.responseHandle(result) { (error, result) in
+    class func getBookCatalogue(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
+        APIManager.serviceRequest(APIList.getBookCatalogue.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
+           APIManager.responseHandler(result) { (error, result) in
                 completion(error, result)
             }
          }
@@ -126,7 +126,7 @@ class APIManager: NSObject {
         if let data = result as? Data {
             do {
                 if let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any> {
-                    if result["message"] as? String == "success" { // # Bug: 1209
+                    if result != nil { // # Bug: 1209
                         completion(nil, result) // no Error
                     } else {
                         completion(true, nil) // SQL error
@@ -141,25 +141,24 @@ class APIManager: NSObject {
            completion(true, nil)  // No Data Response
         }
     }
-        
-         // Registor Service Push Notification
-        class func registorService(completion: @escaping CompletionHandler) {
-            if let channelid = UAirship.channel()?.identifier {
-                let bParameters:Parameters = [ "devicetoken" : channelid ]
-                let bHTTPHeaders: HTTPHeaders = [
-                   "Content-Type" : "application/x-www-form-urlencoded",
-                   "Accept" : "application/json",
-                ]
-                APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-                    APIManager.responseHandler(result) { (error, result) in
-                       completion(error, result)
-                    }
+    
+     // Registor Service Push Notification
+    class func registorService(completion: @escaping CompletionHandler) {
+        if let channelid = UAirship.channel()?.identifier {
+            let bParameters:Parameters = [ "devicetoken" : channelid ]
+            let bHTTPHeaders: HTTPHeaders = [
+               "Content-Type" : "application/x-www-form-urlencoded",
+               "Accept" : "application/json",
+            ]
+            APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
+                APIManager.responseHandler(result) { (error, result) in
+                   completion(error, result)
                 }
-            }else{
-               completion(nil, nil)
             }
-           
+        }else{
+           completion(nil, nil)
         }
+    }
         
 }
 

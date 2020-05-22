@@ -16,6 +16,12 @@
 		E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0063476244A4AE6001A728F /* WebKit.framework */; };
 		E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */; };
 		E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */; };
+		E04FD7732476C13500082D0D /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */; };
+		E04FD7742476C13500082D0D /* TableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */; };
+		E04FD782247786EC00082D0D /* Authors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD77E247786EC00082D0D /* Authors.swift */; };
+		E04FD783247786EC00082D0D /* Catlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD77F247786EC00082D0D /* Catlist.swift */; };
+		E04FD784247786EC00082D0D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD780247786EC00082D0D /* Books.swift */; };
+		E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD781247786EC00082D0D /* Bookcatalogue.swift */; };
 		E054853E244B07F70065532E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054853C244B07F70065532E /* HistoryCell.swift */; };
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
@@ -64,6 +70,12 @@
 		E0063476244A4AE6001A728F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTableViewCell.swift; sourceTree = "<group>"; };
 		E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorTableViewCell.xib; sourceTree = "<group>"; };
+		E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderCell.swift; sourceTree = "<group>"; };
+		E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeaderCell.xib; sourceTree = "<group>"; };
+		E04FD77E247786EC00082D0D /* Authors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authors.swift; sourceTree = "<group>"; };
+		E04FD77F247786EC00082D0D /* Catlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catlist.swift; sourceTree = "<group>"; };
+		E04FD780247786EC00082D0D /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		E04FD781247786EC00082D0D /* Bookcatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookcatalogue.swift; sourceTree = "<group>"; };
 		E0513A06245065DB00F07E4F /* kannadabooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooks.entitlements; sourceTree = "<group>"; };
 		E0513A07245065E200F07E4F /* kannadabooksRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooksRelease.entitlements; sourceTree = "<group>"; };
 		E054853C244B07F70065532E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
@@ -140,6 +152,7 @@
 		E00634702449F2CF001A728F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E04FD775247784D200082D0D /* New Model */,
 				E00634712449F2DD001A728F /* Author */,
 			);
 			path = Model;
@@ -157,6 +170,26 @@
 			path = Author;
 			sourceTree = "<group>";
 		};
+		E04FD7702476C04800082D0D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */,
+				E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		E04FD775247784D200082D0D /* New Model */ = {
+			isa = PBXGroup;
+			children = (
+				E04FD77E247786EC00082D0D /* Authors.swift */,
+				E04FD780247786EC00082D0D /* Books.swift */,
+				E04FD77F247786EC00082D0D /* Catlist.swift */,
+				E04FD781247786EC00082D0D /* Bookcatalogue.swift */,
+			);
+			path = "New Model";
+			sourceTree = "<group>";
+		};
 		E0B0B1C32445CCB300FF986B = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +203,7 @@
 		E0B0B1CE2445CCB300FF986B /* kannada */ = {
 			isa = PBXGroup;
 			children = (
+				E04FD7702476C04800082D0D /* CustomView */,
 				E00634702449F2CF001A728F /* Model */,
 				E0B0B1F52448695600FF986B /* Common */,
 				E0B0B1E82445D30B00FF986B /* UICells */,
@@ -305,6 +339,7 @@
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
 				E0B0B1D92445CCB300FF986B /* Assets.xcassets in Resources */,
 				E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */,
+				E04FD7742476C13500082D0D /* TableViewHeaderCell.xib in Resources */,
 				E0F6282E2461768D00DDA808 /* AudioBookCell.xib in Resources */,
 				E054853F244B07F70065532E /* HistoryCell.xib in Resources */,
 				E0B0B1D72445CCB300FF986B /* Main.storyboard in Resources */,
@@ -363,6 +398,7 @@
 				E0063475244A36F8001A728F /* Book.swift in Sources */,
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
 				E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */,
+				E04FD784247786EC00082D0D /* Books.swift in Sources */,
 				E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */,
 				E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */,
 				E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */,
@@ -374,10 +410,12 @@
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
 				E0A77C5F2460130B00787231 /* AudioBookViewController.swift in Sources */,
+				E04FD7732476C13500082D0D /* TableViewHeaderCell.swift in Sources */,
 				E08854D1245D982600C78C75 /* BookListCell.swift in Sources */,
 				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
+				E04FD782247786EC00082D0D /* Authors.swift in Sources */,
 				E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */,
 				E0B0B2032448865200FF986B /* AuthorView.swift in Sources */,
 				E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */,
@@ -386,6 +424,8 @@
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,
 				E00634732449F347001A728F /* Author.swift in Sources */,
 				E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */,
+				E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */,
+				E04FD783247786EC00082D0D /* Catlist.swift in Sources */,
 				E0063469244958BE001A728F /* UD.swift in Sources */,
 				E006346D24495AD0001A728F /* APIList.swift in Sources */,
 				E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */,

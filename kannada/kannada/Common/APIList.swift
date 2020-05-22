@@ -37,11 +37,19 @@ struct APIList {
         }
     }
     
-    static var authors : String {
+//    static var authors : String {
+//        get {
+//            return "authors.php"
+//        }
+//    }
+    
+    static var getBookCatalogue : String {
         get {
-            return "authors.php"
+            return "newapi/getbookcatalogue.php"
         }
     }
+    
+    
     
     static var booklist : String {
         get {

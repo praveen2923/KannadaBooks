@@ -14,12 +14,12 @@ class AuthorView: UIViewController {
     
  //   @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
-    var authors : [Author] = []
-    var list = ["ಜನಪ್ರಿಯ ಪುಸ್ತಕಗಳು","ಕನ್ನಡ ಸಾಹಿತ್ಯ","ಜನಪ್ರಿಯ ಬರಹಗಾರ","ಇತ್ತೀಚಿನ ಪುಸ್ತಕಗಳು", "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಪುಸ್ತಕಗಳು"]
+    var bookcatalogue : Bookcatalogue?
+   // var list = ["ಜನಪ್ರಿಯ ಪುಸ್ತಕಗಳು","ಕನ್ನಡ ಸಾಹಿತ್ಯ","ಜನಪ್ರಿಯ ಬರಹಗಾರ","ಇತ್ತೀಚಿನ ಪುಸ್ತಕಗಳು", "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಪುಸ್ತಕಗಳು", "ಶಾಲಾ ಪಠ್ಯ ಪುಸ್ತಕಗಳು"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getAllAuthors()
+        self.getBookCatalogue()
         self.configureTableView()
     }
     
@@ -27,16 +27,11 @@ class AuthorView: UIViewController {
         super.viewDidAppear(true)
     }
     
-    
-    func getAllAuthors()  {
-        APIManager.authorList(nil) { (error, result) in
-            if let listauthors = result as? NSArray {
-                for item in listauthors {
-                    if let author = Author(dictionary: item as! NSDictionary) {
-                        self.authors.append(author)
-                    }
-                }
-                self.authors = self.authors.shuffled()
+  //  getBookCatalogue
+    func getBookCatalogue()  {
+        APIManager.getBookCatalogue(nil) { (error, result) in
+            if let catalogue = result as? NSDictionary {
+                self.bookcatalogue = Bookcatalogue(dictionary: catalogue)
                 self.tableView.reloadData()
             }else{
                 
@@ -62,10 +57,13 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
         self.tableView?.dataSource = self
         let nib = UINib(nibName: "AuthorTableViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "AuthorTableViewCell")
+        
+        let header = UINib(nibName: "TableViewHeaderCell", bundle: nil)
+        self.tableView.register(header, forCellReuseIdentifier: "TableViewHeaderCell")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.list.count
+        return self.bookcatalogue?.catlist?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,7 +72,7 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorTableViewCell", for: indexPath) as! AuthorTableViewCell
-        cell.authors = self.authors
+      //  cell.authors = self.authors
         cell.collectionView.reloadData()
         return cell
     }
@@ -83,14 +81,9 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
         return 195
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.list[section]
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let headerView = view as? UITableViewHeaderFooterView else { return }
-        headerView.tintColor =  self.tableView.backgroundColor //use any color you want here .red, .black etc
-        headerView.textLabel?.textColor = .white
-        headerView.textLabel?.font = .systemFont(ofSize: 15)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerSectionCell:TableViewHeaderCell = tableView.dequeueReusableCell(withIdentifier: "TableViewHeaderCell") as! TableViewHeaderCell
+        headerSectionCell.ibHeaderTitle.text = self.bookcatalogue?.catlist?[section].name 
+        return headerSectionCell
     }
 }
