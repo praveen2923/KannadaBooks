@@ -10,7 +10,11 @@ import UIKit
 
 class AuthorTableViewCell: UITableViewCell {
     
-    var authors : [Author] = []
+    var authorlist : Array<Authors>?
+    var bookslist : Array<Books>?
+    
+//    var authors : [Authors] = []
+//    var books : [Books] = []
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -46,20 +50,34 @@ extension AuthorTableViewCell :  UICollectionViewDelegate, UICollectionViewDataS
       }
     
        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-           self.authors.count
+            if let authors = self.authorlist {
+              return authors.count
+            }
+            return self.bookslist?.count ?? 0
        }
        
        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-           let cell : AuthorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
-           cell.authorName.text = self.authors[indexPath.row].name
-           cell.authorimage.image = UIImage(named: "authorimage")
-           if let authorimage = self.authors[indexPath.row].image {
-               if authorimage != "" {
-                   let fullurl = APIList.BOOKBaseUrl + authorimage
-                    cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
-               }
-           }
-           return cell
+            let cell : AuthorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
+            if self.bookslist != nil {
+                cell.authorName.text = self.bookslist?[indexPath.row].bookname
+                cell.authorimage.image = UIImage(named: "authorimage")
+                if let authorimage = self.bookslist?[indexPath.row].bookimageurl {
+                    if authorimage != "" {
+                        let fullurl = APIList.BOOKBaseUrl + authorimage
+                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                    }
+                }
+            }else{
+                cell.authorName.text = self.authorlist?[indexPath.row].authorname
+                cell.authorimage.image = UIImage(named: "authorimage")
+                if let authorimage = self.authorlist?[indexPath.row].authorimage {
+                    if authorimage != "" {
+                        let fullurl = APIList.BOOKBaseUrl + authorimage
+                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                    }
+                }
+            }
+            return cell
        }
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
