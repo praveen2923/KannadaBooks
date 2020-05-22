@@ -11,12 +11,10 @@ import SDWebImage
 import GoogleMobileAds
 
 class AuthorView: UIViewController {
-    
- //   @IBOutlet weak var collectionView: UICollectionView!
+
     @IBOutlet weak var tableView: UITableView!
     var bookcatalogue : Bookcatalogue?
-   // var list = ["ಜನಪ್ರಿಯ ಪುಸ್ತಕಗಳು","ಕನ್ನಡ ಸಾಹಿತ್ಯ","ಜನಪ್ರಿಯ ಬರಹಗಾರ","ಇತ್ತೀಚಿನ ಪುಸ್ತಕಗಳು", "ವೈಶಿಷ್ಟ್ಯಪೂರ್ಣ ಪುಸ್ತಕಗಳು", "ಶಾಲಾ ಪಠ್ಯ ಪುಸ್ತಕಗಳು"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getBookCatalogue()
@@ -77,7 +75,7 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
         }else{
             cell.bookslist = self.bookcatalogue?.catlist?[indexPath.section].otherbooks
         }
-
+        cell.delegate = self
         cell.collectionView.reloadData()
         return cell
     }
@@ -88,7 +86,26 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerSectionCell:TableViewHeaderCell = tableView.dequeueReusableCell(withIdentifier: "TableViewHeaderCell") as! TableViewHeaderCell
-        headerSectionCell.ibHeaderTitle.text = self.bookcatalogue?.catlist?[section].name 
+        headerSectionCell.ibHeaderTitle.text = self.bookcatalogue?.catlist?[section].name
+        headerSectionCell.delegate = self
         return headerSectionCell
+    }
+}
+
+extension AuthorView : SeeMoreDelegate {
+    func didTapOnSeeMoreBtn(_ cell : TableViewHeaderCell) {
+        print("didTapOnSeeMoreBtn")
+    }
+}
+
+extension AuthorView : TapOnBookCellDelegate {
+    func didSelectItemAt(_ author : Authors?, _ books : Books?){
+        
+         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
+        controller.authors = author
+        controller.books =  books
+        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
 }

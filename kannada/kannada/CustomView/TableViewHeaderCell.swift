@@ -8,14 +8,24 @@
 
 import UIKit
 
-class TableViewHeaderCell: UITableViewCell {
-    @IBOutlet weak var ibHeaderTitle: UILabel!
+protocol SeeMoreDelegate: class {
+    func didTapOnSeeMoreBtn(_ cell : TableViewHeaderCell)
+}
 
+class TableViewHeaderCell: UITableViewCell {
+    
+    @IBOutlet weak var ibHeaderTitle: UILabel!
+    weak var delegate: SeeMoreDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
+    
+    @IBAction func didTapOnSeeMoreBtn(_ sender: Any) {
+        self.delegate?.didTapOnSeeMoreBtn(self)
+    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

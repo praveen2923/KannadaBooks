@@ -8,13 +8,15 @@
 
 import UIKit
 
+protocol TapOnBookCellDelegate: class {
+    func didSelectItemAt(_ author : Authors?, _ books : Books?)
+}
+
 class AuthorTableViewCell: UITableViewCell {
     
     var authorlist : Array<Authors>?
     var bookslist : Array<Books>?
-    
-//    var authors : [Authors] = []
-//    var books : [Books] = []
+    weak var delegate: TapOnBookCellDelegate?
 
     @IBOutlet weak var collectionView: UICollectionView!
     override func awakeFromNib() {
@@ -22,8 +24,6 @@ class AuthorTableViewCell: UITableViewCell {
         // Initialization code
         self.setupCells()
     }
-    
-  
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -81,11 +81,13 @@ extension AuthorTableViewCell :  UICollectionViewDelegate, UICollectionViewDataS
        }
        
        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//           let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//           let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
-//           controller.author = self.authors[indexPath.row]
-//           controller.categoryid =  "1"
-          // self.navigationController?.pushViewController(controller, animated: true)
+          if self.bookslist != nil {
+                let books = self.bookslist?[indexPath.row]
+                self.delegate?.didSelectItemAt(nil, books)
+          }else{
+            let author = self.authorlist?[indexPath.row]
+            self.delegate?.didSelectItemAt(author, nil)
+          }
        }
 }
 
