@@ -87,24 +87,36 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerSectionCell:TableViewHeaderCell = tableView.dequeueReusableCell(withIdentifier: "TableViewHeaderCell") as! TableViewHeaderCell
         headerSectionCell.ibHeaderTitle.text = self.bookcatalogue?.catlist?[section].name
+        headerSectionCell.section = section
         headerSectionCell.delegate = self
         return headerSectionCell
     }
 }
 
 extension AuthorView : SeeMoreDelegate {
-    func didTapOnSeeMoreBtn(_ cell : TableViewHeaderCell) {
+    func didTapOnSeeMoreBtn(_ section : Int) {
         print("didTapOnSeeMoreBtn")
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
+        controller.navtitle = self.bookcatalogue?.catlist?[section].name
+        if let authors = self.bookcatalogue?.catlist?[section].authors {
+            if authors.count != 0 {
+                controller.authorlist = authors
+            }else if let books = self.bookcatalogue?.catlist?[section].otherbooks {
+                controller.bookslist = books
+            }
+        }
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension AuthorView : TapOnBookCellDelegate {
     func didSelectItemAt(_ author : Authors?, _ books : Books?){
         
-         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
         controller.authors = author
-        controller.books =  books
+        controller.navtitle = author?.authorname
         self.navigationController?.pushViewController(controller, animated: true)
         
     }

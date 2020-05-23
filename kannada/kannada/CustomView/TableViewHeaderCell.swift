@@ -9,14 +9,14 @@
 import UIKit
 
 protocol SeeMoreDelegate: class {
-    func didTapOnSeeMoreBtn(_ cell : TableViewHeaderCell)
+    func didTapOnSeeMoreBtn(_ section : Int)
 }
 
 class TableViewHeaderCell: UITableViewCell {
     
     @IBOutlet weak var ibHeaderTitle: UILabel!
     weak var delegate: SeeMoreDelegate?
-    
+    var section : Int?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,7 +24,9 @@ class TableViewHeaderCell: UITableViewCell {
     
     
     @IBAction func didTapOnSeeMoreBtn(_ sender: Any) {
-        self.delegate?.didTapOnSeeMoreBtn(self)
+        if let index = section {
+            self.delegate?.didTapOnSeeMoreBtn(index)
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
