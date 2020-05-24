@@ -72,8 +72,10 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AuthorTableViewCell", for: indexPath) as! AuthorTableViewCell
         if indexPath.section == 0 {
             cell.authorlist = self.bookcatalogue?.catlist?[indexPath.section].authors
+            cell.bookslist = nil
         }else{
             cell.bookslist = self.bookcatalogue?.catlist?[indexPath.section].otherbooks
+            cell.authorlist = nil
         }
         cell.delegate = self
         cell.collectionView.reloadData()
