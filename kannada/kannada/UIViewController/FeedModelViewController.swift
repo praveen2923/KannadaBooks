@@ -11,11 +11,10 @@ import UIKit
 class FeedModelViewController: UIViewController {
 
     @IBOutlet weak var ibtextView: UITextView!
-    var deatils : NewsFeed?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ibtextView.text = self.deatils?.note
-        // Do any additional setup after loading the view.
+
     }
 
 }

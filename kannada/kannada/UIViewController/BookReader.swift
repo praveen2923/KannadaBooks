@@ -14,13 +14,13 @@ import PDFKit
 class BookReader: UIViewController {
 
     @IBOutlet weak var ibPdfView: PDFView!
+    var book:Books?
     
-    var bookInfo : Book?
     var bookpdfurl : String?
     var filePath : URL?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = bookInfo?.book_name
+        self.navigationItem.title = book?.bookname
         self.addShareButton()
         self.bookDowanload()
     }
@@ -46,14 +46,14 @@ class BookReader: UIViewController {
     }
     
     func bookDowanload() {
-        if bookInfo?.book_pdf_url != "" {
-            if let bookurl = bookInfo?.book_pdf_url {
+        if book?.bookpdfurl != "" {
+            if let bookurl =  book?.bookpdfurl {
                 let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
                  guard let url =  fullbookpdfurl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) else { return  }
-                if self.showSavedPdf(fileName: bookInfo?.bookId ?? "") {
+                if self.showSavedPdf(fileName: book?.bookid ?? "") {
                     print("Book is in Locally stored")
                 }else{
-                    self.downloadPdf(downloadUrl: url, uniqueName: bookInfo?.bookId ?? "") { (filePath, status) in
+                    self.downloadPdf(downloadUrl: url, uniqueName: book?.bookid ?? "") { (filePath, status) in
                         print("URl: \(filePath)")
                      }
                 }

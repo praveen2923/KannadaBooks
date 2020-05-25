@@ -11,8 +11,6 @@
 		E0063469244958BE001A728F /* UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0063468244958BE001A728F /* UD.swift */; };
 		E006346B24495A66001A728F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006346A24495A66001A728F /* APIManager.swift */; };
 		E006346D24495AD0001A728F /* APIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006346C24495AD0001A728F /* APIList.swift */; };
-		E00634732449F347001A728F /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00634722449F347001A728F /* Author.swift */; };
-		E0063475244A36F8001A728F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0063474244A36F8001A728F /* Book.swift */; };
 		E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0063476244A4AE6001A728F /* WebKit.framework */; };
 		E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */; };
 		E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */; };
@@ -32,7 +30,6 @@
 		E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C12455793100C78C75 /* SlideMenuController.swift */; };
 		E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */; };
 		E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */; };
-		E08854C82456072600C78C75 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C72456072600C78C75 /* NewsFeed.swift */; };
 		E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C92456DF9900C78C75 /* FeedModelViewController.swift */; };
 		E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CB245D969700C78C75 /* BookListViewController.swift */; };
 		E08854D1245D982600C78C75 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CF245D982600C78C75 /* BookListCell.swift */; };
@@ -68,8 +65,6 @@
 		E0063468244958BE001A728F /* UD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD.swift; sourceTree = "<group>"; };
 		E006346A24495A66001A728F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E006346C24495AD0001A728F /* APIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIList.swift; sourceTree = "<group>"; };
-		E00634722449F347001A728F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
-		E0063474244A36F8001A728F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E0063476244A4AE6001A728F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTableViewCell.swift; sourceTree = "<group>"; };
 		E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorTableViewCell.xib; sourceTree = "<group>"; };
@@ -91,7 +86,6 @@
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNewsCell.swift; sourceTree = "<group>"; };
 		E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedNewsCell.xib; sourceTree = "<group>"; };
-		E08854C72456072600C78C75 /* NewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		E08854C92456DF9900C78C75 /* FeedModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModelViewController.swift; sourceTree = "<group>"; };
 		E08854CB245D969700C78C75 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		E08854CF245D982600C78C75 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
@@ -169,10 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E07CAF08246434AF00FAC819 /* AudioBook.swift */,
-				E08854C72456072600C78C75 /* NewsFeed.swift */,
 				E0548540244B39260065532E /* Other.swift */,
-				E0063474244A36F8001A728F /* Book.swift */,
-				E00634722449F347001A728F /* Author.swift */,
 			);
 			path = Author;
 			sourceTree = "<group>";
@@ -412,7 +403,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0063475244A36F8001A728F /* Book.swift in Sources */,
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
 				E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */,
 				E04FD784247786EC00082D0D /* Books.swift in Sources */,
@@ -424,7 +414,6 @@
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
 				E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
-				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
 				E0A77C5F2460130B00787231 /* AudioBookViewController.swift in Sources */,
@@ -441,7 +430,6 @@
 				E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */,
 				E0F6282D2461768D00DDA808 /* AudioBookCell.swift in Sources */,
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,
-				E00634732449F347001A728F /* Author.swift in Sources */,
 				E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */,
 				E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */,
 				E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */,
