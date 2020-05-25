@@ -52,16 +52,6 @@ class APIManager: NSObject {
          }
      }
     
-    // Get ALL Books For author id
-    class func getAllBooksForAuthor(_ authorid: String?, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = [  "author" : authorid ?? "", ]
-        APIManager.serviceRequest(APIList.booklist.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
-            APIManager.responseHandle(result) { (error, result) in
-                completion(error, result)
-            }
-        }
-    }
-    
     // Get History information for category id categoryid
     class func getAllInformationforCategory(_ catid: String?, completion: @escaping CompletionHandler) {
         let bParameters:Parameters = ["categoryid" : catid ?? "", ]

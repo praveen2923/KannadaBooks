@@ -43,14 +43,6 @@ struct APIList {
         }
     }
     
-    
-    
-    static var booklist : String {
-        get {
-            return "books.php"
-        }
-    }
-    
     static var otherInfo : String {
         get {
             return "history.php"

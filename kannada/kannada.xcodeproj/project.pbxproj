@@ -51,6 +51,9 @@
 		E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FC2448841B00FF986B /* AuthorCell.swift */; };
 		E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1FD2448841B00FF986B /* AuthorCell.xib */; };
 		E0B0B2032448865200FF986B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B2022448865200FF986B /* AuthorView.swift */; };
+		E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */; };
+		E0E92A21247BBCB800F633A0 /* Menulist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1E247BBCB800F633A0 /* Menulist.swift */; };
+		E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1F247BBCB800F633A0 /* MenuBase.swift */; };
 		E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70924542ABB00551BD4 /* MenuViewController.swift */; };
 		E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70D2454527000551BD4 /* CommonCell.swift */; };
 		E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F1F70E2454527000551BD4 /* CommonCell.xib */; };
@@ -109,6 +112,9 @@
 		E0B0B1FD2448841B00FF986B /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		E0B0B2022448865200FF986B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 		E0D35F4124670E5500DB0738 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManuIteams.swift; sourceTree = "<group>"; };
+		E0E92A1E247BBCB800F633A0 /* Menulist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menulist.swift; sourceTree = "<group>"; };
+		E0E92A1F247BBCB800F633A0 /* MenuBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBase.swift; sourceTree = "<group>"; };
 		E0F1F70924542ABB00551BD4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E0F1F70D2454527000551BD4 /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		E0F1F70E2454527000551BD4 /* CommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonCell.xib; sourceTree = "<group>"; };
@@ -152,7 +158,8 @@
 		E00634702449F2CF001A728F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E04FD775247784D200082D0D /* New Model */,
+				E0E92A16247BBC2300F633A0 /* MenuListModel */,
+				E04FD775247784D200082D0D /* BookCatalogue */,
 				E00634712449F2DD001A728F /* Author */,
 			);
 			path = Model;
@@ -179,7 +186,7 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		E04FD775247784D200082D0D /* New Model */ = {
+		E04FD775247784D200082D0D /* BookCatalogue */ = {
 			isa = PBXGroup;
 			children = (
 				E04FD77E247786EC00082D0D /* Authors.swift */,
@@ -187,7 +194,7 @@
 				E04FD77F247786EC00082D0D /* Catlist.swift */,
 				E04FD781247786EC00082D0D /* Bookcatalogue.swift */,
 			);
-			path = "New Model";
+			path = BookCatalogue;
 			sourceTree = "<group>";
 		};
 		E0B0B1C32445CCB300FF986B = {
@@ -269,6 +276,16 @@
 				E0063468244958BE001A728F /* UD.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		E0E92A16247BBC2300F633A0 /* MenuListModel */ = {
+			isa = PBXGroup;
+			children = (
+				E0E92A1F247BBCB800F633A0 /* MenuBase.swift */,
+				E0E92A1E247BBCB800F633A0 /* Menulist.swift */,
+				E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */,
+			);
+			path = MenuListModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,6 +422,7 @@
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
 				E07CAF09246434AF00FAC819 /* AudioBook.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
+				E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
 				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
@@ -412,6 +430,7 @@
 				E0A77C5F2460130B00787231 /* AudioBookViewController.swift in Sources */,
 				E04FD7732476C13500082D0D /* TableViewHeaderCell.swift in Sources */,
 				E08854D1245D982600C78C75 /* BookListCell.swift in Sources */,
+				E0E92A21247BBCB800F633A0 /* Menulist.swift in Sources */,
 				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
@@ -424,6 +443,7 @@
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,
 				E00634732449F347001A728F /* Author.swift in Sources */,
 				E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */,
+				E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */,
 				E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */,
 				E04FD783247786EC00082D0D /* Catlist.swift in Sources */,
 				E0063469244958BE001A728F /* UD.swift in Sources */,
