@@ -25,7 +25,6 @@ class MenuViewController: UIViewController {
         super.viewDidLoad()
         self.configureTableView()
         self.getMenuList()
-        // Do any additional setup after loading the view.
     }
     
     func getMenuList()  {

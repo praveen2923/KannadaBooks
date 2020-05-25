@@ -68,9 +68,7 @@ extension NewFeedsViewController : FeedDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "FeedModelViewController") as! FeedModelViewController
         let indexPath = self.tableview.indexPath(for: cell)
-        if let _ = indexPath?.row {
-           // controller.deatils = self.newsFeed[row]
-        }
+        controller.feedNote = self.menuIteam?.manuIteams?[indexPath?.row ?? 0]
         self.present(controller, animated: true, completion: nil)
     }
 }
