@@ -19,6 +19,9 @@ class BookListViewController: UIViewController {
         super.viewDidLoad()
         self.title = navtitle
         self.setupCells()
+        if let books = self.authors?.books {
+            self.bookslist.append(contentsOf: books)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,8 +47,8 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let books = self.authors?.books {
-            return books.count
+        if bookslist.count != 0 {
+             return bookslist.count
         }else{
             return authorlist.count
         }
@@ -53,10 +56,10 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : BookListCell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookListCell", for: indexPath) as! BookListCell
-        if let book = self.authors?.books?[indexPath.row] {
-            cell.ibBookName.text = book.bookname
+        if self.bookslist.count != 0 {
+            cell.ibBookName.text = self.bookslist[indexPath.row].bookname
                cell.ibbookimage.image = UIImage(named: "book")
-               if let authorimage = book.bookimageurl {
+            if let authorimage = self.bookslist[indexPath.row].bookimageurl {
                    if authorimage != "" {
                        let fullurl = APIList.BOOKBaseUrl + authorimage
                         cell.ibbookimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "book"))

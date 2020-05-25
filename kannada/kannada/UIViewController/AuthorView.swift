@@ -88,7 +88,20 @@ extension AuthorView : UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerSectionCell:TableViewHeaderCell = tableView.dequeueReusableCell(withIdentifier: "TableViewHeaderCell") as! TableViewHeaderCell
-        headerSectionCell.ibHeaderTitle.text = self.bookcatalogue?.catlist?[section].name
+        var count = ""
+        if section == 0 {
+            if let listcount = self.bookcatalogue?.catlist?[section].authors?.count {
+                count = " (\(listcount))"
+            }
+        }else{
+            if let listcount = self.bookcatalogue?.catlist?[section].otherbooks?.count {
+                count = " (\(listcount))"
+            }
+        }
+        if let type = self.bookcatalogue?.catlist?[section].name {
+             headerSectionCell.ibHeaderTitle.text = "\(type)\(count)"
+        }
+       
         headerSectionCell.section = section
         headerSectionCell.delegate = self
         return headerSectionCell
