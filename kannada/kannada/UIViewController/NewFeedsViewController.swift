@@ -23,25 +23,25 @@ class NewFeedsViewController: UIViewController {
     }
     
     func getFeedById() {
-        self.showeLoading()
-        APIManager.getFeedformationByMenuId(self.menuId) { (error, result) in
-           self.hideLoading()
-           if let values = result as? Array<Any> {
-               for item in values {
-                 if let abook = NewsFeed(dictionary: item as! NSDictionary) {
-                      self.newsFeed.append(abook)
-                  }
-               }
-               if self.newsFeed.count == 0 {
-                   self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-               }else{
-                   self.hideLoading()
-                   self.tableview.reloadData()
-               }
-           }else{
-               self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-           }
-        }
+//        self.showeLoading()
+//        APIManager.getFeedformationByMenuId(self.menuId) { (error, result) in
+//           self.hideLoading()
+//           if let values = result as? Array<Any> {
+//               for item in values {
+//                 if let abook = NewsFeed(dictionary: item as! NSDictionary) {
+//                      self.newsFeed.append(abook)
+//                  }
+//               }
+//               if self.newsFeed.count == 0 {
+//                   self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
+//               }else{
+//                   self.hideLoading()
+//                   self.tableview.reloadData()
+//               }
+//           }else{
+//               self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
+//           }
+//        }
     }
 }
 

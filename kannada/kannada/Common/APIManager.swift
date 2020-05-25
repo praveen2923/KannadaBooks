@@ -65,20 +65,10 @@ class APIManager: NSObject {
     // Get Menu List
     class func getMenuList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
         APIManager.serviceRequest(APIList.menuList.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
-            APIManager.responseHandle(result) { (error, result) in
+            APIManager.responseHandler(result) { (error, result) in
                completion(error, result)
             }
         }
-    }
-    
-    // Get Menu information for Menu ID
-    class func getFeedformationByMenuId(_ menuId: String?, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = ["id" : menuId ?? "", ]
-        APIManager.serviceRequest(APIList.getFeedById.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
-               APIManager.responseHandle(result) { (error, result) in
-                   completion(error, result)
-               }
-         }
     }
     
     // Get List of Audio Books

@@ -19,7 +19,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var delegate : MenuToDashboard?
-    var meanulist = [[String:String]]()
+    var menuIteams :MenuBase?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +32,9 @@ class MenuViewController: UIViewController {
         self.showeLoading()
         APIManager.getMenuList(nil, completion: { (error, result) in
                self.hideLoading()
-               if let list = result as? NSArray {
-                if list.count > 0 {
-                    self.meanulist = list as! [[String : String]]
-                    self.tableView.reloadData()
-                }
+               if let menu = result as? NSDictionary {
+                self.menuIteams = MenuBase(dictionary: menu)
+                self.tableView.reloadData()
                }else{
                    self.showeErorMsg("ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ")
                }
@@ -54,7 +52,7 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.meanulist.count
+        return self.menuIteams?.menulist?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,8 +61,9 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
 
     func getMenuCell(indexPath: IndexPath) -> CommonCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "CommonCell", for: indexPath) as! CommonCell
-        let value = self.meanulist[indexPath.row] as NSDictionary
-        cell.ibMenuLbl.text = value.object(forKey: "name") as? String
+        if let value = self.self.menuIteams?.menulist?[indexPath.row] {
+            cell.ibMenuLbl.text = value.name
+        }
         cell.selectionStyle = .none
         return cell
                   
@@ -79,9 +78,9 @@ extension MenuViewController : UITableViewDelegate, UITableViewDataSource {
         self.sideMenuController?.hideMenu()
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "NewFeedsViewController") as! NewFeedsViewController
-        let value = self.meanulist[indexPath.row] as NSDictionary
-        controller.menuId = value.object(forKey: "id") as? String
-        controller.navtitle = value.object(forKey: "name") as? String
+//        let value = self.meanulist[indexPath.row] as NSDictionary
+//        controller.menuId = value.object(forKey: "id") as? String
+//        controller.navtitle = value.object(forKey: "name") as? String
         self.delegate?.navigateToVC(vc: controller)
     }
 }

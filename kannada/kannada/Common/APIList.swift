@@ -37,29 +37,24 @@ struct APIList {
         }
     }
     
-    static var getBookCatalogue : String {
-        get {
-            return "newapi/getbookcatalogue.php"
-        }
-    }
-    
     static var otherInfo : String {
         get {
             return "history.php"
         }
     }
     
-    static var menuList : String {
+    static var getBookCatalogue : String {
         get {
-            return "menulist.php"
-        }
-    }
-    static var getFeedById : String {
-        get {
-            return "getFeedById.php"
+            return "newapi/getbookcatalogue.php"
         }
     }
     
+    static var menuList : String {
+        get {
+            return "newapi/getsidemanulist.php"
+        }
+    }
+ 
     static var getAudiobooks : String {
          get {
              return "getaudiobooks.php"
