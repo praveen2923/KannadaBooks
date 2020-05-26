@@ -99,7 +99,6 @@ class BookReader: UIViewController {
             self.ibPdfView.displayMode = .singlePageContinuous
             self.ibPdfView.displaysPageBreaks = true
             self.ibPdfView.document = document
-
             self.ibPdfView.maxScaleFactor = 4.0
             self.ibPdfView.minScaleFactor =   self.ibPdfView.scaleFactorForSizeToFit
 

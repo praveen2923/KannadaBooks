@@ -82,9 +82,17 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      //  let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookReader") as? BookReader
-               // vc?.bookInfo = self.books[indexPath.row]
-               // self.navigationController?.pushViewController(vc!, animated: true)
+        if bookslist.count != 0 {
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BookReader") as? BookReader
+            vc?.book = self.bookslist[indexPath.row]
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }else{
+            let author = self.authorlist[indexPath.row]
+            if let books = author.books {
+                self.bookslist.append(contentsOf: books)
+            }
+            self.title = author.authorname
+            self.collection.reloadData()
+        }
     }
-    
 }

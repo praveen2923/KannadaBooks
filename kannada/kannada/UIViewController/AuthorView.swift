@@ -127,12 +127,16 @@ extension AuthorView : SeeMoreDelegate {
 
 extension AuthorView : TapOnBookCellDelegate {
     func didSelectItemAt(_ author : Authors?, _ books : Books?){
-        
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
-        controller.authors = author
-        controller.navtitle = author?.authorname
-        self.navigationController?.pushViewController(controller, animated: true)
-        
+        if author != nil {
+            let controller = storyBoard.instantiateViewController(withIdentifier: "BookListViewController") as! BookListViewController
+            controller.authors = author
+            controller.navtitle = author?.authorname
+            self.navigationController?.pushViewController(controller, animated: true)
+        }else{
+            let controller = storyBoard.instantiateViewController(withIdentifier: "BookReader") as! BookReader
+            controller.book = books
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

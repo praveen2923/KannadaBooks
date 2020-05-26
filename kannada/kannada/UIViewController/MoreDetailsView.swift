@@ -18,7 +18,6 @@ class MoreDetailsView: UIViewController {
         super.viewDidLoad()
         self.ibTextView.text = self.detail?.note
         self.ibtitlelbl.text = self.detail?.short
-
     }
  
     @IBAction func didTapOnCancelBtn(_ sender: Any) {
