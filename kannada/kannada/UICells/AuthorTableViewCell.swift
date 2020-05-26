@@ -64,7 +64,7 @@ extension AuthorTableViewCell :  UICollectionViewDelegate, UICollectionViewDataS
                 if let authorimage = self.bookslist?[indexPath.row].bookimageurl {
                     if authorimage != "" {
                         let fullurl = APIList.BOOKBaseUrl + authorimage
-                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "noimage"))
                     }
                 }
             }else{
@@ -73,7 +73,7 @@ extension AuthorTableViewCell :  UICollectionViewDelegate, UICollectionViewDataS
                 if let authorimage = self.authorlist?[indexPath.row].authorimage {
                     if authorimage != "" {
                         let fullurl = APIList.BOOKBaseUrl + authorimage
-                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "authorimage"))
+                        cell.authorimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "noimage"))
                     }
                 }
             }

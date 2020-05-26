@@ -62,7 +62,7 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
             if let authorimage = self.bookslist[indexPath.row].bookimageurl {
                    if authorimage != "" {
                        let fullurl = APIList.BOOKBaseUrl + authorimage
-                        cell.ibbookimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "book"))
+                        cell.ibbookimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "noimage"))
                    }
                }
         }else{
@@ -71,7 +71,7 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
             if let authorimage = authorlist[indexPath.row].authorimage{
                    if authorimage != "" {
                        let fullurl = APIList.BOOKBaseUrl + authorimage
-                        cell.ibbookimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "book"))
+                        cell.ibbookimage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "noimage"))
                    }
                }
         }
