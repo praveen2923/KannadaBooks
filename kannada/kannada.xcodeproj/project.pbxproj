@@ -51,6 +51,7 @@
 		E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */; };
 		E0E92A21247BBCB800F633A0 /* Menulist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1E247BBCB800F633A0 /* Menulist.swift */; };
 		E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1F247BBCB800F633A0 /* MenuBase.swift */; };
+		E0E92A24247D890400F633A0 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A23247D890400F633A0 /* AboutUsViewController.swift */; };
 		E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70924542ABB00551BD4 /* MenuViewController.swift */; };
 		E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70D2454527000551BD4 /* CommonCell.swift */; };
 		E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F1F70E2454527000551BD4 /* CommonCell.xib */; };
@@ -109,6 +110,7 @@
 		E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManuIteams.swift; sourceTree = "<group>"; };
 		E0E92A1E247BBCB800F633A0 /* Menulist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menulist.swift; sourceTree = "<group>"; };
 		E0E92A1F247BBCB800F633A0 /* MenuBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBase.swift; sourceTree = "<group>"; };
+		E0E92A23247D890400F633A0 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		E0F1F70924542ABB00551BD4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E0F1F70D2454527000551BD4 /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		E0F1F70E2454527000551BD4 /* CommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonCell.xib; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				E08854CB245D969700C78C75 /* BookListViewController.swift */,
 				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0A77C5E2460130B00787231 /* AudioBookViewController.swift */,
+				E0E92A23247D890400F633A0 /* AboutUsViewController.swift */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				E0B0B2032448865200FF986B /* AuthorView.swift in Sources */,
 				E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */,
 				E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */,
+				E0E92A24247D890400F633A0 /* AboutUsViewController.swift in Sources */,
 				E0F6282D2461768D00DDA808 /* AudioBookCell.swift in Sources */,
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,
 				E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */,
