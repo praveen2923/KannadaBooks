@@ -57,6 +57,12 @@ struct APIList {
              return "getaudiobooks.php"
          }
      }
+    
+    static var savefeedback : String {
+         get {
+             return "newapi/savefeedback.php"
+         }
+     }
 }
 
 extension String {

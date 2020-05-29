@@ -106,11 +106,7 @@ class APIManager: NSObject {
         if let data = result as? Data {
             do {
                 if let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any> {
-                    if result != nil { // # Bug: 1209
-                        completion(nil, result) // no Error
-                    } else {
-                        completion(true, nil) // SQL error
-                    }
+                  completion(nil, result) // no Error
                 } else{
                     completion(true, nil) // Parse error
                 }
@@ -139,6 +135,20 @@ class APIManager: NSObject {
            completion(nil, nil)
         }
     }
+    
+    
+    // Send Feedback
+    class func sendFeedMessage(_ name: String, _ email:String, _ message:String, completion: @escaping CompletionHandler) {
         
+            let bParameters:Parameters = [ "name" : name,
+                                           "email":email,
+                                           "feedback":message]
+            APIManager.serviceRequest(APIList.savefeedback.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
+                APIManager.responseHandler(result) { (error, result) in
+                   completion(error, result)
+                }
+            }
+        
+    }
 }
 

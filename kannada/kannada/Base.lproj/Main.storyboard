@@ -856,10 +856,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-7N-Akf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-7N-Akf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1043,7 +1042,6 @@
         <!--About Us View Controller-->
         <scene sceneID="Mqp-vK-bxu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g0Q-X7-rdx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="AboutUsViewController" id="5A5-vw-AHt" customClass="AboutUsViewController" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5nB-A5-NnU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -2980,6 +2978,9 @@ Cg
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didTapOnSendFeedbackBtn:" destination="5A5-vw-AHt" eventType="touchUpInside" id="d9b-9b-QS6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -3014,8 +3015,12 @@ Cg
                     </view>
                     <connections>
                         <outlet property="ibCommentTextview" destination="c0o-sN-WUu" id="Ymi-f3-FB2"/>
+                        <outlet property="ibEmailTxt" destination="9dF-R9-CGw" id="LZd-8a-Dhp"/>
+                        <outlet property="ibNameTxt" destination="m6f-Z8-Tqk" id="Jg2-RL-FJP"/>
+                        <outlet property="ibSendMessageBtn" destination="Ck0-fw-KM4" id="vUK-cB-JEU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g0Q-X7-rdx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3410.144927536232" y="814.95535714285711"/>
         </scene>

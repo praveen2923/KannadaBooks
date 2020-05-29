@@ -48,12 +48,13 @@ class BookReader: UIViewController {
     func bookDowanload() {
         if book?.bookpdfurl != "" {
             if let bookurl =  book?.bookpdfurl {
-                let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
-                 guard let url =  fullbookpdfurl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) else { return  }
-                if self.showSavedPdf(fileName: book?.bookid ?? "") {
+                let filecomp = bookurl.components(separatedBy: "/")
+                let typebook = filecomp[filecomp.count-2]
+                if self.showSavedPdf(fileName: "\(typebook)\(book?.bookid ?? "")") {
                     print("Book is in Locally stored")
                 }else{
-                    self.downloadPdf(downloadUrl: url, uniqueName: book?.bookid ?? "") { (filePath, status) in
+                     let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
+                    self.downloadPdf(downloadUrl: fullbookpdfurl, uniqueName: book?.bookid ?? "") { (filePath, status) in
                         print("URl: \(filePath)")
                      }
                 }
@@ -110,7 +111,9 @@ class BookReader: UIViewController {
         self.showeLoadingwithText(0)
         let destinationPath: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0];
-            let fileURL = documentsURL.appendingPathComponent("\(uniqueName).pdf")
+            let filecomp = downloadUrl.components(separatedBy: "/")
+            let typebook = filecomp[filecomp.count-2]
+            let fileURL = documentsURL.appendingPathComponent("\(typebook)\(uniqueName).pdf")
             print(fileURL)
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }

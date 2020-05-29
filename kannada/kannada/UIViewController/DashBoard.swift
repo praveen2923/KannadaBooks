@@ -177,6 +177,15 @@ extension UIViewController {
             SVProgressHUD.showError(withStatus: msg)
         }
     }
+    
+    func showeSucessMsg(_ msg : String)  {
+           DispatchQueue.main.async {
+               SVProgressHUD.setDefaultStyle(.dark)
+               SVProgressHUD.dismiss(withDelay: 1)
+                SVProgressHUD.showSuccess(withStatus: msg)
+           }
+       }
+    
     func showeLoading()  {
         DispatchQueue.main.async {
           SVProgressHUD.setDefaultStyle(.dark)
