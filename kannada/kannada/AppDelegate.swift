@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          self.setNotification()
          self.addbackgroundPlayerEnable()
          IQKeyboardManager.shared.enable = true
+         GADMobileAds.sharedInstance().start(completionHandler: nil)
          ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
          return true
     }
@@ -82,9 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         
     }
-    
-    
-
 }
 
 extension AppDelegate : UAPushNotificationDelegate {

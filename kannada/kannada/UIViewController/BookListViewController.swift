@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class BookListViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var collection: UICollectionView!
     var authors : Authors?
     var authorlist : [Authors] = []
@@ -26,6 +28,9 @@ class BookListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
 }
 
@@ -95,4 +100,19 @@ extension BookListViewController : UICollectionViewDelegate, UICollectionViewDat
             self.collection.reloadData()
         }
     }
+}
+
+extension BookListViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+         print("adViewDidReceiveAd")
+       }
+
+       func adView(_ bannerView: GADBannerView,
+           didFailToReceiveAdWithError error: GADRequestError) {
+         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+       }
+
+       func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+         print("adViewWillPresentScreen")
+       }
 }

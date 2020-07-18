@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class NewFeedsViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
     var menuIteam:Menulist?
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
         self.title = menuIteam?.name
+        bannerView.delegate = self
+               bannerView.rootViewController = self
+               bannerView.load(GADRequest())
     }
 }
 
@@ -71,4 +77,19 @@ extension NewFeedsViewController : FeedDelegate {
         controller.feedNote = self.menuIteam?.manuIteams?[indexPath?.row ?? 0]
         self.present(controller, animated: true, completion: nil)
     }
+}
+
+extension NewFeedsViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+         print("adViewDidReceiveAd")
+       }
+
+       func adView(_ bannerView: GADBannerView,
+           didFailToReceiveAdWithError error: GADRequestError) {
+         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+       }
+
+       func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+         print("adViewWillPresentScreen")
+       }
 }

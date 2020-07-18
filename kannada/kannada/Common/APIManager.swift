@@ -28,6 +28,7 @@ class APIManager: NSObject {
             }
             if response.response?.statusCode == 200 {
                 completion(nil, response.data)
+            
             } else {
                 completion(response.data, nil)
             }

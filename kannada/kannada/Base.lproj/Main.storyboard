@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xcx-CO-F54">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xcx-CO-F54">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -507,21 +507,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yun-vE-Gkj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="724"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="heM-KR-OQK" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tLi-lf-VTe"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-9743507528822263/5962117707"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="heM-KR-OQK" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="0hJ-fa-G3z"/>
+                            <constraint firstItem="heM-KR-OQK" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="0pX-vK-Xb7"/>
                             <constraint firstItem="yun-vE-Gkj" firstAttribute="top" secondItem="mJV-BU-dcJ" secondAttribute="top" id="55j-Ag-pwc"/>
+                            <constraint firstItem="heM-KR-OQK" firstAttribute="top" secondItem="yun-vE-Gkj" secondAttribute="bottom" id="N4v-Nf-p1R"/>
                             <constraint firstItem="yun-vE-Gkj" firstAttribute="trailing" secondItem="mJV-BU-dcJ" secondAttribute="trailing" id="Udi-JL-8Sw"/>
                             <constraint firstItem="yun-vE-Gkj" firstAttribute="leading" secondItem="mJV-BU-dcJ" secondAttribute="leading" id="gym-pu-4Eg"/>
-                            <constraint firstItem="yun-vE-Gkj" firstAttribute="bottom" secondItem="mJV-BU-dcJ" secondAttribute="bottom" id="hr4-F9-qP2"/>
+                            <constraint firstItem="heM-KR-OQK" firstAttribute="bottom" secondItem="mJV-BU-dcJ" secondAttribute="bottom" id="m7J-Xr-yqx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mJV-BU-dcJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mLF-pL-tMr"/>
                     <connections>
+                        <outlet property="bannerView" destination="heM-KR-OQK" id="41t-Za-idS"/>
                         <outlet property="tableView" destination="yun-vE-Gkj" id="lKG-mL-p6C"/>
                     </connections>
                 </viewController>
@@ -597,8 +611,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y5j-Bs-DaR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Y5j-Bs-DaR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="760"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ulu-di-ZEK">
                                     <size key="itemSize" width="189" height="231"/>
@@ -608,23 +622,37 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gm8-iu-Pnf" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1xF-nU-hsk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-9743507528822263/5962117707"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Gm8-iu-Pnf" firstAttribute="trailing" secondItem="PMC-cF-QBk" secondAttribute="trailing" id="28m-QI-7jw"/>
+                            <constraint firstItem="Gm8-iu-Pnf" firstAttribute="leading" secondItem="PMC-cF-QBk" secondAttribute="leading" id="6R6-E5-cty"/>
                             <constraint firstItem="Y5j-Bs-DaR" firstAttribute="top" secondItem="PMC-cF-QBk" secondAttribute="top" id="9sz-3R-pRS"/>
                             <constraint firstItem="Y5j-Bs-DaR" firstAttribute="trailing" secondItem="PMC-cF-QBk" secondAttribute="trailing" id="Akb-aJ-HLG"/>
                             <constraint firstItem="Y5j-Bs-DaR" firstAttribute="leading" secondItem="PMC-cF-QBk" secondAttribute="leading" id="aCn-P5-mbL"/>
-                            <constraint firstItem="PMC-cF-QBk" firstAttribute="bottom" secondItem="Y5j-Bs-DaR" secondAttribute="bottom" id="rra-4e-KQq"/>
+                            <constraint firstItem="Gm8-iu-Pnf" firstAttribute="bottom" secondItem="PMC-cF-QBk" secondAttribute="bottom" id="hwa-OB-Qhm"/>
+                            <constraint firstItem="Gm8-iu-Pnf" firstAttribute="top" secondItem="Y5j-Bs-DaR" secondAttribute="bottom" constant="8" id="yde-wa-YZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PMC-cF-QBk"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="Gm8-iu-Pnf" id="Qve-vQ-2co"/>
                         <outlet property="collection" destination="Y5j-Bs-DaR" id="xYr-Mo-Yo1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqG-6k-bre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992" y="116"/>
+            <point key="canvasLocation" x="1991.3043478260872" y="115.84821428571428"/>
         </scene>
         <!--Audio Book View Controller-->
         <scene sceneID="iMl-Dd-qAZ">
@@ -856,17 +884,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-7N-Akf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JuY-7N-Akf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="734"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsv-fQ-3vL" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Nc-GA-zs1"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-9743507528822263/5962117707"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="kft-zr-G0R" firstAttribute="bottom" secondItem="JuY-7N-Akf" secondAttribute="bottom" id="fKM-a0-zX0"/>
+                            <constraint firstItem="Fsv-fQ-3vL" firstAttribute="trailing" secondItem="kft-zr-G0R" secondAttribute="trailing" id="401-Gs-wIG"/>
+                            <constraint firstItem="Fsv-fQ-3vL" firstAttribute="bottom" secondItem="kft-zr-G0R" secondAttribute="bottom" id="K3H-0b-ai1"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="leading" secondItem="kft-zr-G0R" secondAttribute="leading" id="ftG-kJ-YsU"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="trailing" secondItem="kft-zr-G0R" secondAttribute="trailing" id="jwD-NA-wju"/>
+                            <constraint firstItem="Fsv-fQ-3vL" firstAttribute="leading" secondItem="kft-zr-G0R" secondAttribute="leading" id="mMu-iO-N91"/>
                             <constraint firstItem="JuY-7N-Akf" firstAttribute="top" secondItem="kft-zr-G0R" secondAttribute="top" id="wIy-d4-RIL"/>
+                            <constraint firstItem="Fsv-fQ-3vL" firstAttribute="top" secondItem="JuY-7N-Akf" secondAttribute="bottom" id="yNj-3W-KRD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kft-zr-G0R"/>
                     </view>
@@ -874,12 +915,13 @@
                         <barButtonItem key="backBarButtonItem" title="       " id="5mN-i9-Jfv"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="Fsv-fQ-3vL" id="53c-C3-cpX"/>
                         <outlet property="tableView" destination="JuY-7N-Akf" id="dkY-jH-3Pq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irk-pS-ITq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-114" y="818"/>
+            <point key="canvasLocation" x="-114.49275362318842" y="817.63392857142856"/>
         </scene>
         <!--Book Reader-->
         <scene sceneID="pAg-1T-tTm">
@@ -975,22 +1017,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0S-fb-1ve">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P0S-fb-1ve">
+                                <rect key="frame" x="0.0" y="44" width="414" height="766"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-t4-Z9H" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Zek-uS-BMS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="adUnitID" value="ca-app-pub-9743507528822263/5962117707"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="wvm-dz-FJS" firstAttribute="bottom" secondItem="P0S-fb-1ve" secondAttribute="bottom" id="AND-Z6-PcJ"/>
+                            <constraint firstItem="Azh-t4-Z9H" firstAttribute="leading" secondItem="wvm-dz-FJS" secondAttribute="leading" id="AEv-JQ-Z7G"/>
+                            <constraint firstItem="Azh-t4-Z9H" firstAttribute="bottom" secondItem="wvm-dz-FJS" secondAttribute="bottom" id="OG1-pu-yQE"/>
+                            <constraint firstItem="Azh-t4-Z9H" firstAttribute="top" secondItem="P0S-fb-1ve" secondAttribute="bottom" id="WMh-H5-PRg"/>
                             <constraint firstItem="P0S-fb-1ve" firstAttribute="top" secondItem="wvm-dz-FJS" secondAttribute="top" id="i7T-Ac-5ws"/>
                             <constraint firstItem="P0S-fb-1ve" firstAttribute="leading" secondItem="wvm-dz-FJS" secondAttribute="leading" id="nBB-Ao-aXv"/>
+                            <constraint firstItem="Azh-t4-Z9H" firstAttribute="trailing" secondItem="wvm-dz-FJS" secondAttribute="trailing" id="tir-k4-f0a"/>
                             <constraint firstItem="P0S-fb-1ve" firstAttribute="trailing" secondItem="wvm-dz-FJS" secondAttribute="trailing" id="vTx-LL-w8v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wvm-dz-FJS"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="Azh-t4-Z9H" id="8tV-gN-6mj"/>
                         <outlet property="tableview" destination="P0S-fb-1ve" id="cnE-Zy-ChG"/>
                     </connections>
                 </viewController>

@@ -14,15 +14,21 @@ class AuthorView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var bookcatalogue : Bookcatalogue?
-
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getBookCatalogue()
         self.configureTableView()
+      
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
   //  getBookCatalogue
@@ -35,16 +41,6 @@ class AuthorView: UIViewController {
                 
             }
         }
-    }
-}
-
-extension AuthorView : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("recived add")
-    }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        print("Failed recieved:\(error)")
     }
 }
 
@@ -139,4 +135,19 @@ extension AuthorView : TapOnBookCellDelegate {
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }
+}
+
+extension AuthorView : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+         print("adViewDidReceiveAd")
+       }
+
+       func adView(_ bannerView: GADBannerView,
+           didFailToReceiveAdWithError error: GADRequestError) {
+         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+       }
+
+       func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+         print("adViewWillPresentScreen")
+       }
 }
