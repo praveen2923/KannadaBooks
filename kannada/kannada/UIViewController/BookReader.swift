@@ -7,20 +7,19 @@
 //
 
 import UIKit
-import GoogleMobileAds
 import Alamofire
 import PDFKit
 
 class BookReader: UIViewController {
 
     @IBOutlet weak var ibPdfView: PDFView!
+    var book:Books?
     
-    var bookInfo : Book?
     var bookpdfurl : String?
-    var filePath : String?
+    var filePath : URL?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = bookInfo?.book_name
+        self.navigationItem.title = book?.bookname
         self.addShareButton()
         self.bookDowanload()
     }
@@ -33,25 +32,28 @@ class BookReader: UIViewController {
     @objc func didTapOnShareBtn(_ sender: Any) {
 
         let fileManager = FileManager.default
-
-        if let path = self.filePath, fileManager.fileExists(atPath: path) {
-            let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [path], applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view
-            self.present(activityViewController, animated: true, completion: nil)
+        if fileManager.fileExists(atPath: filePath?.path ?? "") {
+            if let absoluteURL = self.filePath?.absoluteURL {
+                let pdfDATA = try? Data(contentsOf: absoluteURL)
+                let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [pdfDATA ?? ""], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                self.present(activityViewController, animated: true, completion: nil)
+            }
         } else {
             print("document was not found")
         }
     }
     
     func bookDowanload() {
-        if bookInfo?.book_pdf_url != "" {
-            if let bookurl = bookInfo?.book_pdf_url {
-                let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
-                 guard let url =  fullbookpdfurl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed) else { return  }
-                if self.showSavedPdf(fileName: bookInfo?.bookId ?? "") {
+        if book?.bookpdfurl != "" {
+            if let bookurl =  book?.bookpdfurl {
+                let filecomp = bookurl.components(separatedBy: "/")
+                let typebook = filecomp[filecomp.count-2]
+                if self.showSavedPdf(fileName: "\(typebook)\(book?.bookid ?? "")") {
                     print("Book is in Locally stored")
                 }else{
-                    self.downloadPdf(downloadUrl: url, uniqueName: bookInfo?.bookId ?? "") { (filePath, status) in
+                     let fullbookpdfurl = APIList.BOOKBaseUrl + bookurl
+                    self.downloadPdf(downloadUrl: fullbookpdfurl, uniqueName: book?.bookid ?? "") { (filePath, status) in
                         print("URl: \(filePath)")
                      }
                 }
@@ -71,7 +73,7 @@ class BookReader: UIViewController {
                         let theFileName = (url.absoluteString as NSString).lastPathComponent
                         if theFileName ==  "\(fileName).pdf"{
                             self.showFileFromLocal(url.absoluteURL)
-                            self.filePath = url.path
+                            self.filePath = url
                             print("file found in local storage")
                             isFileInLocal = true
                             break;
@@ -97,7 +99,6 @@ class BookReader: UIViewController {
             self.ibPdfView.displayMode = .singlePageContinuous
             self.ibPdfView.displaysPageBreaks = true
             self.ibPdfView.document = document
-
             self.ibPdfView.maxScaleFactor = 4.0
             self.ibPdfView.minScaleFactor =   self.ibPdfView.scaleFactorForSizeToFit
 
@@ -109,7 +110,9 @@ class BookReader: UIViewController {
         self.showeLoadingwithText(0)
         let destinationPath: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0];
-            let fileURL = documentsURL.appendingPathComponent("\(uniqueName).pdf")
+            let filecomp = downloadUrl.components(separatedBy: "/")
+            let typebook = filecomp[filecomp.count-2]
+            let fileURL = documentsURL.appendingPathComponent("\(typebook)\(uniqueName).pdf")
             print(fileURL)
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
@@ -125,7 +128,7 @@ class BookReader: UIViewController {
                     if response.fileURL != nil, let filePath = response.fileURL?.absoluteString {
                         if let url = response.fileURL?.absoluteURL {
                              self.showFileFromLocal(url)
-                            self.filePath = response.fileURL?.path
+                            self.filePath = response.fileURL
                         }
                         self.hideLoading()
                         completionHandler(filePath, true)

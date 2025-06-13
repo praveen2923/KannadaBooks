@@ -12,29 +12,29 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Author {
-	public var iD : String?
-	public var name : String?
-	public var about : String?
-	public var image : String?
-	public var categoryid : String?
+public class Authors {
+	public var authorid : String?
+	public var authorname : String?
+	public var authorimage : String?
+	public var authorabout : String?
+	public var books : Array<Books>?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let json4Swift_Base_list = Json4Swift_Base.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let authors_list = Authors.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Json4Swift_Base Instances.
+    - returns: Array of Authors Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [Author]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Authors]
     {
-        var models:[Author] = []
+        var models:[Authors] = []
         for item in array
         {
-            models.append(Author(dictionary: item as! NSDictionary)!)
+            models.append(Authors(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -43,19 +43,19 @@ public class Author {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let json4Swift_Base = Json4Swift_Base(someDictionaryFromJSON)
+    let authors = Authors(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Json4Swift_Base Instance.
+    - returns: Authors Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		iD = dictionary["ID"] as? String
-		name = dictionary["Name"] as? String
-		about = dictionary["about"] as? String
-		image = dictionary["image"] as? String
-		categoryid = dictionary["categoryid"] as? String
+		authorid = dictionary["authorid"] as? String
+		authorname = dictionary["authorname"] as? String
+		authorimage = dictionary["authorimage"] as? String
+		authorabout = dictionary["authorabout"] as? String
+        if (dictionary["books"] != nil) { books = Books.modelsFromDictionaryArray(array: dictionary["books"] as! NSArray) }
 	}
 
 		
@@ -68,11 +68,10 @@ public class Author {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.iD, forKey: "ID")
-		dictionary.setValue(self.name, forKey: "Name")
-		dictionary.setValue(self.about, forKey: "about")
-		dictionary.setValue(self.image, forKey: "image")
-		dictionary.setValue(self.categoryid, forKey: "categoryid")
+		dictionary.setValue(self.authorid, forKey: "authorid")
+		dictionary.setValue(self.authorname, forKey: "authorname")
+		dictionary.setValue(self.authorimage, forKey: "authorimage")
+		dictionary.setValue(self.authorabout, forKey: "authorabout")
 
 		return dictionary
 	}

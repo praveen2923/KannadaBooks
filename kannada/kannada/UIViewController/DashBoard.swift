@@ -101,7 +101,7 @@ class DashBoard: UIViewController  {
                 self.showeErorMsg("ದಯವಿಟ್ಟು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ")
             }
             if self.values.count != 0 {
-                self.values.insert("ಆಡಿಯೊಬುಕ್", at: 1)
+                self.values.insert("ಆಡಿಯೊಬುಕ್ಸ್", at: 1)
                 self.setCarbonframe()
             }
         }
@@ -121,6 +121,7 @@ class DashBoard: UIViewController  {
         carbonTabSwipeNavigation.setTabBarHeight(55)
         carbonTabSwipeNavigation.setSelectedColor(UIColor.systemGreen)
         carbonTabSwipeNavigation.setIndicatorColor(UIColor.systemGreen)
+        carbonTabSwipeNavigation.pagesScrollView?.isScrollEnabled = false
     }
 
 }
@@ -176,6 +177,15 @@ extension UIViewController {
             SVProgressHUD.showError(withStatus: msg)
         }
     }
+    
+    func showeSucessMsg(_ msg : String)  {
+           DispatchQueue.main.async {
+               SVProgressHUD.setDefaultStyle(.dark)
+               SVProgressHUD.dismiss(withDelay: 1)
+                SVProgressHUD.showSuccess(withStatus: msg)
+           }
+       }
+    
     func showeLoading()  {
         DispatchQueue.main.async {
           SVProgressHUD.setDefaultStyle(.dark)

@@ -11,20 +11,25 @@
 		E0063469244958BE001A728F /* UD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0063468244958BE001A728F /* UD.swift */; };
 		E006346B24495A66001A728F /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006346A24495A66001A728F /* APIManager.swift */; };
 		E006346D24495AD0001A728F /* APIList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006346C24495AD0001A728F /* APIList.swift */; };
-		E006346F2449ADED001A728F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E006346E2449ADED001A728F /* LoginView.swift */; };
-		E00634732449F347001A728F /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = E00634722449F347001A728F /* Author.swift */; };
-		E0063475244A36F8001A728F /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0063474244A36F8001A728F /* Book.swift */; };
 		E0063477244A4AE6001A728F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0063476244A4AE6001A728F /* WebKit.framework */; };
+		E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */; };
+		E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */; };
+		E04FD7732476C13500082D0D /* TableViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */; };
+		E04FD7742476C13500082D0D /* TableViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */; };
+		E04FD782247786EC00082D0D /* Authors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD77E247786EC00082D0D /* Authors.swift */; };
+		E04FD783247786EC00082D0D /* Catlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD77F247786EC00082D0D /* Catlist.swift */; };
+		E04FD784247786EC00082D0D /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD780247786EC00082D0D /* Books.swift */; };
+		E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04FD781247786EC00082D0D /* Bookcatalogue.swift */; };
 		E054853E244B07F70065532E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E054853C244B07F70065532E /* HistoryCell.swift */; };
 		E054853F244B07F70065532E /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E054853D244B07F70065532E /* HistoryCell.xib */; };
 		E0548541244B39260065532E /* Other.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548540244B39260065532E /* Other.swift */; };
 		E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0548542244B46BE0065532E /* MoreDetailsView.swift */; };
+		E07CAF09246434AF00FAC819 /* AudioBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07CAF08246434AF00FAC819 /* AudioBook.swift */; };
 		E08854BE24545FAE00C78C75 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08854BD24545FAE00C78C75 /* StoreKit.framework */; };
 		E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854BF2455748600C78C75 /* NewFeedsViewController.swift */; };
 		E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C12455793100C78C75 /* SlideMenuController.swift */; };
 		E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */; };
 		E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */; };
-		E08854C82456072600C78C75 /* NewsFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C72456072600C78C75 /* NewsFeed.swift */; };
 		E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854C92456DF9900C78C75 /* FeedModelViewController.swift */; };
 		E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CB245D969700C78C75 /* BookListViewController.swift */; };
 		E08854D1245D982600C78C75 /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08854CF245D982600C78C75 /* BookListCell.swift */; };
@@ -40,13 +45,18 @@
 		E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1E62445D07400FF986B /* OtherListViewController.swift */; };
 		E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1F32445EC5B00FF986B /* BookReader.swift */; };
 		E0B0B1F72448699100FF986B /* extens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1F62448699100FF986B /* extens.swift */; };
-		E0B0B1FB24486E8500FF986B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FA24486E8500FF986B /* RegisterView.swift */; };
 		E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B1FC2448841B00FF986B /* AuthorCell.swift */; };
 		E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0B0B1FD2448841B00FF986B /* AuthorCell.xib */; };
 		E0B0B2032448865200FF986B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B0B2022448865200FF986B /* AuthorView.swift */; };
+		E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */; };
+		E0E92A21247BBCB800F633A0 /* Menulist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1E247BBCB800F633A0 /* Menulist.swift */; };
+		E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A1F247BBCB800F633A0 /* MenuBase.swift */; };
+		E0E92A24247D890400F633A0 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E92A23247D890400F633A0 /* AboutUsViewController.swift */; };
 		E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70924542ABB00551BD4 /* MenuViewController.swift */; };
 		E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F1F70D2454527000551BD4 /* CommonCell.swift */; };
 		E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F1F70E2454527000551BD4 /* CommonCell.xib */; };
+		E0F6282D2461768D00DDA808 /* AudioBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F6282B2461768D00DDA808 /* AudioBookCell.swift */; };
+		E0F6282E2461768D00DDA808 /* AudioBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F6282C2461768D00DDA808 /* AudioBookCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,23 +66,27 @@
 		E0063468244958BE001A728F /* UD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UD.swift; sourceTree = "<group>"; };
 		E006346A24495A66001A728F /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		E006346C24495AD0001A728F /* APIList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIList.swift; sourceTree = "<group>"; };
-		E006346E2449ADED001A728F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		E00634722449F347001A728F /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
-		E0063474244A36F8001A728F /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		E0063476244A4AE6001A728F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTableViewCell.swift; sourceTree = "<group>"; };
+		E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorTableViewCell.xib; sourceTree = "<group>"; };
+		E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHeaderCell.swift; sourceTree = "<group>"; };
+		E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewHeaderCell.xib; sourceTree = "<group>"; };
+		E04FD77E247786EC00082D0D /* Authors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authors.swift; sourceTree = "<group>"; };
+		E04FD77F247786EC00082D0D /* Catlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Catlist.swift; sourceTree = "<group>"; };
+		E04FD780247786EC00082D0D /* Books.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
+		E04FD781247786EC00082D0D /* Bookcatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookcatalogue.swift; sourceTree = "<group>"; };
 		E0513A06245065DB00F07E4F /* kannadabooks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooks.entitlements; sourceTree = "<group>"; };
 		E0513A07245065E200F07E4F /* kannadabooksRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kannadabooksRelease.entitlements; sourceTree = "<group>"; };
 		E054853C244B07F70065532E /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		E054853D244B07F70065532E /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		E0548540244B39260065532E /* Other.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Other.swift; sourceTree = "<group>"; };
 		E0548542244B46BE0065532E /* MoreDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDetailsView.swift; sourceTree = "<group>"; };
-		E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07CAF08246434AF00FAC819 /* AudioBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioBook.swift; sourceTree = "<group>"; };
 		E08854BD24545FAE00C78C75 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E08854BF2455748600C78C75 /* NewFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedsViewController.swift; sourceTree = "<group>"; };
 		E08854C12455793100C78C75 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		E08854C32455A5FA00C78C75 /* FeedNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedNewsCell.swift; sourceTree = "<group>"; };
 		E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedNewsCell.xib; sourceTree = "<group>"; };
-		E08854C72456072600C78C75 /* NewsFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeed.swift; sourceTree = "<group>"; };
 		E08854C92456DF9900C78C75 /* FeedModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModelViewController.swift; sourceTree = "<group>"; };
 		E08854CB245D969700C78C75 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		E08854CF245D982600C78C75 /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
@@ -89,13 +103,19 @@
 		E0B0B1E62445D07400FF986B /* OtherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewController.swift; sourceTree = "<group>"; };
 		E0B0B1F32445EC5B00FF986B /* BookReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReader.swift; sourceTree = "<group>"; };
 		E0B0B1F62448699100FF986B /* extens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extens.swift; sourceTree = "<group>"; };
-		E0B0B1FA24486E8500FF986B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		E0B0B1FC2448841B00FF986B /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		E0B0B1FD2448841B00FF986B /* AuthorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthorCell.xib; sourceTree = "<group>"; };
 		E0B0B2022448865200FF986B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		E0D35F4124670E5500DB0738 /* ಪುಸ್ತಕಗಳು.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ಪುಸ್ತಕಗಳು.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManuIteams.swift; sourceTree = "<group>"; };
+		E0E92A1E247BBCB800F633A0 /* Menulist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menulist.swift; sourceTree = "<group>"; };
+		E0E92A1F247BBCB800F633A0 /* MenuBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBase.swift; sourceTree = "<group>"; };
+		E0E92A23247D890400F633A0 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		E0F1F70924542ABB00551BD4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E0F1F70D2454527000551BD4 /* CommonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCell.swift; sourceTree = "<group>"; };
 		E0F1F70E2454527000551BD4 /* CommonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonCell.xib; sourceTree = "<group>"; };
+		E0F6282B2461768D00DDA808 /* AudioBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioBookCell.swift; sourceTree = "<group>"; };
+		E0F6282C2461768D00DDA808 /* AudioBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioBookCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +154,8 @@
 		E00634702449F2CF001A728F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E0E92A16247BBC2300F633A0 /* MenuListModel */,
+				E04FD775247784D200082D0D /* BookCatalogue */,
 				E00634712449F2DD001A728F /* Author */,
 			);
 			path = Model;
@@ -142,12 +164,30 @@
 		E00634712449F2DD001A728F /* Author */ = {
 			isa = PBXGroup;
 			children = (
-				E08854C72456072600C78C75 /* NewsFeed.swift */,
+				E07CAF08246434AF00FAC819 /* AudioBook.swift */,
 				E0548540244B39260065532E /* Other.swift */,
-				E0063474244A36F8001A728F /* Book.swift */,
-				E00634722449F347001A728F /* Author.swift */,
 			);
 			path = Author;
+			sourceTree = "<group>";
+		};
+		E04FD7702476C04800082D0D /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				E04FD7712476C13500082D0D /* TableViewHeaderCell.swift */,
+				E04FD7722476C13500082D0D /* TableViewHeaderCell.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		E04FD775247784D200082D0D /* BookCatalogue */ = {
+			isa = PBXGroup;
+			children = (
+				E04FD77E247786EC00082D0D /* Authors.swift */,
+				E04FD780247786EC00082D0D /* Books.swift */,
+				E04FD77F247786EC00082D0D /* Catlist.swift */,
+				E04FD781247786EC00082D0D /* Bookcatalogue.swift */,
+			);
+			path = BookCatalogue;
 			sourceTree = "<group>";
 		};
 		E0B0B1C32445CCB300FF986B = {
@@ -156,17 +196,18 @@
 				E0B0B1CE2445CCB300FF986B /* kannada */,
 				41BA170AA39F5D6DDA3766EB /* Pods */,
 				CFF5563CC4173A09BF46B73C /* Frameworks */,
-				E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */,
+				E0D35F4124670E5500DB0738 /* ಪುಸ್ತಕಗಳು.app */,
 			);
 			sourceTree = "<group>";
 		};
 		E0B0B1CE2445CCB300FF986B /* kannada */ = {
 			isa = PBXGroup;
 			children = (
+				E04FD7702476C04800082D0D /* CustomView */,
 				E00634702449F2CF001A728F /* Model */,
 				E0B0B1F52448695600FF986B /* Common */,
 				E0B0B1E82445D30B00FF986B /* UICells */,
-				E0B0B1E32445CF2500FF986B /* UIScreen */,
+				E0B0B1E32445CF2500FF986B /* UIViewController */,
 				E0B0B1CF2445CCB300FF986B /* AppDelegate.swift */,
 				E0B0B1D12445CCB300FF986B /* SceneDelegate.swift */,
 				E0B0B1D52445CCB300FF986B /* Main.storyboard */,
@@ -180,10 +221,9 @@
 			path = kannada;
 			sourceTree = "<group>";
 		};
-		E0B0B1E32445CF2500FF986B /* UIScreen */ = {
+		E0B0B1E32445CF2500FF986B /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E0F1F70C24544E4900551BD4 /* Not Used */,
 				E0B0B1E42445CF3700FF986B /* DashBoard.swift */,
 				E0B0B2022448865200FF986B /* AuthorView.swift */,
 				E0B0B1E62445D07400FF986B /* OtherListViewController.swift */,
@@ -194,8 +234,9 @@
 				E08854CB245D969700C78C75 /* BookListViewController.swift */,
 				E0B0B1F32445EC5B00FF986B /* BookReader.swift */,
 				E0A77C5E2460130B00787231 /* AudioBookViewController.swift */,
+				E0E92A23247D890400F633A0 /* AboutUsViewController.swift */,
 			);
-			path = UIScreen;
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		E0B0B1E82445D30B00FF986B /* UICells */ = {
@@ -211,6 +252,10 @@
 				E08854C42455A5FA00C78C75 /* FeedNewsCell.xib */,
 				E08854CF245D982600C78C75 /* BookListCell.swift */,
 				E08854D0245D982600C78C75 /* BookListCell.xib */,
+				E0F6282B2461768D00DDA808 /* AudioBookCell.swift */,
+				E0F6282C2461768D00DDA808 /* AudioBookCell.xib */,
+				E04FD76C2476956500082D0D /* AuthorTableViewCell.swift */,
+				E04FD76D2476956500082D0D /* AuthorTableViewCell.xib */,
 			);
 			path = UICells;
 			sourceTree = "<group>";
@@ -227,13 +272,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		E0F1F70C24544E4900551BD4 /* Not Used */ = {
+		E0E92A16247BBC2300F633A0 /* MenuListModel */ = {
 			isa = PBXGroup;
 			children = (
-				E006346E2449ADED001A728F /* LoginView.swift */,
-				E0B0B1FA24486E8500FF986B /* RegisterView.swift */,
+				E0E92A1F247BBCB800F633A0 /* MenuBase.swift */,
+				E0E92A1E247BBCB800F633A0 /* Menulist.swift */,
+				E0E92A1D247BBCB800F633A0 /* ManuIteams.swift */,
 			);
-			path = "Not Used";
+			path = MenuListModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +301,7 @@
 			);
 			name = kannada;
 			productName = kannada;
-			productReference = E08854BC245454F000C78C75 /* ಪುಸ್ತಕಗಳು.app */;
+			productReference = E0D35F4124670E5500DB0738 /* ಪುಸ್ತಕಗಳು.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -297,12 +343,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0F1F7102454527000551BD4 /* CommonCell.xib in Resources */,
+				E04FD76F2476956500082D0D /* AuthorTableViewCell.xib in Resources */,
 				E08854C62455A5FA00C78C75 /* FeedNewsCell.xib in Resources */,
 				E08854D2245D982600C78C75 /* BookListCell.xib in Resources */,
 				E09247B6244DCE17009DE3F2 /* AirshipConfig.plist in Resources */,
 				E0B0B1DC2445CCB400FF986B /* LaunchScreen.storyboard in Resources */,
 				E0B0B1D92445CCB300FF986B /* Assets.xcassets in Resources */,
 				E0B0B1FF2448841B00FF986B /* AuthorCell.xib in Resources */,
+				E04FD7742476C13500082D0D /* TableViewHeaderCell.xib in Resources */,
+				E0F6282E2461768D00DDA808 /* AudioBookCell.xib in Resources */,
 				E054853F244B07F70065532E /* HistoryCell.xib in Resources */,
 				E0B0B1D72445CCB300FF986B /* Main.storyboard in Resources */,
 			);
@@ -357,31 +406,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0063475244A36F8001A728F /* Book.swift in Sources */,
 				E006346B24495A66001A728F /* APIManager.swift in Sources */,
 				E08854CC245D969700C78C75 /* BookListViewController.swift in Sources */,
+				E04FD784247786EC00082D0D /* Books.swift in Sources */,
 				E0F1F70F2454527000551BD4 /* CommonCell.swift in Sources */,
 				E0B0B1E72445D07400FF986B /* OtherListViewController.swift in Sources */,
 				E08854C22455793100C78C75 /* SlideMenuController.swift in Sources */,
 				E0B0B1F72448699100FF986B /* extens.swift in Sources */,
+				E07CAF09246434AF00FAC819 /* AudioBook.swift in Sources */,
 				E0B0B1E52445CF3700FF986B /* DashBoard.swift in Sources */,
+				E0E92A20247BBCB800F633A0 /* ManuIteams.swift in Sources */,
 				E0B0B1FE2448841B00FF986B /* AuthorCell.swift in Sources */,
-				E08854C82456072600C78C75 /* NewsFeed.swift in Sources */,
 				E0548541244B39260065532E /* Other.swift in Sources */,
 				E054853E244B07F70065532E /* HistoryCell.swift in Sources */,
 				E0A77C5F2460130B00787231 /* AudioBookViewController.swift in Sources */,
+				E04FD7732476C13500082D0D /* TableViewHeaderCell.swift in Sources */,
 				E08854D1245D982600C78C75 /* BookListCell.swift in Sources */,
+				E0E92A21247BBCB800F633A0 /* Menulist.swift in Sources */,
 				E08854C02455748600C78C75 /* NewFeedsViewController.swift in Sources */,
 				E0B0B1D02445CCB300FF986B /* AppDelegate.swift in Sources */,
 				E0F1F70A24542ABB00551BD4 /* MenuViewController.swift in Sources */,
+				E04FD782247786EC00082D0D /* Authors.swift in Sources */,
 				E0548543244B46BE0065532E /* MoreDetailsView.swift in Sources */,
 				E0B0B2032448865200FF986B /* AuthorView.swift in Sources */,
+				E04FD76E2476956500082D0D /* AuthorTableViewCell.swift in Sources */,
 				E0B0B1F42445EC5B00FF986B /* BookReader.swift in Sources */,
-				E006346F2449ADED001A728F /* LoginView.swift in Sources */,
+				E0E92A24247D890400F633A0 /* AboutUsViewController.swift in Sources */,
+				E0F6282D2461768D00DDA808 /* AudioBookCell.swift in Sources */,
 				E08854CA2456DF9900C78C75 /* FeedModelViewController.swift in Sources */,
-				E0B0B1FB24486E8500FF986B /* RegisterView.swift in Sources */,
-				E00634732449F347001A728F /* Author.swift in Sources */,
 				E0B0B1D22445CCB300FF986B /* SceneDelegate.swift in Sources */,
+				E0E92A22247BBCB800F633A0 /* MenuBase.swift in Sources */,
+				E04FD785247786EC00082D0D /* Bookcatalogue.swift in Sources */,
+				E04FD783247786EC00082D0D /* Catlist.swift in Sources */,
 				E0063469244958BE001A728F /* UD.swift in Sources */,
 				E006346D24495AD0001A728F /* APIList.swift in Sources */,
 				E08854C52455A5FA00C78C75 /* FeedNewsCell.swift in Sources */,
@@ -532,7 +588,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooks.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -540,7 +596,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -557,7 +614,7 @@
 				CODE_SIGN_ENTITLEMENTS = kannada/kannadabooksRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XAUQE25KE4;
 				INFOPLIST_FILE = kannada/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -565,7 +622,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
+				OTHER_LIBTOOLFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.books.kannadabooks;
 				PRODUCT_NAME = "ಪುಸ್ತಕಗಳು";
 				PROVISIONING_PROFILE_SPECIFIER = "";

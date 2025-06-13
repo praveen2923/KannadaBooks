@@ -10,15 +10,36 @@ import UIKit
 import Airship
 import GoogleMobileAds
 import IQKeyboardManagerSwift
+import AVFoundation
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-         GADMobileAds.sharedInstance().start(completionHandler: nil)
+
          self.setNotification()
+         self.addbackgroundPlayerEnable()
          IQKeyboardManager.shared.enable = true
+         GADMobileAds.sharedInstance().start(completionHandler: nil)
+         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
          return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+           let handled: Bool = ApplicationDelegate.shared.application(application, open: url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
+                   return handled
+       }
+    
+    func addbackgroundPlayerEnable()  {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.default, options: [.defaultToSpeaker, .allowAirPlay])
+            print("Playback OK")
+            try AVAudioSession.sharedInstance().setActive(true)
+            print("Session is Active")
+        } catch {
+            print(error)
+        }
     }
     
     func setNotification()  {
@@ -62,7 +83,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         
     }
-
 }
 
 extension AppDelegate : UAPushNotificationDelegate {

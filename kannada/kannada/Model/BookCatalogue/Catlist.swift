@@ -12,29 +12,28 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class NewsFeed {
+public class Catlist {
 	public var id : String?
-	public var shortnote : String?
-	public var note : String?
-	public var image : String?
 	public var name : String?
+	public var authors : Array<Authors>?
+	public var otherbooks : Array<Books>?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let json4Swift_Base_list = Json4Swift_Base.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let catlist_list = Catlist.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of Json4Swift_Base Instances.
+    - returns: Array of Catlist Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [NewsFeed]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Catlist]
     {
-        var models:[NewsFeed] = []
+        var models:[Catlist] = []
         for item in array
         {
-            models.append(NewsFeed(dictionary: item as! NSDictionary)!)
+            models.append(Catlist(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -43,19 +42,18 @@ public class NewsFeed {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let json4Swift_Base = Json4Swift_Base(someDictionaryFromJSON)
+    let catlist = Catlist(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: Json4Swift_Base Instance.
+    - returns: Catlist Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
 		id = dictionary["id"] as? String
-		shortnote = dictionary["shortnote"] as? String
-		note = dictionary["note"] as? String
-		image = dictionary["image"] as? String
 		name = dictionary["name"] as? String
+        if (dictionary["authors"] != nil) { authors = Authors.modelsFromDictionaryArray(array: dictionary["authors"] as! NSArray) }
+        if (dictionary["otherbooks"] != nil) { otherbooks = Books.modelsFromDictionaryArray(array: dictionary["otherbooks"] as! NSArray) }
 	}
 
 		
@@ -69,9 +67,6 @@ public class NewsFeed {
 		let dictionary = NSMutableDictionary()
 
 		dictionary.setValue(self.id, forKey: "id")
-		dictionary.setValue(self.shortnote, forKey: "shortnote")
-		dictionary.setValue(self.note, forKey: "note")
-		dictionary.setValue(self.image, forKey: "image")
 		dictionary.setValue(self.name, forKey: "name")
 
 		return dictionary

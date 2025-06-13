@@ -7,41 +7,21 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class NewFeedsViewController: UIViewController {
 
     @IBOutlet weak var tableview: UITableView!
-    var menuId : String?
-    var navtitle : String?
-    var newsFeed : [NewsFeed] = []
+    var menuIteam:Menulist?
+    @IBOutlet weak var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTableView()
-        self.getFeedById()
-        self.title = self.navtitle
-    }
-    
-    func getFeedById() {
-        self.showeLoading()
-        APIManager.getFeedformationByMenuId(self.menuId) { (error, result) in
-           self.hideLoading()
-           if let values = result as? Array<Any> {
-               for item in values {
-                 if let abook = NewsFeed(dictionary: item as! NSDictionary) {
-                      self.newsFeed.append(abook)
-                  }
-               }
-               if self.newsFeed.count == 0 {
-                   self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-               }else{
-                   self.hideLoading()
-                   self.tableview.reloadData()
-               }
-           }else{
-               self.showeErorMsg("ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ ದಯವಿಟ್ಟು ನಂತರ ಪ್ರಯತ್ನಿಸಿ")
-           }
-        }
+        self.title = menuIteam?.name
+        bannerView.delegate = self
+               bannerView.rootViewController = self
+               bannerView.load(GADRequest())
     }
 }
 
@@ -56,7 +36,7 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsFeed.count
+        return self.menuIteam?.manuIteams?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,13 +47,13 @@ extension NewFeedsViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = self.tableview.dequeueReusableCell(withIdentifier: "FeedNewsCell", for: indexPath) as! FeedNewsCell
         cell.selectionStyle = .none
         cell.delegate = self
-        cell.ibFeedLbl.text = self.newsFeed[indexPath.row].note
-        cell.ibFeedTitleLbl.text = "\(self.newsFeed[indexPath.row].shortnote ?? ""):"
+        cell.ibFeedLbl.text = self.menuIteam?.manuIteams?[indexPath.row].note
+        cell.ibFeedTitleLbl.text = self.menuIteam?.manuIteams?[indexPath.row].shortnote
         cell.ibFeedImage.image = UIImage(named: "kannada")
-        if let authorimage = self.newsFeed[indexPath.row].image {
+        if let authorimage =  self.menuIteam?.manuIteams?[indexPath.row].image {
             if authorimage != "" {
                 let fullurl = APIList.BOOKBaseUrl + authorimage
-                 cell.ibFeedImage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "kannada"))
+                 cell.ibFeedImage?.sd_setImage(with: URL(string: fullurl), placeholderImage: UIImage(named: "noimage"))
             }
         }
         return cell
@@ -94,9 +74,22 @@ extension NewFeedsViewController : FeedDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let controller = storyBoard.instantiateViewController(withIdentifier: "FeedModelViewController") as! FeedModelViewController
         let indexPath = self.tableview.indexPath(for: cell)
-        if let row = indexPath?.row {
-            controller.deatils = self.newsFeed[row]
-        }
+        controller.feedNote = self.menuIteam?.manuIteams?[indexPath?.row ?? 0]
         self.present(controller, animated: true, completion: nil)
     }
+}
+
+extension NewFeedsViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+         print("adViewDidReceiveAd")
+       }
+
+       func adView(_ bannerView: GADBannerView,
+           didFailToReceiveAdWithError error: GADRequestError) {
+         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+       }
+
+       func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+         print("adViewWillPresentScreen")
+       }
 }

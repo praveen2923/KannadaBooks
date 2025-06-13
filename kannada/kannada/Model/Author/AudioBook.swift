@@ -12,19 +12,13 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class Book {
-	public var book_name : String?
-	public var book_publish : String?
-	public var book_pdf_url : String?
-	public var author_Id : String?
-    public var bookId : String?
-	public var book_image_url : String?
-	public var iD : String?
-	public var name : String?
-	public var about : String?
-	public var image : String?
-	public var categoryid : String?
-
+public class AudioBook {
+	public var id : String?
+	public var title : String?
+	public var subtitle : String?
+	public var imageurl : String?
+	public var likes : String?
+    public var audiourl : String?
 /**
     Returns an array of models based on given dictionary.
     
@@ -35,12 +29,12 @@ public class Book {
 
     - returns: Array of Json4Swift_Base Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [Book]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [AudioBook]
     {
-        var models:[Book] = []
+        var models:[AudioBook] = []
         for item in array
         {
-            models.append(Book(dictionary: item as! NSDictionary)!)
+            models.append(AudioBook(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -56,17 +50,13 @@ public class Book {
     - returns: Json4Swift_Base Instance.
 */
 	required public init?(dictionary: NSDictionary) {
-        bookId = dictionary["bookid"] as? String
-		book_name = dictionary["book_name"] as? String
-		book_publish = dictionary["book_publish"] as? String
-		book_pdf_url = dictionary["book_pdf_url"] as? String
-		author_Id = dictionary["author_Id"] as? String
-		book_image_url = dictionary["book_image_url"] as? String
-		iD = dictionary["ID"] as? String
-		name = dictionary["Name"] as? String
-		about = dictionary["about"] as? String
-		image = dictionary["image"] as? String
-		categoryid = dictionary["categoryid"] as? String
+
+		id = dictionary["id"] as? String
+		title = dictionary["title"] as? String
+		subtitle = dictionary["subtitle"] as? String
+		imageurl = dictionary["imageurl"] as? String
+		likes = dictionary["likes"] as? String
+        audiourl = dictionary["audiourl"] as? String
 	}
 
 		
@@ -79,18 +69,12 @@ public class Book {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.book_name, forKey: "book_name")
-		dictionary.setValue(self.book_publish, forKey: "book_publish")
-		dictionary.setValue(self.book_pdf_url, forKey: "book_pdf_url")
-		dictionary.setValue(self.author_Id, forKey: "author_Id")
-		dictionary.setValue(self.book_image_url, forKey: "book_image_url")
-		dictionary.setValue(self.iD, forKey: "ID")
-		dictionary.setValue(self.name, forKey: "Name")
-		dictionary.setValue(self.about, forKey: "about")
-		dictionary.setValue(self.image, forKey: "image")
-		dictionary.setValue(self.categoryid, forKey: "categoryid")
-        dictionary.setValue(self.categoryid, forKey: "bookid")
-
+		dictionary.setValue(self.id, forKey: "id")
+		dictionary.setValue(self.title, forKey: "title")
+		dictionary.setValue(self.subtitle, forKey: "subtitle")
+		dictionary.setValue(self.imageurl, forKey: "imageurl")
+		dictionary.setValue(self.likes, forKey: "likes")
+        dictionary.setValue(self.likes, forKey: "audiourl")
 		return dictionary
 	}
 

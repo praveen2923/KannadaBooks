@@ -9,9 +9,9 @@
 import UIKit
 import GoogleMobileAds
 
-
 class OtherListViewController: UIViewController {
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var tableView: UITableView!
 
     var others : [Other] = []
@@ -29,6 +29,9 @@ class OtherListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        bannerView.delegate = self
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
     }
     
     
@@ -106,6 +109,22 @@ extension OtherListViewController : CellDelegate {
         self.present(controller, animated: true, completion: nil)
     }
 }
+
+extension OtherListViewController : GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+         print("adViewDidReceiveAd")
+       }
+
+       func adView(_ bannerView: GADBannerView,
+           didFailToReceiveAdWithError error: GADRequestError) {
+         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+       }
+
+       func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+         print("adViewWillPresentScreen")
+       }
+}
+
 
  
 

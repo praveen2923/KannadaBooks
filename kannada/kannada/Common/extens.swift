@@ -13,11 +13,14 @@ class MANavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationBar.shadowImage = UIImage()
         let color = UIColor.init(named: "bgcolor")
-        UINavigationBar.appearance().barTintColor = color
-        UINavigationBar.appearance().tintColor =  .systemGreen
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
-        UINavigationBar.appearance().isTranslucent = false
+        self.navigationBar.barTintColor = color
+        self.navigationBar.tintColor =  .systemGreen
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemBlue.cgColor]
+        self.navigationBar.isTranslucent = false
 
     }
     
@@ -27,9 +30,96 @@ class MANavigationViewController: UINavigationController {
 }
 
 
-class extens : UIView {
+
+class CircleView: UIView {
+
+    var foregroundColor = UIColor.white
+    var lineWidth: CGFloat = 4.0
+
+    var isAnimating = false {
+        didSet {
+            if isAnimating {
+                self.isHidden = false
+                self.rotate360Degrees(duration: 1.0)
+            } else {
+                self.isHidden = true
+                self.layer.removeAllAnimations()
+            }
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+
+    func setup() {
+        self.isHidden = true
+        self.backgroundColor = .clear
+    }
+
+    override func draw(_ rect: CGRect) {
+        let width = bounds.width
+        let height = bounds.height
+        let radius = (min(width, height) - lineWidth) / 2.0
+
+        var currentPoint = CGPoint(x: width / 2.0 + radius, y: height / 2.0)
+        var priorAngle = CGFloat(360)
+
+        for angle in stride(from: CGFloat(360), through: 0, by: -2) {
+            let path = UIBezierPath()
+            path.lineWidth = lineWidth
+
+            path.move(to: currentPoint)
+            currentPoint = CGPoint(x: width / 2.0 + cos(angle * .pi / 180.0) * radius, y: height / 2.0 + sin(angle * .pi / 180.0) * radius)
+            path.addArc(withCenter: CGPoint(x: width / 2.0, y: height / 2.0), radius: radius, startAngle: priorAngle * .pi / 180.0 , endAngle: angle * .pi / 180.0, clockwise: false)
+            priorAngle = angle
+
+            foregroundColor.withAlphaComponent(angle/360.0).setStroke()
+            path.stroke()
+        }
+    }
 
 }
+
+
+extension UIView {
+    func rotate360Degrees(duration: CFTimeInterval = 3) {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat.pi * 2
+        rotateAnimation.isRemovedOnCompletion = false
+        rotateAnimation.duration = duration
+        rotateAnimation.repeatCount = Float.infinity
+        self.layer.add(rotateAnimation, forKey: nil)
+    }
+}
+
+
+class CustomUISlider : UISlider {
+
+    override func trackRect(forBounds bounds: CGRect) -> CGRect {
+
+        //keeps original origin and width, changes height, you get the idea
+        let customBounds = CGRect(origin: bounds.origin, size: CGSize(width: bounds.size.width, height: 5.0))
+        super.trackRect(forBounds: customBounds)
+        return customBounds
+    }
+
+    //while we are here, why not change the image here as well? (bonus material)
+    override func awakeFromNib() {
+        self.setThumbImage(UIImage(named: "sliderthumb"), for: .normal)
+        super.awakeFromNib()
+    }
+}
+
+
+
 
 // MARK: - Designable Extension
 

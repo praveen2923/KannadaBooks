@@ -28,6 +28,7 @@ class APIManager: NSObject {
             }
             if response.response?.statusCode == 200 {
                 completion(nil, response.data)
+            
             } else {
                 completion(response.data, nil)
             }
@@ -44,23 +45,13 @@ class APIManager: NSObject {
     }
     
     // Get ALL Author
-    class func authorList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
-        APIManager.serviceRequest(APIList.authors.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
-           APIManager.responseHandle(result) { (error, result) in
+    class func getBookCatalogue(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
+        APIManager.serviceRequest(APIList.getBookCatalogue.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
+           APIManager.responseHandler(result) { (error, result) in
                 completion(error, result)
             }
          }
      }
-    
-    // Get ALL Books For author id
-    class func getAllBooksForAuthor(_ authorid: String?, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = [  "author" : authorid ?? "", ]
-        APIManager.serviceRequest(APIList.booklist.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
-            APIManager.responseHandle(result) { (error, result) in
-                completion(error, result)
-            }
-        }
-    }
     
     // Get History information for category id categoryid
     class func getAllInformationforCategory(_ catid: String?, completion: @escaping CompletionHandler) {
@@ -75,21 +66,21 @@ class APIManager: NSObject {
     // Get Menu List
     class func getMenuList(_ parameters: NSDictionary?, completion: @escaping CompletionHandler) {
         APIManager.serviceRequest(APIList.menuList.getConstructedUrl(), method: .post, parms: [:], headers: [:]) { (error, result) in
-            APIManager.responseHandle(result) { (error, result) in
+            APIManager.responseHandler(result) { (error, result) in
                completion(error, result)
             }
         }
     }
     
-    // Get Menu information for Menu id
-    class func getFeedformationByMenuId(_ menuId: String?, completion: @escaping CompletionHandler) {
-        let bParameters:Parameters = ["id" : menuId ?? "", ]
-        APIManager.serviceRequest(APIList.getFeedById.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
-               APIManager.responseHandle(result) { (error, result) in
-                   completion(error, result)
-               }
-         }
-    }
+    // Get List of Audio Books
+       class func getListOfAudioBooks(completion: @escaping CompletionHandler) {
+        let bParameters:Parameters = [:]
+           APIManager.serviceRequest(APIList.getAudiobooks.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
+                  APIManager.responseHandle(result) { (error, result) in
+                      completion(error, result)
+                  }
+            }
+       }
     
     
     
@@ -116,11 +107,7 @@ class APIManager: NSObject {
         if let data = result as? Data {
             do {
                 if let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? Dictionary<String, Any> {
-                    if result["message"] as? String == "success" { // # Bug: 1209
-                        completion(nil, result) // no Error
-                    } else {
-                        completion(true, nil) // SQL error
-                    }
+                  completion(nil, result) // no Error
                 } else{
                     completion(true, nil) // Parse error
                 }
@@ -132,47 +119,37 @@ class APIManager: NSObject {
         }
     }
     
-    
-    
-     
-        // Login Service NOT USed
-        class func loginService(_ parameters: NSDictionary, completion: @escaping CompletionHandler) {
-    //        let bParameters:Parameters = [
-    //              "email" : parameters["email"] as? String ?? "",
-    //              "password": parameters["password"] as? String ?? ""
-    //           ]
-    //
-    //        let bHTTPHeaders: HTTPHeaders = [
-    //            "Content-Type" : "application/x-www-form-urlencoded",
-    //            "Accept" : "application/json",
-    //        ]
-    //
-            
-    //        APIManager.serviceRequest(APIList.userLogin.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-    //            APIManager.responseHandler(result) { (error, result) in
-    //                completion(error, result)
-    //            }
-    //        }
-        }
-        
-         // Registor Service
-        class func registorService(completion: @escaping CompletionHandler) {
-            if let channelid = UAirship.channel()?.identifier {
-                let bParameters:Parameters = [ "devicetoken" : channelid ]
-                let bHTTPHeaders: HTTPHeaders = [
-                   "Content-Type" : "application/x-www-form-urlencoded",
-                   "Accept" : "application/json",
-                ]
-                APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
-                    APIManager.responseHandler(result) { (error, result) in
-                       completion(error, result)
-                    }
+     // Registor Service Push Notification
+    class func registorService(completion: @escaping CompletionHandler) {
+        if let channelid = UAirship.channel()?.identifier {
+            let bParameters:Parameters = [ "devicetoken" : channelid ]
+            let bHTTPHeaders: HTTPHeaders = [
+               "Content-Type" : "application/x-www-form-urlencoded",
+               "Accept" : "application/json",
+            ]
+            APIManager.serviceRequest(APIList.userRegistor.getConstructedUrl(), method: .post, parms: bParameters, headers: bHTTPHeaders) { (error, result) in
+                APIManager.responseHandler(result) { (error, result) in
+                   completion(error, result)
                 }
-            }else{
-               completion(nil, nil)
             }
-           
+        }else{
+           completion(nil, nil)
         }
+    }
+    
+    
+    // Send Feedback
+    class func sendFeedMessage(_ name: String, _ email:String, _ message:String, completion: @escaping CompletionHandler) {
         
+            let bParameters:Parameters = [ "name" : name,
+                                           "email":email,
+                                           "feedback":message]
+            APIManager.serviceRequest(APIList.savefeedback.getConstructedUrl(), method: .post, parms: bParameters, headers: [:]) { (error, result) in
+                APIManager.responseHandler(result) { (error, result) in
+                   completion(error, result)
+                }
+            }
+        
+    }
 }
 

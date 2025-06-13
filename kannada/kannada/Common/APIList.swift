@@ -8,9 +8,6 @@
 
 import UIKit
 
-// let unitKey : String = "ca-app-pub-9743507528822263/3383415195"
-//  let unitKey : String = "ca-app-pub-9743507528822263/5962117707"
-
 let unitKey : String = "ca-app-pub-9743507528822263/1646412253"
 
  enum API: String {
@@ -25,33 +22,15 @@ struct APIList {
         }
     }
     
-    static var userRegistor : String {
+    static var userRegistor : String { // registor push notification
         get {
             return "registor.php"
         }
     }
     
-//    static var userLogin : String {
-//        get {
-//            return "login.php"
-//        }
-//    }
-    
     static var categorylist : String {
         get {
             return "categorylist.php"
-        }
-    }
-    
-    static var authors : String {
-        get {
-            return "authors.php"
-        }
-    }
-    
-    static var booklist : String {
-        get {
-            return "books.php"
         }
     }
     
@@ -61,16 +40,29 @@ struct APIList {
         }
     }
     
+    static var getBookCatalogue : String {
+        get {
+            return "newapi/getbookcatalogue.php"
+        }
+    }
+    
     static var menuList : String {
         get {
-            return "menulist.php"
+            return "newapi/getsidemanulist.php"
         }
     }
-    static var getFeedById : String {
-        get {
-            return "getFeedById.php"
-        }
-    }
+ 
+    static var getAudiobooks : String {
+         get {
+             return "getaudiobooks.php"
+         }
+     }
+    
+    static var savefeedback : String {
+         get {
+             return "newapi/savefeedback.php"
+         }
+     }
 }
 
 extension String {

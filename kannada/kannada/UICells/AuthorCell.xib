@@ -9,18 +9,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AuthorCell" customModule="ಕನ್ನಡ_ಪ್ರೇಮಿ" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="176" height="227"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AuthorCell" customModule="ಪುಸ್ತಕಗಳು" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="151" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="176" height="227"/>
+                <rect key="frame" x="0.0" y="0.0" width="151" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9O-2W-Eka">
-                        <rect key="frame" x="5" y="5" width="166" height="224"/>
+                        <rect key="frame" x="5" y="5" width="141" height="172"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ಹರ್ಷ ಮುದ್ರಣಾಲಯ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63k-Rf-YoK">
-                                <rect key="frame" x="0.0" y="182" width="166" height="36"/>
+                                <rect key="frame" x="0.0" y="130" width="141" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Nii-uS-37r"/>
                                 </constraints>
@@ -28,36 +28,39 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorimage" translatesAutoresizingMaskIntoConstraints="NO" id="w98-BX-O48">
-                                <rect key="frame" x="10" y="13" width="146" height="170"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="authorimage" translatesAutoresizingMaskIntoConstraints="NO" id="w98-BX-O48">
+                                <rect key="frame" x="0.0" y="5" width="141" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="ZNm-nV-W2B"/>
+                                    <constraint firstAttribute="height" constant="125" id="ZNm-nV-W2B"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="w98-BX-O48" firstAttribute="top" secondItem="r9O-2W-Eka" secondAttribute="top" constant="13" id="6Jf-Uh-Vyo"/>
-                            <constraint firstItem="63k-Rf-YoK" firstAttribute="trailing" secondItem="w98-BX-O48" secondAttribute="trailing" constant="10" id="MyL-9s-vCw"/>
-                            <constraint firstItem="w98-BX-O48" firstAttribute="leading" secondItem="63k-Rf-YoK" secondAttribute="leading" constant="10" id="Zxn-uG-2M7"/>
-                            <constraint firstItem="63k-Rf-YoK" firstAttribute="top" secondItem="w98-BX-O48" secondAttribute="bottom" constant="-1" id="ck5-FH-Hvl"/>
+                            <constraint firstItem="w98-BX-O48" firstAttribute="top" secondItem="r9O-2W-Eka" secondAttribute="top" constant="5" id="6Jf-Uh-Vyo"/>
+                            <constraint firstItem="63k-Rf-YoK" firstAttribute="trailing" secondItem="w98-BX-O48" secondAttribute="trailing" id="MyL-9s-vCw"/>
+                            <constraint firstItem="w98-BX-O48" firstAttribute="leading" secondItem="63k-Rf-YoK" secondAttribute="leading" id="Zxn-uG-2M7"/>
+                            <constraint firstItem="63k-Rf-YoK" firstAttribute="top" secondItem="w98-BX-O48" secondAttribute="bottom" id="ck5-FH-Hvl"/>
                             <constraint firstItem="63k-Rf-YoK" firstAttribute="leading" secondItem="r9O-2W-Eka" secondAttribute="leading" id="rYI-Uo-kbG"/>
                             <constraint firstAttribute="bottom" secondItem="63k-Rf-YoK" secondAttribute="bottom" constant="6" id="tsn-Zd-3o4"/>
                             <constraint firstAttribute="trailing" secondItem="63k-Rf-YoK" secondAttribute="trailing" id="uQK-Ei-Es2"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                <size key="value" width="1" height="1"/>
+                                <size key="value" width="3" height="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                <real key="value" value="1"/>
+                                <real key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                <real key="value" value="1"/>
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="2"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
@@ -70,12 +73,12 @@
                 <constraint firstItem="r9O-2W-Eka" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="gd6-UF-kGr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="141" height="234"/>
+            <size key="customSize" width="116" height="207"/>
             <connections>
                 <outlet property="authorName" destination="63k-Rf-YoK" id="laO-qx-Ei8"/>
                 <outlet property="authorimage" destination="w98-BX-O48" id="8fc-YQ-Tuo"/>
             </connections>
-            <point key="canvasLocation" x="-184.05797101449278" y="16.40625"/>
+            <point key="canvasLocation" x="-177.536231884058" y="-18.080357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>

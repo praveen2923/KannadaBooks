@@ -19,16 +19,14 @@ class UserDefaultsKeys {
     }
     
 }
-
-
-
 class UD {
 
 static let shared = UD()
 
     let kUserLogedIn = "kUserLoginkeytest"
     let kDeviceToken = "kDeviceToken"
-
+    let kFeedbackmessage = "kFeedbackmessage"
+    
     private init() {
 
     }
@@ -53,8 +51,17 @@ static let shared = UD()
         return value
     }
     
+    func setFeedbackMessageSent(_ value : Bool)  {
+        UserDefaults.standard.set(value, forKey: kFeedbackmessage)
+        self.save()
+    }
+    
+    func getFeedbackMessageSent() -> Bool {
+        let value = UserDefaults.standard.bool(forKey: kFeedbackmessage)
+        return value
+    }
+    
     func save() {
         UserDefaults.standard.synchronize()
     }
-    
 }
